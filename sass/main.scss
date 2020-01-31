@@ -1,4 +1,11 @@
 @import '_vars.scss';
+@import 'modules/_header.scss';
+
+* { margin: 0; border: 0; padding: 0; }
+
+html, body {
+    height: 100%;
+}
 
 body {
     font-family: $body-font;
@@ -11,4 +18,8 @@ h1, h2, h3, h4, h5 {
 a {
     cursor: pointer;
     text-decoration: none;
+}
+
+.hidden {
+    display: none;
 }

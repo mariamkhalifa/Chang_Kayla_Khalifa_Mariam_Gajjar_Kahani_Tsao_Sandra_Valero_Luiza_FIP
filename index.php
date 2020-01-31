@@ -4,14 +4,18 @@
 </head>
 
 <body>
-   <?php include 'template/header.php'; ?>
+    <main id="app">
+    <?php include 'template/header.php'; ?>
 
     <section class="hero">
         <h1 class="hidden">hero</h1>
     </section>
 
-   <?php include 'template/footer.php'; ?>
+    <?php include 'template/footer.php'; ?>
 
-   <script src="js/main.js" type="module"></script>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
+    <script defer src="js/main.js"></script>
 </body>
 </html>
