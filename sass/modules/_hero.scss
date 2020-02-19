@@ -1,0 +1,11 @@
+.hero {
+    @include col;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-img {
+    background: url(../images/asian_girl3.jpg) no-repeat;
+    height: 100%;
+    width: 100%;
+}

@@ -1,7 +1,70 @@
-.nav {
+.header {
+    background-color: $dark-blue;
+    @include row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    width: 65px;
+}
+
+.burger {
+    cursor: pointer;
+    width: 30px;
+}
+
+.rotated {
+    transform: rotate(90deg);
+}
+
+.nav-wrapper {
     display: none;
 }
 
 .visible {
-    display: block;
+    @include col;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+}
+
+.tite-close {
+    @include row;
+    justify-content: space-between;
+    h2 {
+        color: $dark-blue;
+    }
+}
+
+.close-nav {
+    cursor: pointer;
+    //padding: 10px;
+    //width: 20px;
+}
+
+.nav {
+    margin-top: 50px;
+    text-align: center;
+    li {
+        margin-bottom: 15px;
+    }
+    a {
+        text-transform: uppercase;
+        color: $dark-blue;
+    }
+}
+
+.h-social-media {
+    margin-top: 40px;
+    @include row;
+    //justify-content: space-evenly;
+    img {
+        width: 40px;
+        margin-right: 20px;
+    }
 }
