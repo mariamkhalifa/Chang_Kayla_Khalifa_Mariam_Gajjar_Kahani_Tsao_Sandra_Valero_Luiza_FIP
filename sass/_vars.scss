@@ -1,2 +1,24 @@
+$dark-blue: #343d72;
+$blue: #2867ae;
+$v-dark-blue: #212749;
+$green: #5d9e66;
+$yellow-orange: #f8a73a;
+$orang: #EA5C24;
+$red: #e24443;
+$salmon: #F17661;
+$dark-grey: #EA5C24;
+$grey: #BAB9BB;
+$purple: #773070;
+$copy-color: #444345;
 $body-font : acumin-pro, sans-serif;
 $heading-font: neuzeit-grotesk, sans-serif;
+
+@mixin row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin col {
+    display: flex;
+    flex-direction: column;
+}

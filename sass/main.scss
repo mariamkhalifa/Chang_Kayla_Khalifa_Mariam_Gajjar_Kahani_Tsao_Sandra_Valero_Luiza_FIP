@@ -1,14 +1,52 @@
 @import '_vars.scss';
+@import 'modules/_reset.scss';
+@import 'modules/_header.scss';
+@import 'modules/_hero.scss';
+@import 'modules/_footer.scss';
+
+html, body {
+    height: 100%;
+}
 
 body {
     font-family: $body-font;
+    color: $copy-color;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: $heading-font;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
 }
 
 a {
     cursor: pointer;
     text-decoration: none;
+}
+
+input {
+    border: none;
+}
+
+p {
+    line-height: 1.2em;
+}
+
+.hidden {
+    display: none;
 }
