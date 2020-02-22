@@ -1,0 +1,24 @@
+.about {
+    margin-top: 30px;
+    @include col;
+    align-items: center;
+}
+
+.about-top {
+    background-color: $red;
+    width: 100%;
+    .line {
+        height: 3px;
+        margin: 40px 0;
+        background-color: $yellow-orange;
+    }
+}
+
+.about-text {
+    background-color: $yellow-orange;
+    padding: 40px 30px;
+    color: $red;
+    ul li {
+        margin-top: 20px;
+    }
+}

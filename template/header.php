@@ -9,7 +9,7 @@
     <img v-on:click="expandBurger" class="burger" :class="{'rotated':burger.isExpanded}" src="images/burger_menu.svg" alt="burger menu">
     <div class="nav-wrapper" :class="{'visible':burger.isExpanded}">
         <div class="title-close">
-            <h2>Keep It Nuetral</h2>
+            <h3>Keep It Nuetral</h3>
             <p v-on:click="closeBurger" class="close-nav">X</p>
         </div>
         <ul class="nav">

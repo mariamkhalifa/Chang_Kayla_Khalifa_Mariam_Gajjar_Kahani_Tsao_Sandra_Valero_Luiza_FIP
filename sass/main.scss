@@ -2,6 +2,10 @@
 @import 'modules/_reset.scss';
 @import 'modules/_header.scss';
 @import 'modules/_hero.scss';
+@import 'modules/_about.scss';
+@import 'modules/_video.scss';
+@import 'modules/_hfaq.scss';
+@import 'modules/_testing.scss';
 @import 'modules/_footer.scss';
 
 html, body {
@@ -15,15 +19,19 @@ body {
 
 h1, h2, h3, h4, h5 {
     font-family: $heading-font;
+    line-height: 1.2em;
     font-weight: bold;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: bold;
 }
 
 h2 {
-    font-size: 1.7em;
+    font-size: 2em;
+    
+    
 }
 
 h3 {
@@ -44,9 +52,25 @@ input {
 }
 
 p {
-    line-height: 1.2em;
+    line-height: 1.5em;
+}
+
+li {
+    line-height: 1.5em;
 }
 
 .hidden {
     display: none;
+}
+
+.button {
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px 30px;
+    background-color: $green;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: $heading-font;
+    font-size: 1.1em;
 }

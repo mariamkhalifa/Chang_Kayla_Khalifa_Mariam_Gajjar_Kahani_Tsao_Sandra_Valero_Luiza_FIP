@@ -1,0 +1,35 @@
+.video-section {
+    //margin-top: 30px;
+    @include col;
+    align-items: center;
+}
+
+.video-top {
+    background-color: $blue;
+    width: 100%;
+    .line {
+        height: 3px;
+        margin: 40px 0;
+        background-color: $v-dark-blue;
+    }
+}
+
+.video-wrapper {
+    background: url(../images/temporary_video3.jpg) no-repeat center;
+    @include col;
+    align-items: center;
+    height: 459px;
+    .video-icon {
+        width: 100px;
+        margin: 70px 0;
+    }
+}
+
+.video-text {
+    background-color: $dark-blue;
+    padding: 40px 30px;
+    color: $yellow-orange;
+    p {
+        margin-top: 20px;
+    }
+}
