@@ -17,19 +17,21 @@
     </section>
 
     <section class="about">
-        <div class="about-header">
+        <div class="about-top">
             <div class="line"></div>
         </div>
         <img src="images/girl3.jpg">
-        <h1>HIV Neutral</h1>
-        <ul>
-            <li>Keep it Neutral is designed to help people have open, healthy, and thoughtful conversations about HIV and AIDS. We envision a world that’s “HIV Neutral” -- where HIV is no longer transmittable or stigmatized.</li>
-            <li>We bring you ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. Let’s Keep it Neutral.</li>
-        </ul>
+        <div class="about-text">
+            <h2>HIV Neutral</h2>
+            <ul>
+                <li>Keep it Neutral is designed to help people have open, healthy, and thoughtful conversations about HIV and AIDS. We envision a world that’s “HIV Neutral” -- where HIV is no longer transmittable or stigmatized.</li>
+                <li>We bring you ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. Let’s Keep it Neutral.</li>
+            </ul>
+        </div>
     </section>
 
-    <section class="about">
-        <div class="about-header">
+    <section class="video-section">
+        <div class="video-top">
             <div class="line"></div>
         </div>
         <div class="video-wrapper">
@@ -37,47 +39,52 @@
             <video class="video">
                 <source src="" type="video/mp4">
             </video>
-        <h1>Stories of HIV/AIDS</h1>
-        <p>Be the one who shares a story. Start the big change now.</p>
+        </div>
+        <div class="video-text">
+            <h2>Stories of HIV/AIDS</h2>
+            <p>Start by listening to real stories from people who speak openly about their experience with HIV/AIDS.</p>
+        </div>
     </section>
 
     <section class="h-faq">
-        <h1>Frequently Asked Questions</h1>
-        <p>Do you have any questions? We help you find the answers!</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>Do you have any questions? We can help you find the answers!</p>
         <div>
             <!-- FAQ component -->        
         </div>
-        <a href="facts.php">See More</a>
+        <a href="facts.php" class="button">See More</a>
     </section>
 
     <section class="testing">
-        <h1>Get Tested</h1>
+        <h2>Get Tested</h2>
         <p>Find HIV Testing locations and care services close to you.</p>
+        <!-- might add google maps API instead of iframe -->
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.769633654516!2d-81.25054408514464!3d42.98312610351882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef21cf012e81d%3A0xc2124c8409950117!2s186%20King%20St%2C%20London%2C%20ON%20N6A%201C7!5e0!3m2!1sen!2sca!4v1582313402657!5m2!1sen!2sca" allowfullscreen=""></iframe>
         <div class="locations-wrapper">
             <div class="location">
                 <h4>Regional HIV/AIDS Connections</h4>
                 <ul>
                     <li>186 King St #30</li>
-                    <li>London, ON N6A 1C7</li>
+                    <li>London, ON <br>N6A 1C7</li>
                 </ul>
             </div>
             <div class="location">
                 <h4>London InterCommunity Health Centre</h4>
                 <ul>
                     <li>659 Dundas St</li>
-                    <li>London, ON N5W 2Z1</li>
+                    <li>London, ON <br>N5W 2Z1</li>
                 </ul>
             </div>
             <div class="location">
                 <h4>Anova</h4>
                 <ul>
                     <li>101 Wellingtion Rd</li>
-                    <li>London, ON N6C 4M7</li>
+                    <li>London, ON <br>N6C 4M7</li>
                 </ul>
             </div>
         </div>
         <p>For more information on where to get tested:</p>
-        <a href="" target="_blank">Go to HIV/AIDS Connections</a>
+        <a href="https://hivaidsconnection.ca/get-facts/get-tested/where-get-tested" target="_blank" class="testing-link">Go to HIV/AIDS Connections</a>
     </section>
 
     <?php include 'template/footer.php'; ?>

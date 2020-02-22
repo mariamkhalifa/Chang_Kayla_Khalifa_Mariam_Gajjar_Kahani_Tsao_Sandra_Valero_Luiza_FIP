@@ -5,7 +5,17 @@
 }
 
 .hero-img {
-    background: url(../images/asian_girl3.jpg) no-repeat;
-    height: 100%;
+    background: url(../images/asian_girl3.jpg) no-repeat center;
+    height: 362px;
     width: 100%;
+}
+
+.hero-text {
+    color: $red;
+    background-color: $yellow-orange;
+    padding: 90px 100px;
+    h1 {
+        text-transform: uppercase;
+        margin-top: 5px;
+    }
 }

@@ -1,10 +1,10 @@
 .footer {
     background-color: $blue;
-    padding: 20px;
+    padding: 30px;
     @include col;
     align-items: center;
     color: white;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .f-nav {
@@ -18,7 +18,11 @@
     }
     a {
         text-transform: uppercase;
-        color: white; 
+        color: white;
+        transition: all 1s ease;
+    }
+    a:hover {
+        color: $hover-color;
     }
 }
 
@@ -32,7 +36,11 @@
     img {
         width: 30px;
         margin-right: 15px;
+        transition: all 1s ease;
     }
+    // img:hover {
+    //     filter: invert(0.3);
+    // }
 }
 
 .subscribe {

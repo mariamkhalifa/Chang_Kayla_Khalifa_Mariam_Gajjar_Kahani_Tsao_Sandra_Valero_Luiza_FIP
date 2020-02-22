@@ -1,0 +1,15 @@
+.h-faq  {
+    @include col;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 40px;
+    h2 {
+        color: $green;
+    }
+    p {
+        margin-top: 30px;
+        font-size: 1.2em;
+    }
+}
+
