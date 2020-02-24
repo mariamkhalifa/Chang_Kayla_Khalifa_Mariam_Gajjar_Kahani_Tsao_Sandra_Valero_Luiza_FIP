@@ -4,7 +4,7 @@
 @import 'modules/_hero.scss';
 @import 'modules/_about.scss';
 @import 'modules/_video.scss';
-@import 'modules/_hfaq.scss';
+@import 'modules/_faq.scss';
 @import 'modules/_testing.scss';
 @import 'modules/_footer.scss';
 
@@ -73,4 +73,9 @@ li {
     margin-left: auto;
     font-family: $heading-font;
     font-size: 1.1em;
+    transition: all 1s ease;
+}
+
+.button:hover {
+    background-color: $hover-color;
 }

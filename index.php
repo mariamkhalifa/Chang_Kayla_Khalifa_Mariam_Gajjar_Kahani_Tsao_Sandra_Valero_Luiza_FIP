@@ -49,9 +49,21 @@
     <section class="h-faq">
         <h2>Frequently Asked Questions</h2>
         <p>Do you have any questions? We can help you find the answers!</p>
-        <div>
-            <!-- FAQ component -->        
-        </div>
+            <!-- FAQ component -->
+        <template v-for="card in faqdata">
+            <div class="faq-card">
+                <div class="question-card">
+                    <img class="card-top" src="images/top_card.svg" alt="top decoration">
+                    <h4 class="question">{{ card.question }}</h4>
+                    <div v-on:click="revealAnswer" v-if="plus.revealed" class="minus">-</div>
+                    <div v-on:click="revealAnswer" v-else class="plus">+</div>
+                </div>
+                <div class="answer-card" :class="{'revealed':plus.revealed}">    
+                    <p class="answer">{{ card.answer }}</p>
+                    <img class="card-bottom" src="images/bottom_card.svg" alt="bottom decoration">
+                </div>
+            </div>
+        </template>
         <a href="facts.php" class="button">See More</a>
     </section>
 
