@@ -1,0 +1,98 @@
+.h-faq  {
+    @include col;
+    align-items: center;
+    margin-top: 40px;
+    text-align: center;
+    padding: 0 40px;
+    h2 {
+        color: $green;
+    }
+    p {
+        margin-top: 30px;
+        font-size: 1.2em;
+    }
+}
+
+.faq-card {
+    margin-top: 40px;
+    @include col;
+    align-items: center;
+    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .3)
+}
+
+.question-card {
+    @include row;
+    position: relative;
+}
+
+.card-top {
+    width: 20%;
+    position: absolute;
+    opacity: .1;
+}
+
+.question {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0 50px 0 30px;
+    color: $green;
+}
+
+.plus {
+    color: white;
+    background-color: $dark-blue;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 5px 6px 5px 4px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    line-height: .2em;
+    //position: relative;
+    //top: 40px;
+    //right: 25px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    cursor: pointer;
+}
+
+.answer-card {
+    display: none;
+}
+
+.revealed {
+    @include row;
+    position: relative;
+}
+
+.card-bottom {
+    width: 20%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: .1;
+}
+
+.answer {
+    padding: 20px 30px;
+}
+
+.minus {
+    color: $grey;
+    background-color: white;
+    border: $grey 1px solid;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 5px 6px 5px 4px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    line-height: .2em;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    cursor: pointer;
+}
+
