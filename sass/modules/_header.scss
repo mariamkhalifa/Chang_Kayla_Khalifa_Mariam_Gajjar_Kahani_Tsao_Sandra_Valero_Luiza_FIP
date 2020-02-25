@@ -56,14 +56,69 @@
     text-align: center;
     li {
         margin-bottom: 15px;
+        display: flex;
+    }
+    .link1 {
+        background-color: $red;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        margin-left: 20px;
+        margin-top: 8px;
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    .link2 {
+        background-color: $orange;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        margin-left: 20px;
+        margin-top: 8px;
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    .link3 {
+        background-color: $yellow-orange;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        margin-left: 20px;
+        margin-top: 8px;
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    .link4 {
+        background-color: $green;
+        width: 8px;
+        height: 8px;
+        border-radius: 8px;
+        margin-left: 20px;
+        margin-top: 8px;
+        opacity: 0;
+        transition: all 1s ease;
     }
     a {
         text-transform: uppercase;
         color: $dark-blue;
         transition: all 1s ease;
     }
-    a:hover {
-        color: $hover-color;
+    li:hover {
+        a {
+            color: $hover-color;
+        }
+        .link1 {
+            opacity: 1;
+        }
+        .link2 {
+            opacity: 1;
+        }
+        .link3 {
+            opacity: 1;
+        }
+        .link4 {
+            opacity: 1;
+        }
     }
 }
 
@@ -80,3 +135,66 @@
     //     filter: invert(.3) brightness(1);
     // }
 }
+
+@media screen and (min-width:767px) {
+    .logo {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width:1023px) {
+    .burger {
+        display: none;
+    }
+
+    .nav-wrapper {
+        display: flex;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        margin-top: 35px;
+        li {
+            margin-left: 30px;
+            flex-direction: column;
+        }
+        li:first-child {
+            margin-right: 15px;
+        }
+        li:nth-child(2) {
+            margin-right: 10px;
+        }
+        a {
+            color: white;
+        }
+        .link1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .link2 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .link3 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .link4 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    
+
+    .title-close {
+        display: none;
+    }
+
+    .h-social-media {
+        display: none;
+    }
+}
+
+

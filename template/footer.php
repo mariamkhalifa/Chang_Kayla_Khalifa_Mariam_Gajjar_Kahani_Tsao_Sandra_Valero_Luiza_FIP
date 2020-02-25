@@ -28,6 +28,9 @@
         </form>
     </div>
     <img class="f-logo" src="images/kin_symbol.svg" alt="logo">
-    <div class="f-wave"></div>
+    <h3 class="f-title">Keep It Nuetral</h3>
+    <div class="f-symbol">
+        <img src="images/footer_symbol2.svg" alt="footer decoration">
+    </div>
 </footer>
 <p class="reg-trademark">Keep It Nuetral &copy; 2020. All Rights Reserved.</p>
