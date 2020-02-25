@@ -13,10 +13,22 @@
             <p v-on:click="closeBurger" class="close-nav">X</p>
         </div>
         <ul class="nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="community.php">Facts</a></li>
-            <li><a href="community.php">Community</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li>
+                <a href="index.php">Home</a>
+                <div class="link1"><div>
+            </li>
+            <li>
+                <a href="community.php">Facts</a>
+                <div class="link2"><div>
+            </li>
+            <li>
+                <a href="community.php">Community</a>
+                <div class="link3"><div>
+            </li>
+            <li>
+                <a href="contact.php">Contact</a>
+                <div class="link4"><div>
+            </li>
         </ul>
         <ul class="h-social-media">
             <li><a href="#" target="_blank"><img src="images/bl_instagram.svg" alt="instagram"></a></li>
