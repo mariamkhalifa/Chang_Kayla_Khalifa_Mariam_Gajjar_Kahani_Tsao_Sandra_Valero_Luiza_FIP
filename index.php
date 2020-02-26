@@ -9,18 +9,40 @@
 
     <section class="hero">
         <h1 class="hidden">hero</h1>
-        <div class="hero-img"></div>
-        <div class="hero-text">
-            <h2>Have</h2>
-            <h1>Safer Sex</h1>
-        </div>
+            <!-- <picture class="hero-img1">
+                <source srcset="images/asian_girl5.jpg" media="(min-width: 398px)">
+                <source srcset="images/asian_girl7.jpg" media="(min-width: 767px)">
+                <img src="images/asian_girl3.jpg" alt="girl">
+            </picture> -->
+            <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="girl"></div>
+            <div class="hero-text1">
+                <h2>Have</h2>
+                <h1>Safer <br>Sex</h1>
+            </div>
+            <!-- <picture class="hero-img2">
+                <source srcset="images/blondie_boy5.jpg" media="(min-width: 398px)">
+                <source srcset="images/blondie_boy7.jpg" media="(min-width: 767px)">
+                <img src="images/blondie_boy3.jpg" alt="boy">
+            </picture> -->
+            <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="boy"></div>
+            <div class="hero-text2">
+                <h2>Take</h2>
+                <h1>PrEp</h1>
+                <h2>or</h2>
+                <h1>PEP</h1>
+            </div>
+            <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="boy"></div>
+            <div class="hero-text3">
+                <h2>It's</h2>
+                <h1>Neutral</h1>
+            </div>
     </section>
 
     <section class="about">
         <div class="about-top">
             <div class="line"></div>
         </div>
-        <img src="images/girl3.jpg">
+        <img class="about-img" src="images/girl3.jpg">
         <div class="about-text">
             <h2>HIV Neutral</h2>
             <ul>

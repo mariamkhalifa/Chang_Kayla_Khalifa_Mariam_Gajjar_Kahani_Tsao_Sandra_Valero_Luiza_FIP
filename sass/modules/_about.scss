@@ -22,3 +22,24 @@
         margin-top: 20px;
     }
 }
+
+@media screen and (min-width: 767px) {
+    .about {
+        display: grid;
+        grid-template-areas: 'a b'
+                             'c b';
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .about-top {
+        grid-area: a;
+    }
+
+    .about-img {
+        grid-area: b;
+    }
+
+    .about-text {
+        grid-area: c;
+    }
+}
