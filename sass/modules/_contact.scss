@@ -1,0 +1,175 @@
+.contact-wrapper {
+    position: relative;
+}
+
+.cont-banner {
+    position: absolute;
+}
+
+.contact {
+    margin: 0 40px;
+    @include col;
+    margin-top: 100px;
+    h2 {
+        color: $dark-blue;
+    }
+    p {
+        margin-top: 40px;
+    }
+}
+
+.cont-form {
+    @include col;
+    margin: 40px 40px 0 40px;
+    label {
+        color: $dark-blue;
+        font-weight: bold;
+        font-family: $heading-font;
+        margin-top: 20px;
+    }
+    input {
+        border: $grey 2px solid;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    textarea {
+        border: $grey 2px solid;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    #contact-submit {
+        color: white;
+        background-color: $dark-blue;
+        //padding: 10px 30px;
+        border-radius: 20px;
+        border: none;
+        text-transform: uppercase;
+        margin-top: 40px;
+        width: 27%;
+        cursor: pointer;
+        font-family: $heading-font;
+        font-size: 1.1em;
+        transition: all 1s ease;
+    }
+    #contact-submit:hover {
+        background-color: $hover-color;
+    }
+
+}
+
+.cont-social-media-wrapper {
+    margin: 0 40px;
+    @include col;
+    margin-top: 100px;
+    h3 {
+        color: $dark-blue;
+    }
+    p {
+        margin-top: 20px;
+    }
+}
+
+.cont-social-media {
+    @include row;
+    margin-top: 20px;
+    i {
+        font-size: 2em;
+        color: $dark-blue;
+        margin-right: 25px;
+        transition: all 1s ease;
+    }
+    .fa-twitter {
+        margin-right: 0;
+    }
+    i:hover {
+        color: $hover-color;
+    }
+}
+
+.contact-info-wrapper {
+    margin: 0 40px;
+    @include col;
+    margin-top: 60px;
+    h3 {
+        color: $dark-blue;
+    }
+}
+
+.info-text {
+    margin-top: 20px;
+    h4 {
+        color: $dark-blue;
+    }
+}
+
+@media screen and (min-width: 410px) {
+    .contact {
+        margin-top: 120px;
+        margin-right: 30%;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .contact {
+        //margin-top: 180px;
+        margin-right: 35%;
+    }
+
+    .cont-form {
+        margin-right: 70px;
+    }
+
+    .contact-wrapper {
+        p:last-child {
+            margin-right: 20%;
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .contact-wrapper {
+        display: grid;
+        grid-template-areas: 'a a'
+                             'b c';
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 40px;
+    }
+    
+    .contact {
+        grid-area: a;
+        margin-top: 150px;
+        margin-right: 50%;
+        margin-left: 60px;
+    }
+
+    .cont-form {
+        grid-area: b;
+        margin-top: 0;
+        margin-left: 60px;
+        label:first-child {
+            margin-top: 0;
+        }
+    }
+
+    .info {
+        grid-area: c;
+        margin-top: 0;
+        padding-left: 35px;
+        align-self: center;
+        justify-self: start;
+        border-left : 2px solid rgba($color: $grey, $alpha: .5);
+    }
+
+    .cont-social-media-wrapper {
+        margin-top: 0;
+        
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contact {
+        margin-top: 180px;
+    }
+}

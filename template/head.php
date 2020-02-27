@@ -11,5 +11,5 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script>
     <!-- <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script> -->
-    <!-- <script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script>
     

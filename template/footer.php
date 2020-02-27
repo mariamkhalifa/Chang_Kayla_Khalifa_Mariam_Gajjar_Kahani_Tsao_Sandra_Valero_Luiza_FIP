@@ -12,10 +12,10 @@
     <ul class="f-social-media">
         <h4>Stay Connected</h4>
         <div class="f-social-icons">
-            <li><a href="#" target="_blank"><img src="images/w_instagram.svg" alt="instagram"></a></li>
-            <li><a href="#" target="_blank"><img src="images/w_snapchat.svg" alt="snapchat"></a></li>
-            <li><a href="#" target="_blank"><img src="images/w_youtube.svg" alt="youtube"></a></li>
-            <li><a href="#" target="_blank"><img src="images/w_twitter.svg" alt="twitter"></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
         </div>
     </ul>
     <div class="subscribe">
