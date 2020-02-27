@@ -16,7 +16,8 @@
 .faq-card {
     margin-top: 40px;
     @include col;
-    align-items: center;
+    width: 80%;
+    text-align: left;
     box-shadow: 0 0 20px rgba($color: $grey, $alpha: .3)
 }
 
@@ -27,6 +28,7 @@
 
 .card-top {
     width: 20%;
+    max-width: 80px;
     position: absolute;
     opacity: .1;
 }
@@ -62,12 +64,13 @@
 }
 
 .revealed {
-    @include row;
+    display: block;
     position: relative;
 }
 
 .card-bottom {
     width: 20%;
+    max-width: 80px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -75,7 +78,9 @@
 }
 
 .answer {
-    padding: 20px 30px;
+    padding: 0 30px 40px 30px;
+    text-align: left;
+    margin-top: 0 !important;
 }
 
 .minus {
@@ -96,3 +101,21 @@
     cursor: pointer;
 }
 
+.h-faq {
+    .button {
+        margin-top: 40px;
+    }
+    
+}
+
+@media screen and (min-width: 767px) {
+    .question {
+        padding-left: 40px;
+    }
+
+    .answer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+}
