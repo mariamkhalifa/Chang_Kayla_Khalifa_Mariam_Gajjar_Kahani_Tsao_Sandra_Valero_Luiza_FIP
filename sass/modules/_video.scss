@@ -7,22 +7,28 @@
 .video-top {
     background-color: $blue;
     width: 100%;
+    padding: 40px 0;
     .line {
         height: 3px;
-        margin: 40px 0;
+        
         background-color: $v-dark-blue;
     }
 }
 
 .video-wrapper {
-    background: url(../images/temporary_video3.jpg) no-repeat center;
     @include col;
     align-items: center;
-    height: 459px;
+    position: relative;
+    justify-content: center;
+    //height: 459px;
     .video-icon {
         width: 100px;
-        margin: 70px 0;
+        position: absolute;
     }
+}
+
+.video {
+    display: none;
 }
 
 .video-text {
@@ -31,5 +37,121 @@
     color: $yellow-orange;
     p {
         margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 598px) {
+    .video-section {
+        position: relative;
+    }
+
+    .vid-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+    }
+
+    .video-top {
+        grid-column: 2;
+        height: 100%;
+        padding: 0;
+        .line {
+            width: 50%;
+            margin-top: 140px;
+        }
+    }
+
+    .video-wrapper {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 200px;
+        //width: 50%;
+        .temp {
+            width: 100%;
+        }
+    }
+
+    .video-text {
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+        z-index: 10;
+        width: 45vw;
+        padding-right: 80px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @include col;
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 618px) {
+    .video-wrapper {
+        margin-top: 150px;
+    }
+
+    .video-top {
+        .line {
+            margin-top: 100px;
+        }
+    }
+}
+
+@media screen and (min-width: 638px) {
+    .video-wrapper {
+        margin-top: 100px;
+    }
+
+    .video-top {
+        .line {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media screen and (min-width: 735px) {
+    .video-wrapper {
+        margin-top: 50px;
+    }
+
+    .video-text {
+        bottom: 10%;
+    }
+}
+
+@media screen and (min-width: 792px) {
+    .video-wrapper {
+        margin-top: 20px;
+    }
+
+    .video-top {
+        .line {
+            margin-top: 70px;
+        }
+    }
+}
+
+@media screen and (min-width: 858px) {
+    .video-wrapper {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .video-top {
+        .line {
+            margin-top: 100px;
+        }
+    }
+}
+
+@media screen and (min-width: 1190px) {
+    .vid-grid {
+        grid-template-columns: 1.5fr 2fr;
+    }
+
+    .video-text {
+        padding-left: 50px;
+        width: 60vw;
     }
 }

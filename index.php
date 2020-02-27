@@ -42,25 +42,33 @@
         <div class="about-top">
             <div class="line"></div>
         </div>
-        <img class="about-img" src="images/girl3.jpg">
+        <div class="about-img">
+            <picture>
+                <source media="(min-width: 598px)" srcset="images/girl7.jpg">
+            <img src="images/girl3.jpg" alt="girl">
+            </picture>
+        </div>
         <div class="about-text">
             <h2>HIV Neutral</h2>
             <ul>
                 <li>Keep it Neutral is designed to help people have open, healthy, and thoughtful conversations about HIV and AIDS. We envision a world that’s “HIV Neutral” -- where HIV is no longer transmittable or stigmatized.</li>
-                <li>We bring you ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. Let’s Keep it Neutral.</li>
+                <li>We bring you ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. <span>Let’s Keep it Neutral.</span></li>
             </ul>
         </div>
     </section>
 
     <section class="video-section">
-        <div class="video-top">
-            <div class="line"></div>
-        </div>
-        <div class="video-wrapper">
-            <img class="video-icon" src="images/play_icon.svg" alt="play video icon">
-            <video class="video">
-                <source src="" type="video/mp4">
-            </video>
+        <div class="vid-grid">
+            <div class="video-top">
+                <div class="line"></div>
+            </div>
+            <div class="video-wrapper">
+                <img class="temp" src="images/temporary_video3.jpg" alt="temporary video">
+                <div class="video-icon"><img src="images/play_icon.svg" alt="play video icon"></div>
+                <video class="video">
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
         </div>
         <div class="video-text">
             <h2>Stories of HIV/AIDS</h2>
@@ -99,21 +107,21 @@
                 <h4>Regional HIV/AIDS Connections</h4>
                 <ul>
                     <li>186 King St #30</li>
-                    <li>London, ON <br>N6A 1C7</li>
+                    <li>London, ON N6A 1C7</li>
                 </ul>
             </div>
             <div class="location">
                 <h4>London InterCommunity Health Centre</h4>
                 <ul>
                     <li>659 Dundas St</li>
-                    <li>London, ON <br>N5W 2Z1</li>
+                    <li>London, ON N5W 2Z1</li>
                 </ul>
             </div>
             <div class="location">
                 <h4>Anova</h4>
                 <ul>
                     <li>101 Wellingtion Rd</li>
-                    <li>London, ON <br>N6C 4M7</li>
+                    <li>London, ON N6C 4M7</li>
                 </ul>
             </div>
         </div>

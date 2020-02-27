@@ -19,7 +19,7 @@
         </div>
     </ul>
     <div class="subscribe">
-        <h4>Want to Stay Nuetral</h4>
+        <h4>Want to Stay Neutral</h4>
         <p>Sign up for our newsletter for HIV community events, updats, and contests.</p>
         <form class="subs-form" action="includes/subscribe.php" method="post">
             <label for="email">Email Address *</label>
