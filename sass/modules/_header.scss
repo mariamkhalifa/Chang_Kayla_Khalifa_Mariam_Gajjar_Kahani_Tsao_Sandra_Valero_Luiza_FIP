@@ -29,17 +29,19 @@
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     padding: 30px;
-    width: 100%;
+    z-index: 10;
 }
 
 .title-close {
-    @include row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     h3 {
         color: $dark-blue;
-        //margin-right: 50px;
-        //margin-left: 30px;
+    }
+    p {
+        justify-self: end;
     }
 }
 
@@ -54,6 +56,8 @@
 .nav {
     margin-top: 50px;
     text-align: center;
+    @include col;
+    align-items: center;
     li {
         margin-bottom: 15px;
         display: flex;
@@ -63,7 +67,7 @@
         width: 8px;
         height: 8px;
         border-radius: 8px;
-        margin-left: 20px;
+        margin-left: 8px;
         margin-top: 8px;
         opacity: 0;
         transition: all 1s ease;
@@ -73,7 +77,7 @@
         width: 8px;
         height: 8px;
         border-radius: 8px;
-        margin-left: 20px;
+        margin-left: 8px;
         margin-top: 8px;
         opacity: 0;
         transition: all 1s ease;
@@ -83,7 +87,7 @@
         width: 8px;
         height: 8px;
         border-radius: 8px;
-        margin-left: 20px;
+        margin-left: 8px;
         margin-top: 8px;
         opacity: 0;
         transition: all 1s ease;
@@ -93,7 +97,7 @@
         width: 8px;
         height: 8px;
         border-radius: 8px;
-        margin-left: 20px;
+        margin-left: 8px;
         margin-top: 8px;
         opacity: 0;
         transition: all 1s ease;
@@ -126,14 +130,18 @@
     margin-top: 40px;
     @include row;
     //justify-content: space-evenly;
-    img {
-        width: 40px;
+    i {
+        font-size: 2.5em;
+        color: $dark-blue;
         margin-right: 20px;
         transition: all 1s ease;
     }
-    // img:hover {
-    //     filter: invert(.3) brightness(1);
-    // }
+    .fa-twitter {
+        margin-right: 0;
+    }
+    i:hover {
+        color: $hover-color;
+    }
 }
 
 @media screen and (min-width:767px) {

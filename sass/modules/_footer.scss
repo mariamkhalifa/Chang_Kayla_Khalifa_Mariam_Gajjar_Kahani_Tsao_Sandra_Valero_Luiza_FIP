@@ -36,20 +36,21 @@
         margin-top: 20px;
         @include row;
     }
-    img {
-        width: 30px;
+    li {
+        cursor: pointer;
+    }
+    i {
+        font-size: 2.5em;
+        color: white;
         margin-right: 15px;
         transition: all 1s ease;
     }
-    li:last-child {
-        img {
-            margin-right: 0;
-        }
-        
+    .fa-twitter {
+        margin-right: 0;
     }
-    // img:hover {
-    //     filter: invert(0.3);
-    // }
+    i:hover {
+        color: $hover-color;
+    }
 }
 
 .subscribe {

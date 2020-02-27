@@ -1,6 +1,6 @@
 # Keep It Neutral | Marketing Campaign
 
-<img src="/public/images/logo.svg" width="150">
+<img src="images/logo.svg" width="150">
 
 About Keep It Neutral. If we have a live site, put it [here](google.ca).
 

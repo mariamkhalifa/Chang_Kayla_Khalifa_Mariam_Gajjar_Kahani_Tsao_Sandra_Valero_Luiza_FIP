@@ -1,15 +1,17 @@
 @import '_vars.scss';
 @import 'modules/_reset.scss';
 @import 'modules/_header.scss';
-@import 'modules/_hero.scss';
-@import 'modules/_about.scss';
-@import 'modules/_video.scss';
-@import 'modules/_faq.scss';
-@import 'modules/_testing.scss';
+@import 'modules/_h_hero.scss';
+@import 'modules/_h_about.scss';
+@import 'modules/_h_video.scss';
+@import 'modules/_h_faq.scss';
+@import 'modules/_h_testing.scss';
+@import 'modules/_contact.scss';
 @import 'modules/_footer.scss';
 
 html, body {
     height: 100%;
+    max-width: 100vw;
 }
 
 body {

@@ -45,7 +45,7 @@
         <div class="about-img">
             <picture>
                 <source media="(min-width: 598px)" srcset="images/girl7.jpg">
-            <img src="images/girl3.jpg" alt="girl">
+                <img src="images/girl3.jpg" alt="girl">
             </picture>
         </div>
         <div class="about-text">
