@@ -19,8 +19,8 @@
         </div>
     </ul>
     <div class="subscribe">
-        <h4>Want to Stay Neutral</h4>
-        <p>Sign up for our newsletter for HIV community events, updats, and contests.</p>
+        <h4>Want to Stay Neutral?</h4>
+        <p>Sign up to our newsletter for community events, updates, and contests.</p>
         <form class="subs-form" action="includes/subscribe.php" method="post">
             <label for="email">Email Address *</label>
             <input id="email" name="email" type="email" required>
@@ -28,9 +28,10 @@
         </form>
     </div>
     <img class="f-logo" src="images/kin_symbol.svg" alt="logo">
-    <h3 class="f-title">Keep It Nuetral</h3>
+    <h3 class="f-title">Keep It Neutral</h3>
     <div class="f-symbol">
         <img src="images/footer_symbol2.svg" alt="footer decoration">
     </div>
 </footer>
-<p class="reg-trademark">Keep It Nuetral &copy; 2020. All Rights Reserved.</p>
+<!-- change this to a php year that updates automatically -->
+<p class="reg-trademark">Keep It Neutral &copy; 2020. All Rights Reserved.</p>
