@@ -11,15 +11,15 @@
         <div class="contact-wrapper">
             <section class="contact">
                 <h2>Contact Us</h2>
-                <p>We take our commitment to our patients seriously.  We understand you may have questions that are not answered in our FAQ section. If you cannot find the answer to your question or you need to help, please feel free to contact us.</p>
+                <p>We’re here to help. Got questions? Want to use stuff from our campaign? Please don’t hesitate to reach out &#9786</p>
             </section>
 
             <form class="cont-form" action="" method="post">
-                <label for="name">Full name</label>
+                <label for="name">Your name</label>
                 <input id="name" name="name" type="text" required>
-                <label for="email">Email address</label>
+                <label for="email">Email</label>
                 <input id="email" name="email" type="email" required>
-                <label for="phone">Phone number</label>
+                <label for="phone">Phone</label>
                 <input id="phone" name="phone" type="tel">
                 <label for="msg">Message</label>
                 <textarea id="msg" name="msg" type="text"  rows="10" required></textarea>
@@ -31,7 +31,7 @@
                 
                 <section class="cont-social-media-wrapper">
                     <h3>Social media</h3>
-                    <p>Find us on the following social networks:</p>
+                    <p>Follow us here!</p>
                     <ul class="cont-social-media">
                         <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a><li>
                         <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a><li>

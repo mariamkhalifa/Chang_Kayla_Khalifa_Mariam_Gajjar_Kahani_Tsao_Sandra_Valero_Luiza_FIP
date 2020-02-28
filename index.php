@@ -8,6 +8,8 @@
     <?php include 'template/header.php'; ?>
 
     <section class="hero">
+    <!-- please only use one h1 per page, also for validation-->
+    <!-- store all the text in one tag and use spans to style them - for screen readers and SEO to read the full sentence-->
         <h1 class="hidden">hero</h1>
             <!-- <picture class="hero-img1">
                 <source srcset="images/asian_girl5.jpg" media="(min-width: 398px)">
@@ -49,10 +51,10 @@
             </picture>
         </div>
         <div class="about-text">
-            <h2>HIV Neutral</h2>
+            <h2>What's HIV Neutral?</h2>
             <ul>
-                <li>Keep it Neutral is designed to help people have open, healthy, and thoughtful conversations about HIV and AIDS. We envision a world that’s “HIV Neutral” -- where HIV is no longer transmittable or stigmatized.</li>
-                <li>We bring you ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. <span>Let’s Keep it Neutral.</span></li>
+                <li>We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.</li>
+                <li>Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. <span>Let’s Keep it Neutral.</span></li>
             </ul>
         </div>
     </section>
