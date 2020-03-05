@@ -31,10 +31,22 @@
     height: 100%;
     @include col;
     justify-content: center;
-    h1 {
-        text-transform: uppercase;
-        margin-top: 5px;
-    }
+}
+
+.small-txt {
+    font-size: 2em;
+    font-family: $heading-font;
+    font-weight: bold;
+}
+
+.large-txt {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1em;
+    font-size: 3em;
+    font-family: $heading-font;
+    font-weight: bold;
+    margin-top: 4px;
 }
 
 // .hero2 {

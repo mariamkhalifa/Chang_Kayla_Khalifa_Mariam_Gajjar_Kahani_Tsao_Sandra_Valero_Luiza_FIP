@@ -18,8 +18,10 @@
             </picture> -->
             <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="girl"></div>
             <div class="hero-text1">
-                <h2>Have</h2>
-                <h1>Safer <br>Sex</h1>
+                <p>
+                    <span class="small-txt">Have<br></span>
+                    <span class="large-txt">Safer <br>Sex</span>
+                </p>
             </div>
             <!-- <picture class="hero-img2">
                 <source srcset="images/blondie_boy5.jpg" media="(min-width: 398px)">
@@ -28,15 +30,19 @@
             </picture> -->
             <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="boy"></div>
             <div class="hero-text2">
-                <h2>Take</h2>
-                <h1>PrEp</h1>
-                <h2>or</h2>
-                <h1>PEP</h1>
+                <p>
+                    <span class="small-txt">Take<br></span>
+                    <span class="large-txt">PrEp<br></span>
+                    <span class="small-txt">or<br></span>
+                    <span class="large-txt">PEP</span>
+                </p>
             </div>
             <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="boy"></div>
             <div class="hero-text3">
-                <h2>It's</h2>
-                <h1>Neutral</h1>
+                <p>
+                    <span class="small-txt">It's<br></span>
+                    <span class="large-txt">Neutral</span>
+                </p>
             </div>
     </section>
 
