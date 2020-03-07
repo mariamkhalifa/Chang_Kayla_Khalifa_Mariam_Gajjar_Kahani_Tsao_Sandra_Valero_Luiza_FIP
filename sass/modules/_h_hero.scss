@@ -1,40 +1,66 @@
 .hero {
-    //@include col;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    @include row;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: 1fr 1fr;
     text-align: center;
+    //position: relative;
 }
 
-// .hero1 {
-//     @include col;
-// }
-
-// .hero-img1 {
-//     background: url(../images/asian_girl3.jpg) no-repeat center;
-//     height: 362px;
-//     width: 100%;
-// }
+.hero1 {
+    @include col;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
 
 .hero-img1 {
     @include col;
     align-items: center;
+    width: 100%;
+    position: relative;
     img {
         width: 100%;
+        max-width: 398px;
+        //position: absolute;
+        transition: all .5s ease;
+    }
+    img.top-img {
+        position: absolute;
+        animation-name: fade;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        //animation-delay: 6s;
+        //animation-fill-mode: both;
+        animation-direction: alternate;
     }
 }
 
 .hero-text1 {
-    color: $red;
-    background-color: $yellow-orange;
-    width: 100%;
-    height: 100%;
+    @include col;
+    position: relative;
+    max-width: 398px;
+    transition: all .5s ease;
+}
+
+.top-txt {
     @include col;
     justify-content: center;
+    position: absolute;
+    //padding: 60px 0;
+    background-color: $yellow-orange;
+    width: 100vw;
+    height: 40vh;
+    //opacity: 0;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-delay: .5s;
+    animation-direction: alternate;
 }
 
 .small-txt {
-    font-size: 2em;
+    font-size: 1.7em;
     font-family: $heading-font;
     font-weight: bold;
 }
@@ -43,69 +69,97 @@
     display: block;
     text-transform: uppercase;
     line-height: 1em;
-    font-size: 3em;
+    font-size: 3.2em;
     font-family: $heading-font;
     font-weight: bold;
     margin-top: 4px;
 }
 
-// .hero2 {
+.bottom-txt {
+    @include col;
+    justify-content: center;
+    background-color: $blue;
+    //padding-top: 60px;
+    //padding-bottom: 60px;
+    width: 100vw;
+    height: 40vh;
+}
+
+.red-txt {
+    color: $red;
+}
+
+.yellow-txt {
+    color: $yellow-orange;
+}
+
+.dark-blue-txt {
+    $color: $dark-blue;
+}
+
+.hero2 {
+    display: none;
+}
+
+.hero3 {
+    display: none;
+}
+
+// .hero-img2 {
 //     display: none;
 // }
 
-.hero-img2 {
-    display: none;
-}
+// .hero-text2 {
+//     display: none;
+// }
 
-.hero-text2 {
-    display: none;
-}
+// .hero-img3 {
+//     display: none;
+// }
 
-.hero-img3 {
-    display: none;
-}
-
-.hero-text3 {
-    display: none;
-}
+// .hero-text3 {
+//     display: none;
+// }
 
 @media screen and (min-width: 398px) {
-    .hero {
-        display: grid;
-        grid-template-areas: 'a b'
-                             'c d';
-        grid-template-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
+    // .hero {
+        // display: grid;
+        // grid-template-areas: 'a b'
+        //                      'c d';
+        // grid-template-columns: 1fr 1fr;
+        // grid-template-columns: 1fr 1fr;
+    // }
 
-    .hero-img1 {
-        grid-area: a;
-    }
+    //.hero-img1 {
+        // grid-area: a;
+    // }
 
-    .hero-text1 {
-        grid-area: b;
-        h2 {
-            font-size: 1.5em;
-        }
-        h1 {
-            text-transform: uppercase;
-            margin-top: 0;
-            font-size: 2em;
-            line-height: 1em;
-        }
+    //.hero-text1 {
+        // grid-area: b;
+        
+    //}
+
+    .hero2 {
+        @include col;
     }
 
     .hero-img2 {
-        grid-area: d;
+        // grid-area: d;
         @include col;
         align-items: center;
+        position: relative;
         img {
             width: 100%;
+            //position: absolute;
+            transition: all .5s ease;
+        }
+        img.top {
+            position: absolute;
         }
     }
 
     .hero-text2 {
-        grid-area: c;
+        // grid-area: c;
         background-color: $blue;
         color: $yellow-orange;
         width: 100%;
@@ -144,32 +198,35 @@
 }
 
 @media screen and (min-width: 900px) {
-    .hero {
-        grid-template-areas: 'a b c'
-                             'd e f';
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    }
+    // .hero {
+        // grid-template-areas: 'a b c'
+        //                      'd e f';
+        // grid-template-columns: repeat(3, 1fr);
+        // grid-template-rows: repeat(2, 1fr);
+    // }
 
-    .hero-img2 {
-        grid-area: c;
-    }
+    // .hero-img2 {
+        // grid-area: c;
+    // }
 
-    .hero-text2 {
-        grid-area: d;
-    }
+    // .hero-text2 {
+        // grid-area: d;
+    // }
 
     .hero-img3 {
-        grid-area: e;
+        // grid-area: e;
         @include col;
         align-items: center;
+        position: relative;
         img {
             width: 100%;
+            position: absolute;
+            transition: all .5s ease-in-out;
         }
     }
 
     .hero-text3 {
-        grid-area: f;
+        // grid-area: f;
         background-color: $purple;
         color: $yellow-orange;
         width: 100%;
@@ -179,5 +236,20 @@
         h1 {
             text-transform: uppercase;
         }
+    }
+}
+
+@keyframes fade {  
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 1;
+    }
+    55% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
     }
 }

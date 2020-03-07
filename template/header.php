@@ -1,5 +1,5 @@
 <header class="header">
-    <h1 class="hidden">Main Navigation</h1>
+    <h2 class="hidden">Main Navigation</h2>
     <a href="index.php" class="logo">
         <picture>
             <source srcset="images/kin_logo.svg" media="(min-width: 767px)">

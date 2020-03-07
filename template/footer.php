@@ -1,5 +1,5 @@
 <footer class="footer">
-    <h1 class="hidden">Footer</h1>
+    <h2 class="hidden">Footer</h2>
     <ul class="f-nav">
         <h4>All Links</h4>
         <div>

@@ -5,48 +5,60 @@
 
 <body>
     <main id="app">
+    <h1 class="hidden">Keep It Nuetral</h1>
     <?php include 'template/header.php'; ?>
 
     <section class="hero">
-    <!-- please only use one h1 per page, also for validation-->
-    <!-- store all the text in one tag and use spans to style them - for screen readers and SEO to read the full sentence-->
-        <h1 class="hidden">hero</h1>
-            <!-- <picture class="hero-img1">
-                <source srcset="images/asian_girl5.jpg" media="(min-width: 398px)">
-                <source srcset="images/asian_girl7.jpg" media="(min-width: 767px)">
-                <img src="images/asian_girl3.jpg" alt="girl">
-            </picture> -->
-            <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="girl"></div>
-            <div class="hero-text1">
-                <p>
-                    <span class="small-txt">Have<br></span>
-                    <span class="large-txt">Safer <br>Sex</span>
-                </p>
+        <h2 class="hidden">hero</h2>
+            <div class="hero1">
+                <div class="hero-img1">
+                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
+                    <img class="top-img" src="images/asian_girl3.jpg" alt="asian girl">
+                </div>
+                <div class="hero-text1">
+                    <p class="bottom-txt">
+                    <span class="small-txt yellow-txt">Take<br></span>
+                        <span class="large-txt yellow-txt">PrEP<br></span>
+                        <span class="small-txt yellow-txt">or<br></span>
+                        <span class="large-txt yellow-txt">PEP<br></span>
+                    </p>
+                    <p class="top-txt">
+                        <span class="small-txt red-txt">Have<br></span>
+                        <span class="large-txt red-txt">Safer <br>Sex</span>
+                    </p>
+                </div>
             </div>
-            <!-- <picture class="hero-img2">
-                <source srcset="images/blondie_boy5.jpg" media="(min-width: 398px)">
-                <source srcset="images/blondie_boy7.jpg" media="(min-width: 767px)">
-                <img src="images/blondie_boy3.jpg" alt="boy">
-            </picture> -->
-            <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="boy"></div>
-            <div class="hero-text2">
-                <p>
-                    <span class="small-txt">Take<br></span>
-                    <span class="large-txt">PrEp<br></span>
-                    <span class="small-txt">or<br></span>
-                    <span class="large-txt">PEP</span>
-                </p>
+            
+            <div class="hero2">
+                <div class="hero-img2">
+                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
+                    <img class="top-img" src="images/blondie_boy3.jpg" alt="asian girl">
+                </div>
+                <div class="hero-text2">
+                    <p class="top-txt">
+                        <span class="small-txt">It's<br></span>
+                        <span class="large-txt">Nuetral<br></span>
+                    </p>
+                </div>
             </div>
-            <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="boy"></div>
-            <div class="hero-text3">
-                <p>
-                    <span class="small-txt">It's<br></span>
-                    <span class="large-txt">Neutral</span>
-                </p>
+
+            <div class="hero3">
+                <div class="hero-img3">
+                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
+                    <img class="top-img" src="images/happiness_girl3.jpg" alt="asian girl">
+                </div>
+
+                <div class="hero-text3">
+                    <p class="top-txt">
+                        <span class="small-txt">Have<br></span>
+                        <span class="large-txt">Safer<br>Sex</span>
+                    </p>
+                </div>
             </div>
     </section>
 
     <section class="about">
+        <h2 class="hidden">about</h2>
         <div class="about-top">
             <div class="line"></div>
         </div>
@@ -66,6 +78,7 @@
     </section>
 
     <section class="video-section">
+        <h2 class="hidden">video</h2>
         <div class="vid-grid">
             <div class="video-top">
                 <div class="line"></div>
