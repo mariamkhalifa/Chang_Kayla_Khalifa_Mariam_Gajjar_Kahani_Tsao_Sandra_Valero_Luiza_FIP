@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+.about-img {
+    img {
+        width: 100%;
+    }
+}
+
 .about-top {
     background-color: $red;
     width: 100%;

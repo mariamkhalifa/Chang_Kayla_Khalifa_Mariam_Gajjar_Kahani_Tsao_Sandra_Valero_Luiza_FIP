@@ -8,42 +8,71 @@
     <?php include 'template/header.php'; ?>
 
     <section class="hero">
-    <!-- please only use one h1 per page, also for validation-->
-    <!-- store all the text in one tag and use spans to style them - for screen readers and SEO to read the full sentence-->
+    
         <h1 class="hidden">hero</h1>
-            <!-- <picture class="hero-img1">
-                <source srcset="images/asian_girl5.jpg" media="(min-width: 398px)">
-                <source srcset="images/asian_girl7.jpg" media="(min-width: 767px)">
-                <img src="images/asian_girl3.jpg" alt="girl">
-            </picture> -->
-            <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="girl"></div>
+            
+            <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="asian girl"></div>
+            
             <div class="hero-text1">
                 <p>
                     <span class="small-txt">Have<br></span>
-                    <span class="large-txt">Safer <br>Sex</span>
+                    <span class="large-txt">Safer<br>Sex</span>
                 </p>
             </div>
-            <!-- <picture class="hero-img2">
-                <source srcset="images/blondie_boy5.jpg" media="(min-width: 398px)">
-                <source srcset="images/blondie_boy7.jpg" media="(min-width: 767px)">
-                <img src="images/blondie_boy3.jpg" alt="boy">
-            </picture> -->
-            <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="boy"></div>
+            
+            <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="blond boy"></div>
+            
             <div class="hero-text2">
                 <p>
-                    <span class="small-txt">Take<br></span>
-                    <span class="large-txt">PrEp<br></span>
-                    <span class="small-txt">or<br></span>
-                    <span class="large-txt">PEP</span>
+                    <span class="small-txt">What's<br></span>
+                    <span class="large-txt">Your<br>Status</span>
                 </p>
             </div>
-            <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="boy"></div>
+            
+            <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="african girl"></div>
+            
             <div class="hero-text3">
                 <p>
-                    <span class="small-txt">It's<br></span>
-                    <span class="large-txt">Neutral</span>
+                    <span class="small-txt">Let's<br></span>
+                    <span class="large-txt">Talk</span>
                 </p>
             </div>
+
+            <div class="alt-hero-wrapper">
+                <div class="alt-hero-grid">
+
+                    <div class="alt-hero-img1"><img src="images/dark_skin_teenager3.jpg" alt="african boy"></div>
+                
+                    <div class="alt-hero-text1">
+                        <p>
+                            <span class="small-txt">Take<br></span>
+                            <span class="large-txt">PrEp<br></span>
+                            <span class="small-txt">or<br></span>
+                            <span class="large-txt">PEP</span>
+                        </p>
+                    </div>
+
+                    <div class="alt-hero-img2"><img src="images/thinking_girl3.jpg" alt="dark haired girl"></div>
+                
+                    <div class="alt-hero-text2">
+                        <p>
+                            <span class="small-txt">It's<br></span>
+                            <span class="large-txt">Neutral</span>
+                        </p>
+                    </div>
+
+                    <div class="alt-hero-img3"><img src="images/curly_haired_girl3.jpg" alt="red haired girl"></div>
+                
+                    <div class="alt-hero-text3">
+                        <p>
+                            <span class="small-txt">With<br></span>
+                            <span class="large-txt">Pride</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
     </section>
 
     <section class="about">
