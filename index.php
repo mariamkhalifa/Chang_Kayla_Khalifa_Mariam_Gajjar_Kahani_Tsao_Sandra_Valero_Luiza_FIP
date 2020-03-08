@@ -10,51 +10,64 @@
 
     <section class="hero">
         <h2 class="hidden">hero</h2>
+
             <div class="hero1">
                 <div class="hero-img1">
-                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
                     <img class="top-img" src="images/asian_girl3.jpg" alt="asian girl">
+                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
                 </div>
+
                 <div class="hero-text1">
-                    <p class="bottom-txt">
-                    <span class="small-txt yellow-txt">Take<br></span>
-                        <span class="large-txt yellow-txt">PrEP<br></span>
-                        <span class="small-txt yellow-txt">or<br></span>
-                        <span class="large-txt yellow-txt">PEP<br></span>
+                    <p class="top-txt1">
+                        <span class="small-txt red-txt">What's<br></span>
+                        <span class="large-txt red-txt">Your<br>Status</span>
                     </p>
-                    <p class="top-txt">
-                        <span class="small-txt red-txt">Have<br></span>
-                        <span class="large-txt red-txt">Safer <br>Sex</span>
+                    <p class="bottom-txt1">
+                        <span class="small-txt yellow-txt">It's<br></span>
+                        <span class="large-txt yellow-txt">Nuetral<br></span>
                     </p>
+                </div>
+                
+                <div class="hero-img2">
+                    <img class="top-img" src="images/blondie_boy3.jpg" alt="blond boy">
+                    <img class="bottom-img" src="images/thinking_girl3.jpg" alt="thinking gril">
                 </div>
             </div>
             
             <div class="hero2">
-                <div class="hero-img2">
-                    <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
-                    <img class="top-img" src="images/blondie_boy3.jpg" alt="asian girl">
-                </div>
+
                 <div class="hero-text2">
-                    <p class="top-txt">
-                        <span class="small-txt">It's<br></span>
-                        <span class="large-txt">Nuetral<br></span>
+                    <p class="top-txt2">
+                        <span class="small-txt red-txt">Have<br></span>
+                        <span class="large-txt red-txt">Safer <br>Sex</span>
+                    </p>
+                    <p class="bottom-txt2">
+                        <span class="small-txt yellow-txt">Take<br></span>
+                        <span class="large-txt yellow-txt">PrEP<br></span>
+                        <span class="small-txt yellow-txt">or<br></span>
+                        <span class="large-txt yellow-txt">PEP</span>
                     </p>
                 </div>
-            </div>
 
-            <div class="hero3">
                 <div class="hero-img3">
+                    <img class="top-img" src="images/happiness_girl3.jpg" alt="happy girl">
                     <img class="bottom-img" src="images/dark_skin_teenager3.jpg" alt="african boy">
-                    <img class="top-img" src="images/happiness_girl3.jpg" alt="asian girl">
                 </div>
 
                 <div class="hero-text3">
-                    <p class="top-txt">
-                        <span class="small-txt">Have<br></span>
-                        <span class="large-txt">Safer<br>Sex</span>
+                    <p class="top-txt3">
+                        <span class="small-txt yellow-txt">With<br></span>
+                        <span class="large-txt yellow-txt">Pride</span>
+                    </p>
+                    <p class="bottom-txt3">
+                        <span class="small-txt yellow-txt">Let's<br></span>
+                        <span class="large-txt yellow-txt">Talk<</span>
                     </p>
                 </div>
+                
             </div>
+
+            
     </section>
 
     <section class="about">
