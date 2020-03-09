@@ -4,17 +4,8 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     text-align: center;
+    position: relative;
 }
-
-// .hero1 {
-//     @include col;
-// }
-
-// .hero-img1 {
-//     background: url(../images/asian_girl3.jpg) no-repeat center;
-//     height: 362px;
-//     width: 100%;
-// }
 
 .hero-img1 {
     @include col;
@@ -25,8 +16,8 @@
 }
 
 .hero-text1 {
-    color: $red;
     background-color: $yellow-orange;
+    color: $red;
     width: 100%;
     height: 100%;
     @include col;
@@ -49,10 +40,6 @@
     margin-top: 4px;
 }
 
-// .hero2 {
-//     display: none;
-// }
-
 .hero-img2 {
     display: none;
 }
@@ -69,11 +56,58 @@
     display: none;
 }
 
+.alt-hero-wrapper {
+    position: absolute;
+}
+
+.alt-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+
+.alt-hero-img1 {
+    @include col;
+    align-items: center;
+    img {
+        width: 100%;
+        animation: 10s ease-in-out infinite alternate fade;
+    }
+}
+
+.alt-hero-text1 {
+    background-color: $blue;
+    color: $yellow-orange;
+    width: 100%;
+    height: 100%;
+    @include col;
+    justify-content: center;
+    animation: 10s ease-in-out .5s infinite alternate fade;
+}
+
+.alt-hero-img2 {
+    display: none;
+}
+
+.alt-hero-text2 {
+    display: none;
+}
+
+.alt-hero-img3 {
+    display: none;
+}
+
+.alt-hero-text3 {
+    display: none;
+}
+
 @media screen and (min-width: 398px) {
     .hero {
         display: grid;
         grid-template-areas: 'a b'
-                             'c d';
+                             'c d'
+                             'e f';
         grid-template-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     }
@@ -84,15 +118,14 @@
 
     .hero-text1 {
         grid-area: b;
-        h2 {
-            font-size: 1.5em;
-        }
-        h1 {
-            text-transform: uppercase;
-            margin-top: 0;
-            font-size: 2em;
-            line-height: 1em;
-        }
+    }
+
+    .small-txt {
+        font-size: 1.5em;
+    }
+
+    .large-txt {
+        font-size: 2.5em;
     }
 
     .hero-img2 {
@@ -112,51 +145,6 @@
         height: 100%;
         @include col;
         justify-content: center;
-        h2 {
-            font-size: 1.5em;
-        }
-        h1 {
-            text-transform: uppercase;
-            //margin-top: 5px;
-            font-size: 2em;
-            line-height: 1em;
-        }
-    }
-}
-
-@media screen and (min-width: 605px) {
-    .hero-text1 {
-        h2 {
-           font-size: 2em; 
-        }
-        h1 {
-            font-size: 3em; 
-        }
-    }
-    .hero-text2 {
-        h2 {
-            font-size: 2em; 
-        }
-        h1 {
-            font-size: 3em; 
-        }
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .hero {
-        grid-template-areas: 'a b c'
-                             'd e f';
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-    }
-
-    .hero-img2 {
-        grid-area: c;
-    }
-
-    .hero-text2 {
-        grid-area: d;
     }
 
     .hero-img3 {
@@ -176,8 +164,122 @@
         height: 100%;
         @include col;
         justify-content: center;
-        h1 {
-            text-transform: uppercase;
+    }
+
+    .alt-hero-grid {
+        display: grid;
+        grid-template-areas: 'a b'
+                             'c d'
+                             'e f';
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .alt-hero-img2 {
+        grid-area: d;
+        @include col;
+        align-items: center;
+        img {
+            width: 100%;
+            animation: 10s ease-in-out 1.5s infinite alternate fade;
         }
     }
+
+    .alt-hero-text2 {
+        grid-area: c;
+        background-color: $red;
+        color: $yellow-orange;
+        width: 100%;
+        height: 100%;
+        @include col;
+        justify-content: center;
+        animation: 10s ease-in-out 1s infinite alternate fade;
+    }
+
+    .alt-hero-img3 {
+        grid-area: e;
+        @include col;
+        align-items: center;
+        img {
+            width: 100%;
+            animation: 10s ease-in-out 2s infinite alternate fade;
+        }
+    }
+
+    .alt-hero-text3 {
+        grid-area: f;
+        background-color: $green;
+        color: $dark-blue;
+        width: 100%;
+        height: 100%;
+        @include col;
+        justify-content: center;
+        animation: 10s ease-in-out 2.5s infinite alternate fade;
+    }
+}
+
+@media screen and (min-width: 605px) {
+    .small-txt {
+        font-size: 2em;
+    }
+
+    .large-txt {
+        font-size: 3em;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .hero {
+        grid-template-areas: 'a b c'
+                             'd e f';
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .hero-img2 {
+        grid-area: c;
+        
+    }
+
+    .hero-text2 {
+        grid-area: d;
+        
+    }
+
+    
+
+    .alt-hero-grid {
+        grid-template-areas: 'a b c'
+                             'd e f';
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .alt-hero-img2 {
+        grid-area: c;
+        animation-delay: 1.5s;
+    }
+
+    .alt-hero-text2 {
+        grid-area: d;
+        animation-delay: 2s;
+    }
+    
+    .alt-hero-img3 {
+        img {
+            animation-delay: 2.5s;
+        }
+    }
+
+    .alt-hero-text3 {
+        animation-delay: 3s;;
+    }
+
+}
+
+@keyframes fade {
+    0% {opacity: 0;}
+    45% {opacity: 0;}
+    55% {opacity: 1;}
+    100% {opacity: 1;}
 }
