@@ -16,11 +16,11 @@ function getAll($tbl){
 function greeting() {
     $nowtime = date("G");
     if($nowtime <= 10 && $nowtime >= 0){
-        return '<h3>Good morning!</h3>';
+        return 'Good morning';
     }else if($nowtime >= 11 && $nowtime <= 17){
-        return '<h3>Good afternoon!</h3>';
+        return 'Good afternoon';
     }else{
-        return '<h3>Good evening!</h3>';
+        return 'Good evening';
     }
 }
 

@@ -1,0 +1,42 @@
+version: '3'
+services:
+  php:
+    build: .docker/php
+    depends_on:
+      - mysql
+    ports:
+      - 8018:80
+    volumes:
+      - ./:/var/www/html/
+    environment:
+      KEEPITNEUTRAL: docker
+
+  mysql:
+    image: mariadb:10.3
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+    restart: always
+    ports:
+      - 8808:3306
+    environment:
+      TZ: America/Toronto
+      MYSQL_DATABASE: db_keepitneutral
+      MYSQL_USER: docker_u
+      MYSQL_PASSWORD: docker_p
+      MYSQL_ROOT_PASSWORD: root
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - 8015:80
+    environment:
+      PMA_USER: docker_u
+      PMA_PASSWORD: docker_p
+      PMA_HOSTS: mysql
+
+volumes:
+  mysql:

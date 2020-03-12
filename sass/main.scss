@@ -1,3 +1,4 @@
+// sass --watch sass:css --style compressed
 @import '_vars.scss';
 @import 'modules/_reset.scss';
 @import 'modules/_header.scss';
@@ -8,6 +9,8 @@
 @import 'modules/_h_testing.scss';
 @import 'modules/_contact.scss';
 @import 'modules/_footer.scss';
+@import 'modules/_userCMS.scss';
+
 
 html, body {
     height: 100%;
