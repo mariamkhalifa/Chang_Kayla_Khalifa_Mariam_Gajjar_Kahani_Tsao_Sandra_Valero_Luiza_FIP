@@ -50,6 +50,7 @@
     border: $dark-blue 3px solid;
     border-radius: 3px;
     padding-bottom: 5%;
+    margin-top: 5%;
     // width: 100%;
     h2, h3, h4, th {
         font-family: 'Teko', Impact, sans-serif; 
@@ -158,5 +159,113 @@
     @keyframes fadeout{
         0%{opacity: 1;}
         100%{opacity: 0;}
+    }
+}
+
+@media screen and (min-width: 768px){
+    .userForms {
+        width: 40%;
+        h2 {
+            font-size: 40px;
+        }
+        label {
+            font-size: 20px;
+        }
+        input {
+            font-size: 15px;
+        }
+        button {
+            margin-left: 78%;
+            letter-spacing: 1px;
+            font-size: 22px;
+        }
+        p {
+            margin-top: -5%;
+            margin-bottom: 5%;
+        }
+    }
+
+    #deleteT {
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 10%;
+        h2 {
+            font-size: 40px;
+        }
+        p {
+            font-size: 20px;
+            margin-left: 6%;
+        }
+        th {
+            font-size: 20px;
+            margin-bottom: 8%;
+        }
+        td {
+            font-size: 18px;
+            margin-bottom: 5%;
+        }
+        td:nth-of-type(2) {
+            display: block;
+            width: 100%;
+        }
+        th:nth-of-type(2) {
+            display: block;
+            width: 100%;
+        }
+        th, td {
+            width: 18%;
+            text-align: center;
+        }
+    }
+
+    #userIndex {
+        h1 {
+            font-size: 40px;
+            margin-left: 3%;
+        }
+        header {
+            a {
+                font-size: 18px;
+                margin-top: 1%;
+                margin-right: 3%;
+            }
+        }
+        #topSec {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            h3 {
+                width: 40%;
+                text-align: center;
+                margin-top: 0%;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                font-size: 30px;
+                border-bottom: $grey 2px solid;
+            }
+            .topSecRow {
+                width: 60%;
+                justify-content: space-evenly;
+                margin-top: 0%;
+                padding-top: 3%;
+                a {
+                    font-size: 22px;
+                }
+            }
+        }
+        #dashP {
+            margin-top: 3%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            .users-list {
+                width: 30%;
+            }
+        }
+        .actions {
+            font-size: 22px;
+        }
     }
 }
