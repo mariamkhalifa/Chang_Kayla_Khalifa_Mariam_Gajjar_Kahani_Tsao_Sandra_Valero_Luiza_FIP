@@ -18,7 +18,7 @@
     @include col;
     width: 80%;
     text-align: left;
-    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .3)
+    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .2)
 }
 
 .question-card {
@@ -36,27 +36,26 @@
 .question {
     margin-top: 40px;
     margin-bottom: 40px;
-    padding: 0 50px 0 30px;
+    padding: 0 60px 0 30px;
     color: $green;
 }
 
 .plus {
     color: white;
     background-color: $dark-blue;
-    border-radius: 10px;
-    font-size: 1.2em;
-    padding: 5px 6px 5px 4px;
-    width: 10px;
-    height: 10px;
+    @include row;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 5px 7px 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
     text-align: center;
-    line-height: .2em;
-    //position: relative;
-    //top: 40px;
-    //right: 25px;
     position: absolute;
     right: 20px;
     top: 40px;
     cursor: pointer;
+    font-size: 1.5em;
 }
 
 .answer-card {
@@ -87,13 +86,15 @@
     color: $grey;
     background-color: white;
     border: $grey 1px solid;
-    border-radius: 10px;
-    font-size: 1.2em;
-    padding: 5px 6px 5px 4px;
-    width: 10px;
-    height: 10px;
+    font-size: 1.5em;
+    @include row;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 5px 8px 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
     text-align: center;
-    line-height: .2em;
     font-weight: bold;
     position: absolute;
     right: 20px;

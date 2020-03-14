@@ -123,7 +123,7 @@
                     <img class="card-top" src="images/top_card.svg" alt="top decoration">
                     <h4 class="question">{{ card.question }}</h4>
                     <div v-on:click="revealAnswer" v-if="plus.revealed" class="minus">-</div>
-                    <div v-on:click="revealAnswer" v-else class="plus">+</div>
+                    <div v-on:mouseover="revealAnswer" v-else class="plus">+</div>
                 </div>
                 <div class="answer-card" :class="{'revealed':plus.revealed}">    
                     <p class="answer">{{ card.answer }}</p>
@@ -141,21 +141,21 @@
         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.769633654516!2d-81.25054408514464!3d42.98312610351882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef21cf012e81d%3A0xc2124c8409950117!2s186%20King%20St%2C%20London%2C%20ON%20N6A%201C7!5e0!3m2!1sen!2sca!4v1582313402657!5m2!1sen!2sca" allowfullscreen=""></iframe>
         <div class="locations-wrapper">
             <div class="location">
-                <h4>Regional HIV/AIDS Connections</h4>
+                <h3>Regional HIV/AIDS Connections</h3>
                 <ul>
                     <li>186 King St #30</li>
                     <li>London, ON N6A 1C7</li>
                 </ul>
             </div>
             <div class="location">
-                <h4>London InterCommunity Health Centre</h4>
+                <h3>London InterCommunity Health Centre</h3>
                 <ul>
                     <li>659 Dundas St</li>
                     <li>London, ON N5W 2Z1</li>
                 </ul>
             </div>
             <div class="location">
-                <h4>Anova</h4>
+                <h3>Anova</h3>
                 <ul>
                     <li>101 Wellingtion Rd</li>
                     <li>London, ON N6C 4M7</li>

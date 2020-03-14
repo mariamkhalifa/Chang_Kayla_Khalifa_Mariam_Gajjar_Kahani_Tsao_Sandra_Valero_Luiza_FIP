@@ -11,11 +11,14 @@
 .f-nav {
     margin-top: 40px;
     text-align: center;
+    position: relative;
+    z-index: 10;
     div {
         margin-top: 20px;
     }
     li {
         margin-top: 10px;
+        
     }
     a {
         text-transform: uppercase;
@@ -32,6 +35,8 @@
     align-items: center;
     text-align: center;
     margin-top: 40px;
+    position: relative;
+    z-index: 9;
     div {
         margin-top: 20px;
         @include row;
@@ -55,7 +60,7 @@
 
 .subscribe {
     margin-top: 40px;
-    h4 {
+    h3 {
         text-align: center;
     }
     p {
@@ -164,7 +169,7 @@
         grid-area: c;
         margin-top: 0;
         margin-left: 15px;
-        h4 {
+        h3 {
             text-align: left;
         }
         #email {

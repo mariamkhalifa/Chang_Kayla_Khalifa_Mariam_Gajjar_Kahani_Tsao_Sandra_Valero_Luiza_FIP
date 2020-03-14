@@ -1,16 +1,14 @@
 <footer class="footer">
-    <h1 class="hidden">Footer</h1>
+    <h2 class="hidden">Footer</h2>
     <ul class="f-nav">
-        <h4>All Links</h4>
-        <div>
+        <h3>All Links</h3>
             <li><a href="index.php">Home</a></li>
-            <li><a href="community.php">Facts</a></li>
+            <li><a href="facts.php">Facts</a></li>
             <li><a href="community.php">Community</a></li>
             <li><a href="contact.php">Contact</a></li>
-        </div>
     </ul>
     <ul class="f-social-media">
-        <h4>Stay Connected</h4>
+        <h3>Stay Connected</h3>
         <div class="f-social-icons">
             <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a></li>
@@ -19,7 +17,7 @@
         </div>
     </ul>
     <div class="subscribe">
-        <h4>Want to Stay Neutral?</h4>
+        <h3>Want to Stay Neutral?</h3>
         <p>Sign up to our newsletter for community events, updates, and contests.</p>
         <form class="subs-form" action="includes/subscribe.php" method="post">
             <label for="email">Email Address *</label>
