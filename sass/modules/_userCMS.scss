@@ -1,0 +1,162 @@
+.userForms {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+    margin-top: 10%;
+    border: $dark-blue 3px solid;
+    border-radius: 3px;
+    h2, h3, h4, button {
+        font-family: 'Teko', Impact, sans-serif; 
+    }
+    h2 {
+        margin-bottom: 10%;
+    }
+    p, label, input {
+        font-family: 'Oswald', "Roboto", sans-serif;
+    }
+    p {
+        margin-bottom: 3%;
+    }
+    input {
+        border: $blue 1px solid;
+        border-radius: 3px;
+    }
+    form {
+        width: 80%;
+        padding: 10%;
+    }
+    .row {
+        margin-bottom: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    button {
+        margin-left: 75%;
+        border: $blue 1px solid;
+        background-color: $dark-blue;
+        border-radius: 3px;
+        color: white;
+        letter-spacing: 0.5px;
+        font-size: 15px;
+    }
+    #ca {
+        margin-left: 50%;
+        letter-spacing: 0.2px;
+    }
+}
+
+#deleteT {
+    border: $dark-blue 3px solid;
+    border-radius: 3px;
+    padding-bottom: 5%;
+    // width: 100%;
+    h2, h3, h4, th {
+        font-family: 'Teko', Impact, sans-serif; 
+    }
+    h2 {
+        margin-bottom: 10%;
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-bottom: 3%;
+    }
+    p, td {
+        font-family: 'Oswald', "Roboto", sans-serif;
+    }
+    p {
+        margin-bottom: 3%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+    }
+    a {
+        text-decoration: none;
+    }
+    td:nth-of-type(2) {
+        display: none;
+    }
+    th:nth-of-type(2) {
+        display: none;
+    }
+    th, td {
+        width: 20%;
+        text-align: center;
+    }
+}
+
+#userIndex {
+    h1, h2, h3, h4 {
+        font-family: 'Teko', Impact, sans-serif; 
+    }
+    p, a {
+        font-family: 'Oswald', "Roboto", sans-serif;
+        text-decoration: none;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3%;
+        background-color: $blue;
+        color: white;
+        a {
+            color: white;
+            font-size: 15px;
+            margin-top: 2%;
+            margin-bottom: 1%;
+            padding: 1%;
+            // line-height: 15px;
+            border: $dark-blue 2px solid;
+            border-radius: 3px;
+            box-shadow: 2px 3px 5px $dark-blue;
+        }
+    }
+    #topSec {
+        h3 {
+            text-align: center;
+            margin-top: 2%;
+        }
+        .topSecRow {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 2%;
+            background-color: $grey;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            a {
+                color: $dark-blue;
+            }
+        }
+    }
+    #dashP {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+        .users-list {
+            border: $blue 2px solid;
+            padding: 5%;
+            margin-bottom: 5%;
+        }
+    }
+    .actions {
+        text-align: center;
+        color: $copy-color;
+        -webkit-animation: fadeout 7s; 
+        animation: fadeout 7s; 
+        transition: all ease 0.5s;
+        animation-fill-mode: forwards;  
+    }
+    
+    @-webkit-keyframes fadeout{
+        0%{opacity: 1;}	
+        100%{opacity: 0;}
+      }
+    @keyframes fadeout{
+        0%{opacity: 1;}
+        100%{opacity: 0;}
+    }
+}

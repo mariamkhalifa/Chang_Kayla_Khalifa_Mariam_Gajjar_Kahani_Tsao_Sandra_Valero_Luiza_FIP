@@ -4,7 +4,7 @@ class Database
     // Note: specify your own database credentials
     private $host = "localhost";
 
-    private $db_name = "db_roku_flashback";
+    private $db_name = "db_keepitneutral";
 
     private $username = "root";
 
@@ -21,7 +21,7 @@ class Database
             'charset' => 'utf8',
         );
 
-        if (getenv('LOGIN_RESEARCH') === 'docker') {
+        if (getenv('KEEPITNEUTRAL') === 'docker') {
             $db_dsn['host'] = 'mysql';
             $this->username = 'docker_u';
             $this->password = 'docker_p';

@@ -1,10 +1,9 @@
 <?php
 
-    require_once '../load.php';
-    require_once ADMIN_SCRIPT_PATH.'/login.php';
+    require_once '../../load.php';
+    
     $ip = $_SERVER['REMOTE_ADDR'];
     $reqtime = date("Y-m-d H:i:s");
-    session_start();
 
     if(isset($_POST['submit'])) {
         $username = trim($_POST['username']);
@@ -17,6 +16,7 @@
             $message = 'Please fill out the required feilds';
         }
     }
+    
 
 ?>
 
@@ -27,9 +27,10 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div class="forms">
+    <div class="userForms">
         <?php echo !empty($message)?$message: ''; ?>
         <form action="admin_login.php" method="post">
+            <h2>Log In</h2>
             <div class="row">
                 <label>Username:</label>
                 <input type="text" name="username" value="">
@@ -40,7 +41,7 @@
             </div>
             <button name="submit">Login</button>
         </form>
-        <p class="static">Don't have an account yet?<a href="admin_signup.php">Sign up</a></p>
+        <!-- <p class="static">Don't have an account yet?<a href="admin_signup.php">Sign up</a></p> -->
     </div>
 </body>
 </html>
