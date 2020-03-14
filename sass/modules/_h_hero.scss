@@ -65,6 +65,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     text-align: center;
+    width: 100vw;
 }
 
 .alt-hero-img1 {
@@ -245,8 +246,6 @@
         grid-area: d;
         
     }
-
-    
 
     .alt-hero-grid {
         grid-template-areas: 'a b c'
