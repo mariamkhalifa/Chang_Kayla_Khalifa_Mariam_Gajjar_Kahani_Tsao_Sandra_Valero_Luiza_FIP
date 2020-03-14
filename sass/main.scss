@@ -81,3 +81,9 @@ li {
 .button:hover {
     background-color: $hover-color;
 }
+
+@media screen and (min-width: 1000px) {
+    p {
+        font-size: 1.1em;
+    }
+}
