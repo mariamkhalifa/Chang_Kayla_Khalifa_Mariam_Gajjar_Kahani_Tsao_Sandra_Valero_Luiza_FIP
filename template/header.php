@@ -18,7 +18,7 @@
                 <div class="link1"><div>
             </li>
             <li>
-                <a href="community.php">Facts</a>
+                <a href="facts.php">Facts</a>
                 <div class="link2"><div>
             </li>
             <li>
