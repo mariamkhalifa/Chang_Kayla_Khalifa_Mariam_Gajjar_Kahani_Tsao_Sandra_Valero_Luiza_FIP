@@ -7,7 +7,7 @@
     <main id ="app">
         <?php include 'template/header.php'; ?>
 
-        <img class="cont-banner" src="images/banner_symbol2.svg" alt="banner symbol">
+        <img class="cont-banner" src="images/banner_symbol2.svg" alt="">
         <div class="contact-wrapper">
             <section class="contact">
                 <h2>Contact Us</h2>
