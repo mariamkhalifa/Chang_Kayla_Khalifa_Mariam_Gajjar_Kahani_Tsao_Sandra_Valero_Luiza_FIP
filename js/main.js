@@ -42,7 +42,7 @@ var vm = new Vue({
               desc: "Drop in and volunteer with us!",
               location: "RHAC Boardroom, #30-186 King St.",
               link: "www.hivaidsconnection.ca/events" },
-              
+
               { heading: "PrEP Clinic",
               img: "prep.jpg",
               month: "April",
@@ -51,7 +51,38 @@ var vm = new Vue({
               desc: "The RHAC PrEP clinic is currently held every second Friday. ",
               location: "RHAC Boardroom, #30-186 King St.",
               link: "www.hivaidsconnection.ca/events" },
-            
+        ],
+
+        instagram: [
+            { img: "i_asian_girl.jpg",
+              quote: "Let us give publicity to HIV/AIDS and not hide it. beacuse that is the only way to make it appear like a normal illness.",
+              author: "Nelson Mandela"
+            },
+
+            { img: "i_blondie_teenger.jpg",
+              quote: "It is bad enough that people are dying of AIDS, but no one should die of ignorance.",
+              author: "Elizabeth Taylor"
+            },
+
+            { img: "supporters.jpg",
+              quote: "HIV does not make people dangerous to know, so you can shake their hands and give them a hug: Heaven knows they need it.",
+              author: "Princess Diana"
+            },
+
+            { img: "i_african_american.jpg",
+              quote: "I tell you, it’s funny because the only time I think about HIV is when I have to take my medicine twice a day.",
+              author: "Magic Johnson"
+            },
+
+            { img: "i_girl_thinking.jpg",
+              quote: "Education, awareness and prevention are the key, but stigmatisation and exclusion from family is what makes people suffer most.",
+              author: "Ralph Fiennes"
+            },
+
+            { img: "group_supporters.jpg",
+              quote: "HIV infection and AIDS is growing- but so too is public apathy. We have already lost too many friends and collegues.",
+              author: "David Geffen"
+            },
         ],
     },
 

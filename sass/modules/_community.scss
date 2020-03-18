@@ -112,13 +112,6 @@
     margin-top: 40px;
     @include col;
     align-items: center;
-    a {
-        margin-top: 60px;
-        background-color: $blue;
-        text-transform: uppercase;
-        padding-top: 13px;
-        padding-bottom: 13px;
-    }
 }
 
 .comm-img {
@@ -140,14 +133,14 @@
     position: relative;
     p {
         margin-top: 50px;
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 50px;
+        margin-right: 50px;
         text-align: center;
     }
     span {
         text-transform: uppercase;
         display: block;
-        margin-top: 20px;
+        margin-top: 15px;
     }
     i {
         position: absolute;
@@ -160,7 +153,7 @@
 .quote-logo {
     width: 50px;
     position: absolute;
-    bottom: 35px;
+    bottom: 30px;
 }
 
 .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
@@ -191,6 +184,14 @@
 
 .quote:last-of-type {
     background: url(../images/quote6.png) no-repeat;
+}
+
+.insta-link {
+    margin-top: 60px;
+    background-color: $blue;
+    text-transform: uppercase;
+    padding-top: 13px;
+    padding-bottom: 13px;
 }
 
 // share story
@@ -304,6 +305,13 @@
     .quote {
         width: 380px;
         height: 310px;
+        p {
+            margin-top: 60px;
+        }
+    }
+
+    .quote-logo {
+        bottom: 40px;
     }
 }
 
@@ -368,15 +376,15 @@
         p {
             font-size: 1.1em;
             margin-top: 60px;
-            margin-right: 60px;
-            margin-left: 60px;
+            margin-right: 50px;
+            margin-left: 50px;
         }
         span {
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .quote-logo {
             width: 50px;
-            bottom: 30px;
+            bottom: 42px;
         }
     }
 
@@ -410,7 +418,7 @@
     .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
     .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
     .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
-        display: block;
+        display: flex;
     }
 
     .comm-img, .quote {
@@ -445,16 +453,22 @@
     .quote {
         p {
             font-size: 1.1em;
-            margin-top: 60px;
-            margin-right: 60px;
-            margin-left: 60px;
+            margin-top: 50px;
+            margin-right: 40px;
+            margin-left: 40px;
         }
         span {
             margin-top: 20px;
         }
         .quote-logo {
             width: 50px;
-            bottom: 30px;
+            bottom: 40px;
+        }
+    }
+
+    .quote:nth-of-type(5) {
+        p {
+            margin-top: 30px;
         }
     }
 }
