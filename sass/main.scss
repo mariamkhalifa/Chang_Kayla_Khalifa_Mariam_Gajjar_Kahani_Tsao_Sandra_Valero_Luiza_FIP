@@ -7,6 +7,7 @@
 @import 'modules/_h_video.scss';
 @import 'modules/_h_faq.scss';
 @import 'modules/_h_testing.scss';
+@import 'modules/_community.scss';
 @import 'modules/_contact.scss';
 @import 'modules/_footer.scss';
 @import 'modules/_userCMS.scss';
@@ -54,6 +55,11 @@ input {
     border: none;
 }
 
+::placeholder {
+    font-family: $body-font;
+    font-size: .8em;
+}
+
 p {
     line-height: 1.5em;
 }
@@ -76,14 +82,36 @@ li {
     font-family: $heading-font;
     font-size: 1.1em;
     transition: all 1s ease;
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: $hover-color;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 3.2em;
+    }
+    h2 {
+        font-size: 2.2em;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
     p {
         font-size: 1.1em;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    h2 {
+        font-size: 2.7em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.5em;
     }
 }
