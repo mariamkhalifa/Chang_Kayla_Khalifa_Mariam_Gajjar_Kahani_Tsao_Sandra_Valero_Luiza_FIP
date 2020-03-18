@@ -20,57 +20,34 @@
 
         <!-- Database -->
         <div class="events-grid">
-            <section class="event-card">
-                <p class="event-date"> 
-                    <span class="month">April</span> <!-- column -->
-                    <span class="day">01</span> <!-- column -->
-                </p>
+            <template v-for="event in events">
 
-                <img class="event-img" src="images/coffee_cups.jpg" alt="coffee cups"> <!-- column -->
-                
-                <h3 class="event-heading">Coffee Drop-In</h3> <!-- column -->
-                
-                <p class="event-time">Wednesday Mornings, 10:00 AM - 11:30 AM</p> <!-- column -->
-                
-                <p class="event-desc">Join us for coffee and support. For people living with HIV.</p> <!-- column -->
-                
-                <div class="event-location">
-                    <p>Location:</p>
-                    <p>RHAC Boardroom, #30-186 King St.</p> <!-- column -->
-                </div>
-                
-                <div class="see-more-info">
-                    <p>See more information:</p>
-                    <a href="www.hivaidsconnection.ca/events" target="_blank">www.hivaidsconnection.ca/events</a> <!-- column -->
-                </div>
+                <section class="event-card">
+                    <p class="event-date"> 
+                        <span class="month">{{ event.month }}</span> <!-- column -->
+                        <span class="day">{{ event.day }}</span> <!-- column -->
+                    </p>
 
-            </section>
+                    <img class="event-img" :src="'images/' + event.img" alt=""> <!-- column -->
+                    
+                    <h3 class="event-heading">{{ event.heading }}</h3> <!-- column -->
+                    
+                    <p class="event-time">{{ event.time }}</p> <!-- column -->
+                    
+                    <p class="event-desc">{{ event.desc }}</p> <!-- column -->
+                    
+                    <div class="event-location">
+                        <p>Location:</p>
+                        <p>{{ event.location }}</p> <!-- column -->
+                    </div>
+                
+                    <div class="see-more-info">
+                        <p>See more information:</p>
+                        <a :href="event.link" target="_blank">{{ event.link }}</a> <!-- column -->
+                    </div>
+                </section>
 
-            <section class="event-card">
-                <p class="event-date"> 
-                    <span class="month">April</span> <!-- column -->
-                    <span class="day">01</span> <!-- column -->
-                </p>
-
-                <img class="event-img" src="images/coffee_cups.jpg" alt="coffee cups"> <!-- column -->
-                
-                <h3 class="event-heading">Coffee Drop-In</h3> <!-- column -->
-                
-                <p class="event-time">Wednesday Mornings, 10:00 AM - 11:30 AM</p> <!-- column -->
-                
-                <p class="event-desc">Join us for coffee and support. For people living with HIV.</p> <!-- column -->
-                
-                <div class="event-location">
-                    <p>Location:</p>
-                    <p>RHAC Boardroom, #30-186 King St.</p> <!-- column -->
-                </div>
-                
-                <div class="see-more-info">
-                    <p>See more information:</p>
-                    <a href="www.hivaidsconnection.ca/events" target="_blank">www.hivaidsconnection.ca/events</a> <!-- column -->
-                </div>
-
-            </section>
+            </template>
         </div>
 
     </section>
