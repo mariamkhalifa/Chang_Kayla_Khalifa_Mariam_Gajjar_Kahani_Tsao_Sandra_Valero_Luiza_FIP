@@ -53,6 +53,11 @@ a {
 
 input {
     border: none;
+    font-size: 1em;
+}
+
+textarea {
+    font-size: 1em;
 }
 
 ::placeholder {
@@ -113,5 +118,8 @@ li {
     }
     p {
         font-size: 1.5em;
+    }
+    ::placeholder {
+        font-size: 1em;
     }
 }
