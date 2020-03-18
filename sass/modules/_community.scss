@@ -1,0 +1,464 @@
+// intro
+.comm-intro {
+    text-align: center;
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 40%;
+    h2 {
+        color: $blue;
+        margin: 0 10vw;
+    }
+    p {
+        margin: 0 40px;
+        margin-top: 30px;
+    }
+}
+
+.comm-banner {
+    position: absolute;
+}
+
+// events
+
+.comm-events {
+    margin-top: 60px;
+    margin-right: 60px;
+    margin-left: 60px;
+    @include col;
+    align-items: center;
+    h2 {
+        color: $blue;
+        text-align: center;
+    }
+}
+
+.event-card {
+    position: relative;
+    margin-top: 60px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .2)
+}
+
+.event-date {
+    position: absolute;
+    background-color: white;
+    padding: 5px 8px;
+    border-radius: 8px;
+    top: 20px;
+    left: 20px;
+    text-align: center;
+    span {
+        display: block;
+        color: $purple;
+    }
+    .day {
+        font-size: 1.4em;
+    }
+}
+
+.event-img {
+    width: 100%;
+}
+
+.event-heading {
+    color: $purple;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.event-time, .event-desc, .event-location, .see-more-info {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.event-time {
+    color: $purple;
+    margin-top: 5px;
+}
+
+.event-location p:first-child {
+    color: $purple;
+    margin-bottom: 5px;
+}
+
+.see-more-info {
+    p {
+        color: $purple;
+        margin-bottom: 5px; 
+    }
+    a {
+        color: $dark-blue;
+    }
+}
+
+// instagram feed
+
+.more-community {
+    @include col;
+    align-items: center;
+    margin-top: 100px;
+    margin-right: 60px;
+    margin-left: 60px;
+    h2 {
+        color: $blue;
+        text-align: center;
+    }
+}
+
+.insta-feed {
+    margin-top: 40px;
+    @include col;
+    align-items: center;
+    a {
+        margin-top: 60px;
+        background-color: $blue;
+        text-transform: uppercase;
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+}
+
+.comm-img {
+    width: 300px;
+}
+
+.comm-img, .quote {
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.quote {
+    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .2);
+    @include col;
+    align-items: center;
+    border-radius: 10px;
+    height: 310px;
+    width: 300px;
+    position: relative;
+    p {
+        margin-top: 50px;
+        margin-left: 60px;
+        margin-right: 60px;
+        text-align: center;
+    }
+    span {
+        text-transform: uppercase;
+        display: block;
+        margin-top: 20px;
+    }
+    i {
+        position: absolute;
+        top: 50px;
+        font-size: 7em;
+        opacity: .07;
+    }
+}
+
+.quote-logo {
+    width: 50px;
+    position: absolute;
+    bottom: 35px;
+}
+
+.comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
+.comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
+.quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
+    display: none;
+}
+
+.quote:first-of-type {
+    background: url(../images/quote1.png) no-repeat;
+}
+
+.quote:nth-of-type(2) {
+    background: url(../images/quote2.png) no-repeat;
+}
+
+.quote:nth-of-type(3) {
+    background: url(../images/quote3.png) no-repeat;
+}
+
+.quote:nth-of-type(4) {
+    background: url(../images/quote4.png) no-repeat;
+}
+
+.quote:nth-of-type(5) {
+    background: url(../images/quote5.png) no-repeat;
+}
+
+.quote:last-of-type {
+    background: url(../images/quote6.png) no-repeat;
+}
+
+// share story
+
+.share-story {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    @include col;
+    align-items: center;
+    text-align: center;
+    h2 {
+        color: $blue;
+    }
+    p {
+        margin-top: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+.story-form {
+    position: relative;
+    margin-top: 40px;
+    padding: 40px;
+    width: 80%;
+    @include col;
+    box-shadow: 0 0 20px rgba($color: $grey, $alpha: .2);
+    label {
+        color: $purple;
+        text-align: left;
+        font-weight: bold;
+    }
+    #story {
+        margin-top: 20px;
+        padding-top: 10px;
+        padding-left: 10px;
+        border-radius: 5px;
+        border: $grey solid 1px;
+    }
+    input {
+        margin-top: 30px;
+        background-color: $purple;
+    }
+}
+
+.top-form {
+    position: absolute;
+    width: 50px;
+    top: 0;
+    left: 0;
+    opacity: .2;
+}
+
+.bottom-form {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    opacity: .2;
+}
+
+// helplines
+
+.comm-help {
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+    @include col;
+    align-items: center;
+    text-align: center;
+    h2 {
+        color: $blue;
+    }
+    p {
+        margin-top: 40px;
+    }
+}
+
+.help-icon {
+    width: 170px;
+    margin-top: 40px;
+}
+
+.help-small-text {
+    font-size: .9em;
+}
+
+.help-link {
+    color: $dark-blue;
+    font-size: .9em;
+    margin-top: 5px;
+}
+
+// media queries
+
+@media screen and (min-width: 450px) {
+    .comm-intro {
+        //margin-top: 40%;
+        h2 {
+            margin: 0 15vw;
+        }
+    }
+}
+
+@media screen and (min-width: 420px) {
+    .comm-img {
+        width: 380px;
+    }
+
+    .quote {
+        width: 380px;
+        height: 310px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .comm-intro {
+        text-align: left;
+        margin-top: 30%;
+        margin-left: 50px;
+        margin-right: 40vw;
+        h2 {
+            margin: 0;
+        }
+        p {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+    }
+
+    .insta-feed {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+        margin: 40px 30px;
+    }
+
+    .comm-img, .quote {
+        margin: 0;
+        width: 300px;
+        height: 250px;
+    }
+
+    .quote {
+        p {
+            font-size: 1em;
+            margin-top: 40px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        span {
+            margin-top: 10px;
+        }
+        .quote-logo {
+            width: 30px;
+            bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 830px) {
+    .comm-img, .quote {
+        width: 380px;
+        height: 310px;
+    }
+
+    .quote {
+        p {
+            font-size: 1.1em;
+            margin-top: 60px;
+            margin-right: 60px;
+            margin-left: 60px;
+        }
+        span {
+            margin-top: 20px;
+        }
+        .quote-logo {
+            width: 50px;
+            bottom: 30px;
+        }
+    }
+
+    .share-story {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+
+    .story-form {
+        margin-top: 60px;
+        textarea {
+            height: 20vw;
+        }
+    }
+
+    .comm-help {
+        margin-left: 15vw;
+        margin-right: 15vw;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .insta-feed {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
+    .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
+    .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
+        display: block;
+    }
+
+    .comm-img, .quote {
+        margin: 0;
+        width: 300px;
+        height: 250px;
+    }
+
+    .quote {
+        p {
+            font-size: 1em;
+            margin-top: 40px;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        span {
+            margin-top: 10px;
+        }
+        .quote-logo {
+            width: 30px;
+            bottom: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .comm-img, .quote {
+        width: 380px;
+        height: 310px;
+    }
+
+    .quote {
+        p {
+            font-size: 1.1em;
+            margin-top: 60px;
+            margin-right: 60px;
+            margin-left: 60px;
+        }
+        span {
+            margin-top: 20px;
+        }
+        .quote-logo {
+            width: 50px;
+            bottom: 30px;
+        }
+    }
+}
+
+
+
+
