@@ -182,8 +182,12 @@
     background: url(../images/quote5.png) no-repeat;
 }
 
-.quote:last-of-type {
+.quote:nth-of-type(6) {
     background: url(../images/quote6.png) no-repeat;
+}
+
+.quote:nth-of-type(7) {
+    background: url(../images/quote7.png) no-repeat;
 }
 
 .insta-link {
@@ -298,6 +302,12 @@
 }
 
 @media screen and (min-width: 420px) {
+    .more-community {
+        h2 {
+            margin-right: 10%;
+            margin-left: 10%;
+        }
+    }
     .comm-img {
         width: 380px;
     }
@@ -330,10 +340,9 @@
         }
     }
 
-    .events-grid {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 30px;
+    .comm-events {
+        margin-left: 150px;
+        margin-right: 150px;
     }
 
     .insta-feed {
@@ -406,9 +415,22 @@
     }
 }
 
+@media screen and (min-width: 980px) {
+    .comm-events {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2vw;
+    }
+}
+
 @media screen and (min-width: 1024px) {
     .events-grid {
-        grid-template-columns: repeat(3,1fr);
+        grid-gap: 5vw;
     }
 
     .insta-feed {
@@ -469,6 +491,15 @@
     .quote:nth-of-type(5) {
         p {
             margin-top: 30px;
+        }
+    }
+
+    .quote:nth-of-type(7) {
+        p {
+            margin-top: 80px;
+        }
+        i {
+            top: 70px;
         }
     }
 }
