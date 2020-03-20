@@ -28,8 +28,12 @@
                         <span class="day">{{ event.day }}</span> <!-- column -->
                     </p>
 
-                    <img class="event-img" :src="'images/' + event.img" alt=""> <!-- column -->
-                    
+                    <picture>
+                        <source :srcset="'images/' + event.img" media="(min-width: 1000px)">
+                        <source :srcset="'images/' + event.img2" media="(min-width: 500px)">
+                        <img class="event-img" :src="'images/' + event.img" alt=""> <!-- column -->
+                    </picture>
+
                     <h3 class="event-heading">{{ event.heading }}</h3> <!-- column -->
                     
                     <p class="event-time">{{ event.time }}</p> <!-- column -->
@@ -54,7 +58,7 @@
 
     <section class="more-community">
 
-        <h2>More Community</h2>
+        <h2>Join our Community on Instagram</h2>
 
         <div class="insta-feed">
             <template v-for="feed in instagram">
@@ -66,11 +70,8 @@
                 </div>
             </template>
 
-            <img class="comm-img" src="images/high_school_teenagers.jpg" alt="friends">
+            <img class="comm-img" src="images/i_girl_thinking.jpg"  alt="">
             
-            <img class="comm-img" src="images/fun_teenagers.jpg" alt="teens cheering">
-
-            <img class="comm-img" src="images/girls.jpg" alt="girls">
         </div>
 
         <a href="#" target="_blank" class="button insta-link">More Instagram</a>

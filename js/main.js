@@ -4,7 +4,8 @@
 var vm = new Vue({
     props: {
         link: String,
-        img: String
+        img: String,
+        img2: String,
     },
 
     el: "#app",
@@ -27,6 +28,7 @@ var vm = new Vue({
         events: [
             { heading: "Coffee Drop-In",
               img: "coffee_cups.jpg",
+              img2: "coffee_cups2.jpg",
               month: "April",
               day: "01",
               time: "Wednesday Mornings, 10:00 AM - 11:30 AM",
@@ -36,6 +38,7 @@ var vm = new Vue({
 
               { heading: "Couch Crew",
               img: "friends.jpg",
+              img2: "friends2.jpg",
               month: "April",
               day: "01",
               time: "Monday & Wednesday, 12:00 PM - 4:00 PM",
@@ -45,6 +48,7 @@ var vm = new Vue({
 
               { heading: "PrEP Clinic",
               img: "prep.jpg",
+              img2: "prep2.jpg",
               month: "April",
               day: "10",
               time: "Every second Friday, 9:00 AM to 5:00 PM",
@@ -69,12 +73,12 @@ var vm = new Vue({
               author: "Princess Diana"
             },
 
-            { img: "i_african_american.jpg",
+            { img: "high_school_teenagers.jpg",
               quote: "I tell you, it’s funny because the only time I think about HIV is when I have to take my medicine twice a day.",
               author: "Magic Johnson"
             },
 
-            { img: "i_girl_thinking.jpg",
+            { img: "girls.jpg",
               quote: "Education, awareness and prevention are the key, but stigmatisation and exclusion from family is what makes people suffer most.",
               author: "Ralph Fiennes"
             },
@@ -82,6 +86,11 @@ var vm = new Vue({
             { img: "group_supporters.jpg",
               quote: "HIV infection and AIDS is growing- but so too is public apathy. We have already lost too many friends and collegues.",
               author: "David Geffen"
+            },
+
+            { img: "i_african_american.jpg",
+              quote: "It’s not the years in your life that count. It’s the life in your years.",
+              author: "ABE LINCLON"
             },
         ],
     },
