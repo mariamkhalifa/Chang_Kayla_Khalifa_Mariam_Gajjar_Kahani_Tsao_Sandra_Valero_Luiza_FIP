@@ -1,6 +1,7 @@
 
-//console.log('linked');
 
+(()=> {
+    
 var vm = new Vue({
     props: {
         link: String,
@@ -15,15 +16,15 @@ var vm = new Vue({
             isExpanded: false
         },
 
-        faqdata: [
-                { question: "What's HIV? What's the difference between HIV and AIDS?",
-                  answer: `HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.`},
-                { question: "How can I get HIV?",
-                  answer: "HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status." },
-            ],
-        plus: {
-            revealed: false
-        },
+        // faqdata: [
+        //         { question: "What's HIV? What's the difference between HIV and AIDS?",
+        //           answer: `HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.`},
+        //         { question: "How can I get HIV?",
+        //           answer: "HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status." },
+        //     ],
+        // plus: {
+        //     revealed: false
+        // },
 
         events: [
             { heading: "Coffee Drop-In",
@@ -104,9 +105,56 @@ var vm = new Vue({
             //console.log('closed');
             this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
         },
-        revealAnswer(event) {
-            //console.log('revealed');
-            this.plus.revealed = (this.plus.revealed) ? false : true;
-        }
+        // revealAnswer(event) {
+        //     //console.log('revealed');
+        //     this.plus.revealed = (this.plus.revealed) ? false : true;
+        // }
     }
 });
+
+console.log('linked');
+    const   answers = document.querySelectorAll(".answer-card"),
+            pluses = document.querySelectorAll(".plus"),
+            minuses = document.querySelectorAll(".minus");
+
+            console.log(window.innerWidth);
+
+            if (window.innerWidth >= 800) {
+                for (var i = 0; i < pluses.length; i++) {
+                    // console.log('plus: ', pluses[i]);
+                    pluses.forEach(plus => plus.addEventListener("mouseover", function(){
+                        this.classList.add("hidden");
+                        this.parentElement.nextElementSibling.classList.remove("hidden");
+                    }));
+                    minuses.forEach(minus => minus.addEventListener("mouseout", function(){
+                        pluses.forEach(plus => {
+                            plus.classList.remove("hidden");
+                            answers.forEach(ans => {
+                                ans.classList.add("hidden");
+                            });
+                        });
+                    }));
+                    
+                    // ans.classList.add("hidden");
+                  }
+            } else {
+                for (var i = 0; i < pluses.length; i++) {
+                    pluses.forEach(plus => plus.addEventListener("click", function(){
+                        this.classList.add("hidden");
+                        this.parentElement.nextElementSibling.classList.remove("hidden");
+                    }));
+                    minuses.forEach(minus => minus.addEventListener("click", function(){
+                        console.log("clickkkk");
+                        pluses.forEach(plus => {
+                            plus.classList.remove("hidden");
+                            answers.forEach(ans => {
+                                ans.classList.add("hidden");
+                            });
+                        });
+                    }));
+                }
+            }
+
+            
+
+})();

@@ -1,7 +1,6 @@
 <?php
 class Database
 {
-    // Note: specify your own database credentials
     private $host = "localhost";
 
     private $db_name = "db_keepitneutral";
@@ -14,7 +13,6 @@ class Database
     public $conn;
 
     private function __construct(){
-        // used to be in getConnection function
         $db_dsn = array(
             'host'    => $this->host,
             'dbname'  => $this->db_name,
@@ -49,7 +47,6 @@ class Database
         return self::$instance;
     }
 
-    // get the database connection
     public function getConnection()
     {
         return $this->conn;
