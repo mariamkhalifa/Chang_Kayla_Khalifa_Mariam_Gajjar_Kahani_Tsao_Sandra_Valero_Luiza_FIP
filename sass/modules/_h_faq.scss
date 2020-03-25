@@ -46,7 +46,7 @@
     @include row;
     align-items: center;
     justify-content: center;
-    padding: 3px 5px 7px 5px;
+    padding: 3px 6px 8px 5px;
     width: 20px;
     height: 20px;
     border-radius: 20px;
@@ -59,7 +59,8 @@
 }
 
 .answer-card {
-    display: none;
+    // display: none;
+    position: relative;
 }
 
 .revealed {
@@ -90,7 +91,7 @@
     @include row;
     align-items: center;
     justify-content: center;
-    padding: 2px 5px 8px 5px;
+    padding: 2px 5px 8px 4.5px;
     width: 20px;
     height: 20px;
     border-radius: 20px;

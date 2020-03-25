@@ -3,8 +3,7 @@
     require_once '../../load.php';
     confirm_logged_in();
     
-    $tbl = 'tbl_user';
-    $getUsers = getAll($tbl);
+    $getUsers = getAllUsers();
     $message = greeting();
 
     if(!empty($_GET['create'])){
