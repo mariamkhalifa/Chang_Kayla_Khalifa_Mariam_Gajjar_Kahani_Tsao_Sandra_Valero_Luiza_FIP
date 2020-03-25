@@ -1,3 +1,10 @@
+<?php
+    require_once 'load.php';
+   
+    $tbl_commu = 'tbl_community';
+    $getEvents = getEvents($tbl_commu);
+?>
+
 <?php include 'template/head.php'; ?>
 
 <title>Keep It Neutral Campaign - Community</title>
@@ -20,38 +27,38 @@
 
         <!-- Database -->
         <div class="events-grid">
-            <template v-for="event in events">
-
+            <!-- <template v-for="event in events"> -->
+            <?php while($row = $getEvents->fetch(PDO::FETCH_ASSOC)):?>
                 <section class="event-card">
                     <p class="event-date"> 
-                        <span class="month">{{ event.month }}</span> <!-- column -->
-                        <span class="day">{{ event.day }}</span> <!-- column -->
+                        <span class="month"><?php echo $row['e_month'];?></span> <!-- column -->
+                        <span class="day"><?php echo $row['e_day'];?></span> <!-- column -->
                     </p>
 
                     <picture>
-                        <source :srcset="'images/' + event.img" media="(min-width: 1000px)">
-                        <source :srcset="'images/' + event.img2" media="(min-width: 500px)">
-                        <img class="event-img" :src="'images/' + event.img" alt=""> <!-- column -->
+                        <source srcset="images/<?php echo $row['e_img'];?>" media="(min-width: 1000px)">
+                        <source srcset="images/<?php echo $row['e_img2'];?>" media="(min-width: 500px)">
+                        <img class="event-img" src="images/<?php echo $row['e_img'];?>" alt=""> <!-- column -->
                     </picture>
 
-                    <h3 class="event-heading">{{ event.heading }}</h3> <!-- column -->
+                    <h3 class="event-heading"><?php echo $row['e_heading'];?></h3> <!-- column -->
                     
-                    <p class="event-time">{{ event.time }}</p> <!-- column -->
+                    <p class="event-time"><?php echo $row['e_time'];?></p> <!-- column -->
                     
-                    <p class="event-desc">{{ event.desc }}</p> <!-- column -->
+                    <p class="event-desc"><?php echo $row['e_desc'];?></p> <!-- column -->
                     
                     <div class="event-location">
                         <p>Location:</p>
-                        <p>{{ event.location }}</p> <!-- column -->
+                        <p><?php echo $row['e_location'];?></p> <!-- column -->
                     </div>
                 
                     <div class="see-more-info">
                         <p>See more information:</p>
-                        <a :href="event.link" target="_blank">{{ event.link }}</a> <!-- column -->
+                        <a href="<?php echo $row['e_link'];?>" target="_blank"><?php echo $row['e_link'];?></a> <!-- column -->
                     </div>
                 </section>
-
-            </template>
+            <?php endwhile;?>
+            <!-- </template> -->
         </div>
 
     </section>

@@ -3,11 +3,11 @@
 (()=> {
     
 var vm = new Vue({
-    props: {
-        link: String,
-        img: String,
-        img2: String,
-    },
+    // props: {
+    //     link: String,
+    //     img: String,
+    //     img2: String,
+    // },
 
     el: "#app",
 
@@ -26,37 +26,37 @@ var vm = new Vue({
         //     revealed: false
         // },
 
-        events: [
-            { heading: "Coffee Drop-In",
-              img: "coffee_cups.jpg",
-              img2: "coffee_cups2.jpg",
-              month: "April",
-              day: "01",
-              time: "Wednesday Mornings, 10:00 AM - 11:30 AM",
-              desc: "Join us for coffee and support. For people living with HIV.",
-              location: "RHAC Boardroom, #30-186 King St.",
-              link: "www.hivaidsconnection.ca/events" },
+        // events: [
+        //     { heading: "Coffee Drop-In",
+        //       img: "coffee_cups.jpg",
+        //       img2: "coffee_cups2.jpg",
+        //       month: "April",
+        //       day: "01",
+        //       time: "Wednesday Mornings, 10:00 AM - 11:30 AM",
+        //       desc: "Join us for coffee and support. For people living with HIV.",
+        //       location: "RHAC Boardroom, #30-186 King St.",
+        //       link: "www.hivaidsconnection.ca/events" },
 
-              { heading: "Couch Crew",
-              img: "friends.jpg",
-              img2: "friends2.jpg",
-              month: "April",
-              day: "01",
-              time: "Monday & Wednesday, 12:00 PM - 4:00 PM",
-              desc: "Drop in and volunteer with us!",
-              location: "RHAC Boardroom, #30-186 King St.",
-              link: "www.hivaidsconnection.ca/events" },
+        //       { heading: "Couch Crew",
+        //       img: "friends.jpg",
+        //       img2: "friends2.jpg",
+        //       month: "April",
+        //       day: "01",
+        //       time: "Monday & Wednesday, 12:00 PM - 4:00 PM",
+        //       desc: "Drop in and volunteer with us!",
+        //       location: "RHAC Boardroom, #30-186 King St.",
+        //       link: "www.hivaidsconnection.ca/events" },
 
-              { heading: "PrEP Clinic",
-              img: "prep.jpg",
-              img2: "prep2.jpg",
-              month: "April",
-              day: "10",
-              time: "Every second Friday, 9:00 AM to 5:00 PM",
-              desc: "The RHAC PrEP clinic is currently held every second Friday. ",
-              location: "RHAC Boardroom, #30-186 King St.",
-              link: "www.hivaidsconnection.ca/events" },
-        ],
+        //       { heading: "PrEP Clinic",
+        //       img: "prep.jpg",
+        //       img2: "prep2.jpg",
+        //       month: "April",
+        //       day: "10",
+        //       time: "Every second Friday, 9:00 AM to 5:00 PM",
+        //       desc: "The RHAC PrEP clinic is currently held every second Friday. ",
+        //       location: "RHAC Boardroom, #30-186 King St.",
+        //       link: "www.hivaidsconnection.ca/events" },
+        // ],
 
         instagram: [
             { img: "i_asian_girl.jpg",
