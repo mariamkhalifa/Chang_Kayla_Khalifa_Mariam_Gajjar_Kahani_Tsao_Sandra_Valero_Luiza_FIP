@@ -180,3 +180,17 @@ function getFaq($tbl_home, $tbl_faq) {
         return '<p>There was a problem accessing the info</p>';
     }
 };
+
+function getEvents($tbl_commu) {
+
+    $pdo = Database::getInstance()->getConnection();
+
+    $queryEvent = 'SELECT * FROM ' . $tbl_commu;
+    $event = $pdo->query($queryEvent);
+
+    if($event){
+        return $event;
+    }else{
+        return '<p>There was a problem accessing the info</p>';
+    }
+};
