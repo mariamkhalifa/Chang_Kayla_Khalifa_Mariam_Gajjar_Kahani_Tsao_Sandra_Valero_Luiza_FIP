@@ -26,76 +26,64 @@
     <section class="hero">
     
         <h1 class="hidden">hero</h1>
-        
-            <div class="hero-img1"><img src="images/asian_girl3.jpg" alt="asian girl"></div>
-            
-            <div class="hero-text1">
-                <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
-                <p>
-                    <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                    <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                </p>
-                <?php endwhile;?>
-            </div>
-            
-            <div class="hero-img2"><img src="images/blondie_boy3.jpg" alt="blond boy"></div>
-            
-            <div class="hero-text2">
-                <?php while($row = $getHero2->fetch(PDO::FETCH_ASSOC)):?>
-                <p>
-                    <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                    <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                </p>
-                <?php endwhile;?>
-            </div>
-            
-            <div class="hero-img3"><img src="images/happiness_girl3.jpg" alt="african girl"></div>
-            
-            <div class="hero-text3">
-                <?php while($row = $getHero3->fetch(PDO::FETCH_ASSOC)):?>
-                <p>
-                    <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                    <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                </p>
-                <?php endwhile;?>
-            </div>
+            <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
+                <div class="hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="asian girl"></div>
+                <div class="hero-text1">
+                    <p>
+                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                    </p>
+                </div>
+            <?php endwhile;?>
+            <?php while($row = $getHero2->fetch(PDO::FETCH_ASSOC)):?>
+                <div class="hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="blond boy"></div>
+                <div class="hero-text2">
+                    <p>
+                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                    </p>
+                    
+                </div>
+            <?php endwhile;?>
+            <?php while($row = $getHero3->fetch(PDO::FETCH_ASSOC)):?>
+            <div class="hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="african girl"></div>
+                <div class="hero-text3">
+                    <p>
+                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                    </p>
+                </div>
+            <?php endwhile;?>
 
             <div class="alt-hero-wrapper">
                 <div class="alt-hero-grid">
-
-                    <div class="alt-hero-img1"><img src="images/dark_skin_teenager3.jpg" alt="african boy"></div>
-                
-                    <div class="alt-hero-text1">
-                        <?php while($row = $getHero4->fetch(PDO::FETCH_ASSOC)):?>
-                        <p>
-                            <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                            <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                        </p>
-                        <?php endwhile;?>
-                    </div>
-
-                    <div class="alt-hero-img2"><img src="images/thinking_girl3.jpg" alt="dark haired girl"></div>
-                
-                    <div class="alt-hero-text2">
-                        <?php while($row = $getHero5->fetch(PDO::FETCH_ASSOC)):?>
-                        <p>
-                            <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                            <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                        </p>
-                        <?php endwhile;?>
-                    </div>
-
-                    <div class="alt-hero-img3"><img src="images/curly_haired_girl3.jpg" alt="red haired girl"></div>
-                
-                    <div class="alt-hero-text3">
-                        <?php while($row = $getHero6->fetch(PDO::FETCH_ASSOC)):?>
-                        <p>
-                            <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                            <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                        </p>
-                        <?php endwhile;?>
-                    </div>
-                    
+                    <?php while($row = $getHero4->fetch(PDO::FETCH_ASSOC)):?>
+                        <div class="alt-hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="african boy"></div>
+                        <div class="alt-hero-text1">
+                            <p>
+                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                            </p>
+                        </div>
+                    <?php endwhile;?>
+                    <?php while($row = $getHero5->fetch(PDO::FETCH_ASSOC)):?>
+                        <div class="alt-hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="dark haired girl"></div>
+                        <div class="alt-hero-text2">
+                            <p>
+                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                            </p>
+                        </div>
+                    <?php endwhile;?>
+                    <?php while($row = $getHero6->fetch(PDO::FETCH_ASSOC)):?>
+                        <div class="alt-hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="red haired girl"></div>
+                        <div class="alt-hero-text3">
+                            <p>
+                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
+                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
+                            </p>
+                        </div>
+                    <?php endwhile;?>
                 </div>
             </div>
             
