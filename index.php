@@ -29,7 +29,7 @@
             <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
                 <div class="hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="asian girl"></div>
                 <div class="hero-text1">
-                    <p>
+                    <p class="hero-p">
                         <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                         <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                     </p>
@@ -38,7 +38,7 @@
             <?php while($row = $getHero2->fetch(PDO::FETCH_ASSOC)):?>
                 <div class="hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="blond boy"></div>
                 <div class="hero-text2">
-                    <p>
+                    <p class="hero-p">
                         <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                         <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                     </p>
@@ -48,7 +48,7 @@
             <?php while($row = $getHero3->fetch(PDO::FETCH_ASSOC)):?>
             <div class="hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="african girl"></div>
                 <div class="hero-text3">
-                    <p>
+                    <p class="hero-p">
                         <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                         <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                     </p>
@@ -60,7 +60,7 @@
                     <?php while($row = $getHero4->fetch(PDO::FETCH_ASSOC)):?>
                         <div class="alt-hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="african boy"></div>
                         <div class="alt-hero-text1">
-                            <p>
+                            <p class="hero-p">
                                 <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                                 <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                             </p>
@@ -69,7 +69,7 @@
                     <?php while($row = $getHero5->fetch(PDO::FETCH_ASSOC)):?>
                         <div class="alt-hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="dark haired girl"></div>
                         <div class="alt-hero-text2">
-                            <p>
+                            <p class="hero-p">
                                 <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                                 <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                             </p>
@@ -78,7 +78,7 @@
                     <?php while($row = $getHero6->fetch(PDO::FETCH_ASSOC)):?>
                         <div class="alt-hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="red haired girl"></div>
                         <div class="alt-hero-text3">
-                            <p>
+                            <p class="hero-p">
                                 <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
                                 <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
                             </p>
@@ -89,7 +89,7 @@
             
     </section>
 
-    <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
+     
     <section class="about">
         <div class="about-top">
             <div class="line"></div>
@@ -101,11 +101,13 @@
             </picture>
         </div>
         <div class="about-text">
+            <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)): ?> 
             <h2><?php echo $row['about_heading'];?></h2>
             <ul>
                 <li><?php echo $row['about_p'];?></li>
                 <li><?php echo $row['about_p_sub'];?> <span><?php echo $row['about_p_highlight'];?></span></li>
             </ul>
+            <?php endwhile;?>
         </div>
     </section>
 
@@ -123,11 +125,13 @@
             </div>
         </div>
         <div class="video-text">
+            <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?> 
             <h2><?php echo $row['stories_heading'];?></h2>
             <p><?php echo $row['stories_p'];?></p>
+            <?php endwhile;?>
         </div>
     </section>
-    <?php endwhile;?>
+    
 
     
     <section class="h-faq">
@@ -138,14 +142,14 @@
         <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
             <div class="faq-card">
                 <div class="question-card">
-                    <img class="card-top" src="images/top_card.svg" alt="top decoration">
+                    <img class="card-top" src="images/top_card.svg" alt="">
                     <h4 class="question"><?php echo $row['question'];?></h4>
-                    <div class="minus">-</div>
-                    <div class="plus">+</div>
+                    <div @click="revealAnswer" v-if="plus.revealed" class="minus">-</div>
+                    <div @mouseover="revealAnswer" v-else class="plus">+</div>
                 </div>
-                <div class="answer-card hidden">    
+                <div class="answer-card" :class="{revealed:plus.revealed}">    
                     <p class="answer"><?php echo $row['answer'];?></p>
-                    <img class="card-bottom" src="images/bottom_card.svg" alt="bottom decoration">
+                    <img class="card-bottom" src="images/bottom_card.svg" alt="">
                 </div>
             </div>
         <?php endwhile;?>
