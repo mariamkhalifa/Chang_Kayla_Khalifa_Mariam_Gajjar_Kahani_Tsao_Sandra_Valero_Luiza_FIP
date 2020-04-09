@@ -25,12 +25,12 @@
     <h1 class="hidden">Keep It Neutral</h1>
     <header class="header">
         <h2 class="hidden">Main Navigation</h2>
-        <a href="index.php" class="logo">
+        <router-link :to="{ name: 'home' }" class="logo">
             <picture>
                 <source srcset="images/kin_logo.svg" media="(min-width: 767px)">
                 <img src="images/kin_symbol.svg" alt="logo">
             </picture>
-        </a>
+        </router-link>
         <img v-on:click="expandBurger" class="burger" :class="{'rotated':burger.isExpanded}" src="images/burger_menu.svg" alt="burger menu">
         <div class="nav-wrapper" :class="{'visible':burger.isExpanded}">
             <div class="title-close">
@@ -39,19 +39,19 @@
             </div>
             <ul class="nav">
                 <li>
-                    <a href="index.php">Home</a>
+                    <router-link :to="{ name: 'home' }">Home</router-link>
                     <div class="link1"><div>
                 </li>
                 <li>
-                    <a href="facts.php">Facts</a>
+                    <router-link :to="{ name: 'facts' }">Facts</router-link>
                     <div class="link2"><div>
                 </li>
                 <li>
-                    <a href="community.php">Community</a>
+                    <router-link :to="{ name: 'community' }">Community</router-link>
                     <div class="link3"><div>
                 </li>
                 <li>
-                    <a href="contact.php">Contact</a>
+                    <router-link :to="{ name: 'contact' }">Contact</router-link>
                     <div class="link4"><div>
                 </li>
             </ul>
@@ -70,10 +70,10 @@
         <h2 class="hidden">Footer</h2>
         <ul class="f-nav">
             <h3>All Links</h3>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="facts.php">Facts</a></li>
-                <li><a href="community.php">Community</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+                <li><router-link :to="{ name: 'facts' }">Facts</router-link></li>
+                <li><router-link :to="{ name: 'community' }">Community</router-link></li>
+                <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
         </ul>
         <ul class="f-social-media">
             <h3>Stay Connected</h3>
