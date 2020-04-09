@@ -1,5 +1,8 @@
 .contact-wrapper {
     position: relative;
+    .sub-heading {
+        color: $dark-blue;
+    }
 }
 
 .cont-banner {
@@ -9,8 +12,8 @@
 .contact {
     margin: 0 40px;
     @include col;
-    margin-top: 100px;
-    h2 {
+    padding-top: 100px;
+    .main-heading {
         color: $dark-blue;
     }
     p {
@@ -27,18 +30,21 @@
         font-family: $heading-font;
         margin-top: 20px;
     }
+
     input {
         border: $grey 2px solid;
         padding: 10px;
         border-radius: 8px;
         margin-top: 10px;
     }
+
     textarea {
         border: $grey 2px solid;
         padding: 10px;
         border-radius: 10px;
         margin-top: 10px;
     }
+
     #contact-submit {
         color: white;
         background-color: $dark-blue;
@@ -53,6 +59,7 @@
         font-size: 1.1em;
         transition: all 1s ease;
     }
+
     #contact-submit:hover {
         background-color: $hover-color;
     }
@@ -63,12 +70,7 @@
     margin: 0 40px;
     @include col;
     margin-top: 100px;
-    h3 {
-        color: $dark-blue;
-    }
-    p {
-        margin-top: 20px;
-    }
+    p { margin-top: 20px; }
 }
 
 .cont-social-media {
@@ -80,9 +82,11 @@
         margin-right: 25px;
         transition: all 1s ease;
     }
+
     .fa-twitter {
         margin-right: 0;
     }
+
     i:hover {
         color: $hover-color;
     }
@@ -92,21 +96,24 @@
     margin: 0 40px;
     @include col;
     margin-top: 60px;
-    h3 {
-        color: $dark-blue;
-    }
 }
 
 .info-text {
     margin-top: 20px;
-    h4 {
+    h5 {
         color: $dark-blue;
+        font-size: 1.1em;
+        text-transform: capitalize; 
     }
+    p:first-of-type {
+        max-width: 120px;
+    }
+    p { font-size: 1em; }
 }
 
 @media screen and (min-width: 410px) {
     .contact {
-        margin-top: 120px;
+        padding-top: 120px;
         margin-right: 30%;
     }
 }
@@ -139,7 +146,7 @@
     
     .contact {
         grid-area: a;
-        margin-top: 150px;
+        padding-top: 150px;
         margin-right: 50%;
         margin-left: 60px;
     }
@@ -170,6 +177,6 @@
 
 @media screen and (min-width: 1200px) {
     .contact {
-        margin-top: 180px;
+        padding-top: 180px;
     }
 }
