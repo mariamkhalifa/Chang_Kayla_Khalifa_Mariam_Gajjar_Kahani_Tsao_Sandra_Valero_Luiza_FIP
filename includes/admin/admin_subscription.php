@@ -17,6 +17,7 @@
         <header>
             <h1>Subscriptions</h1>
         <?php include '../template/header.php'; ?>
+        <a href="index.php"><-Back to Dashboard</a>
         <p>Check out <a href="https://mailchimp.com/" target="_blank">Mailchimp.com</a> for mass email products.</p>
         <div class="subList">
             <h2>Email List:</h2>

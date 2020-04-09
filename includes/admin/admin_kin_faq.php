@@ -17,7 +17,10 @@
         <header>
             <h1>Subscriptions</h1>
         <?php include '../template/header.php'; ?>
-        <p>Check out <a href="https://mailchimp.com/" target="_blank">Mailchimp.com</a> for mass email products.</p>
+        <a href="index.php"><-Back to Dashboard</a>
+        <section id="faq">
+            
+        </section>
         <div class="subList">
             <h2>Email List:</h2>
         <?php while($row = $getSub->fetch(PDO::FETCH_ASSOC)):?>

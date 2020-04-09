@@ -17,6 +17,7 @@
         <header>
             <h1>Anonymous Stories</h1>
         <?php include '../template/header.php'; ?>
+        <a href="index.php"><-Back to Dashboard</a>
         <div class="storyList">
             <h2>Stories List:</h2>
             <?php while($row = $getStory->fetch(PDO::FETCH_ASSOC)):?>
