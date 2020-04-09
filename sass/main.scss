@@ -24,6 +24,7 @@ ol, ul {
 html, body {
     height: 100%;
     max-width: 100vw;
+    scroll-behavior: smooth;
 }
 
 img, embed, object, video {

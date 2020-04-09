@@ -10,6 +10,7 @@
     <link rel="icon" type="image/x-icon/" href="images/favicon.ico">
     <link href="css/main.css" rel="stylesheet" type="text/css">
 
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script> -->
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -20,6 +21,7 @@
 
 <body>
     <main id="app">
+
     <h1 class="hidden">Keep It Neutral</h1>
     <header class="header">
         <h2 class="hidden">Main Navigation</h2>

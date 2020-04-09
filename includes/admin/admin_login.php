@@ -23,25 +23,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include '../head.php'; ?>
+    <?php include '../template/head.php'; ?>
     <title>Login Page</title>
 </head>
 <body>
-    <div class="userForms">
-        <?php echo !empty($message)?$message: ''; ?>
-        <form action="admin_login.php" method="post">
-            <h2>Log In</h2>
-            <div class="row">
-                <label>Username:</label>
-                <input type="text" name="username" value="">
-            </div>
-            <div class="row">
-                <label>Password:</label>
-                <input type="password" name="password" value="">
-            </div>
-            <button name="submit">Login</button>
-        </form>
-        <!-- <p class="static">Don't have an account yet?<a href="admin_signup.php">Sign up</a></p> -->
+    <div class="userCMS">
+        <div class="userForms">
+            <?php echo !empty($message)?$message: ''; ?>
+            <form action="admin_login.php" method="post">
+                <h2>Log In</h2>
+                <div class="row">
+                    <label>Username:</label>
+                    <input type="text" name="username" value="">
+                </div>
+                <div class="row">
+                    <label>Password:</label>
+                    <input type="password" name="password" value="">
+                </div>
+                <button name="submit">Login</button>
+            </form>
+            <!-- <p class="static">Don't have an account yet?<a href="admin_signup.php">Sign up</a></p> -->
+        </div>
     </div>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

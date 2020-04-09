@@ -1,99 +1,10 @@
-.userForms {
-    margin-right: auto;
-    margin-left: auto;
-    width: 70%;
-    margin-top: 10%;
-    border: $dark-blue 3px solid;
-    border-radius: 3px;
-    h2, h3, h4, button {
-        font-family: 'Teko', Impact, sans-serif; 
-    }
-    h2 {
-        margin-bottom: 10%;
-    }
-    p, label, input {
-        font-family: 'Oswald', "Roboto", sans-serif;
-    }
-    p {
-        margin-bottom: 3%;
-    }
-    input {
-        border: $blue 1px solid;
-        border-radius: 3px;
-    }
-    form {
-        width: 80%;
-        padding: 10%;
-    }
-    .row {
-        margin-bottom: 10%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    button {
-        margin-left: 75%;
-        border: $blue 1px solid;
-        background-color: $dark-blue;
-        border-radius: 3px;
-        color: white;
-        letter-spacing: 0.5px;
-        font-size: 15px;
-    }
-    #ca {
-        margin-left: 50%;
-        letter-spacing: 0.2px;
-    }
-}
-
-#deleteT {
-    border: $dark-blue 3px solid;
-    border-radius: 3px;
-    padding-bottom: 5%;
-    margin-top: 5%;
-    // width: 100%;
-    h2, h3, h4, th {
-        font-family: 'Teko', Impact, sans-serif; 
-    }
-    h2 {
-        margin-bottom: 10%;
-        margin-left: 5%;
-        margin-top: 5%;
-        margin-bottom: 3%;
-    }
-    p, td {
-        font-family: 'Oswald', "Roboto", sans-serif;
-    }
-    p {
-        margin-bottom: 3%;
-        margin-left: 5%;
-        margin-bottom: 5%;
-    }
-    a {
-        text-decoration: none;
-    }
-    td:nth-of-type(2) {
-        display: none;
-    }
-    th:nth-of-type(2) {
-        display: none;
-    }
-    th, td {
-        width: 20%;
-        text-align: center;
-    }
-}
-
-#userIndex {
+.userCMS {
     h1, h2, h3, h4 {
         font-family: 'Teko', Impact, sans-serif; 
     }
     p, a {
         font-family: 'Oswald', "Roboto", sans-serif;
         text-decoration: none;
-    }
-    h1 {
-        font-size: 30px;
     }
     header {
         display: flex;
@@ -102,170 +13,310 @@
         padding: 3%;
         background-color: $blue;
         color: white;
-        a {
-            color: white;
-            font-size: 15px;
-            margin-top: 2%;
-            margin-bottom: 1%;
-            padding: 1%;
-            // line-height: 15px;
-            border: $dark-blue 2px solid;
-            border-radius: 3px;
-            box-shadow: 2px 3px 5px $dark-blue;
+        h1 {
+            font-size: 30px;
         }
-    }
-    #topSec {
-        h3 {
-            text-align: center;
-            margin-top: 2%;
-        }
-        .topSecRow {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            margin-top: 2%;
-            background-color: $grey;
-            padding-top: 2%;
-            padding-bottom: 2%;
-            a {
-                color: $dark-blue;
-            }
-        }
-    }
-    #dashP {
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-top: 5%;
-        .users-list {
-            border: $blue 2px solid;
-            padding: 5%;
-            margin-bottom: 5%;
-        }
-    }
-    .actions {
-        text-align: center;
-        color: $copy-color;
-        -webkit-animation: fadeout 7s; 
-        animation: fadeout 7s; 
-        transition: all ease 0.5s;
-        animation-fill-mode: forwards;  
     }
     
-    @-webkit-keyframes fadeout{
-        0%{opacity: 1;}	
-        100%{opacity: 0;}
-      }
-    @keyframes fadeout{
-        0%{opacity: 1;}
-        100%{opacity: 0;}
-    }
-}
-
-@media screen and (min-width: 768px){
-    .userForms {
-        width: 40%;
-        h2 {
-            font-size: 40px;
-        }
-        label {
-            font-size: 20px;
-        }
-        input {
-            font-size: 15px;
-        }
-        button {
-            margin-left: 78%;
-            letter-spacing: 1px;
-            font-size: 22px;
-        }
-        p {
-            margin-top: -5%;
-            margin-bottom: 5%;
-        }
-    }
-
-    #deleteT {
-        width: 80%;
-        margin-right: 10%;
-        margin-left: 10%;
-        h2 {
-            font-size: 40px;
-        }
-        p {
-            font-size: 20px;
-            margin-left: 6%;
-        }
-        th {
-            font-size: 20px;
-            margin-bottom: 8%;
-        }
-        td {
-            font-size: 18px;
-            margin-bottom: 5%;
-        }
-        td:nth-of-type(2) {
-            display: block;
-            width: 100%;
-        }
-        th:nth-of-type(2) {
-            display: block;
-            width: 100%;
-        }
-        th, td {
-            width: 18%;
-            text-align: center;
-        }
-    }
-
-    #userIndex {
-        h1 {
-            font-size: 40px;
-            margin-left: 3%;
-        }
-        header {
-            a {
-                font-size: 18px;
-                margin-top: 1%;
-                margin-right: 3%;
+    .mainNavCon {
+        #hamburger_menu {
+            width: 30px;
+            margin-top: 5px;
+            z-index: 99;
+            &:hover {
+                .ham-1, .ham-2, .ham-3 {
+                    transition: all 0.3s ease;
+                }
             }
         }
+        .navOpen {
+            display: block !important;
+        }
+        .rot90 {
+            .ham-3 {
+                transform: translateY(12px) translateX(-7px) rotate(-155deg);
+                transform-origin: center center;
+            }
+            .ham-1 {
+                transform: translateY(-11px) translateX(-7px) rotate(155deg);
+                transform-origin: center center;
+            }
+            .ham-2 {
+                transform: scale(0);
+                transform-origin: center center;
+            }
+        }
+        .mainNav {
+            position: absolute;
+            background: $blue;
+            width: 150px;
+            margin-left: -120px;
+            border: $copy-color solid 1px;
+            ul {
+                text-align: right;
+            }
+            ul a li {
+                color: white;
+                font-family: 'Oswald', "Roboto", sans-serif;
+                font-size: 18px;
+                padding: 5px;
+                border: #fff 1px solid;
+                &:hover {
+                    color: $dark-blue;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    
+    #userIndex {
         #topSec {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
             h3 {
-                width: 40%;
                 text-align: center;
-                margin-top: 0%;
-                padding-top: 2%;
-                padding-bottom: 2%;
-                font-size: 30px;
-                border-bottom: $grey 2px solid;
+                margin-top: 2%;
             }
             .topSecRow {
-                width: 60%;
-                justify-content: space-evenly;
-                margin-top: 0%;
-                padding-top: 3%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                margin-top: 2%;
+                background-color: $grey;
+                padding-top: 2%;
+                padding-bottom: 2%;
                 a {
-                    font-size: 22px;
+                    color: $dark-blue;
                 }
             }
         }
         #dashP {
-            margin-top: 3%;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 5%;
             .users-list {
-                width: 30%;
+                border: $blue 2px solid;
+                padding: 5%;
+                margin-bottom: 5%;
             }
         }
         .actions {
-            font-size: 22px;
+            text-align: center;
+            color: $copy-color;
+            -webkit-animation: fadeout 7s; 
+            animation: fadeout 7s; 
+            transition: all ease 0.5s;
+            animation-fill-mode: forwards;  
+        }
+        
+        @-webkit-keyframes fadeout{
+            0%{opacity: 1;}	
+            100%{opacity: 0;}
+          }
+        @keyframes fadeout{
+            0%{opacity: 1;}
+            100%{opacity: 0;}
+        }
+    }
+    
+    .userForms {
+        margin-right: auto;
+        margin-left: auto;
+        width: 70%;
+        margin-top: 10%;
+        border: $dark-blue 3px solid;
+        border-radius: 3px;
+        h2, h3, h4, button {
+            font-family: 'Teko', Impact, sans-serif; 
+        }
+        h2 {
+            margin-bottom: 10%;
+        }
+        p, label, input {
+            font-family: 'Oswald', "Roboto", sans-serif;
+        }
+        p {
+            margin-bottom: 3%;
+        }
+        input {
+            border: $blue 1px solid;
+            border-radius: 3px;
+        }
+        form {
+            width: 80%;
+            padding: 10%;
+        }
+        .row {
+            margin-bottom: 10%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        button {
+            margin-left: 75%;
+            border: $blue 1px solid;
+            background-color: $dark-blue;
+            border-radius: 3px;
+            color: white;
+            letter-spacing: 0.5px;
+            font-size: 15px;
+        }
+        #ca {
+            margin-left: 50%;
+            letter-spacing: 0.2px;
+        }
+    }
+    
+    #deleteT {
+        border: $dark-blue 3px solid;
+        border-radius: 3px;
+        padding-bottom: 5%;
+        margin-top: 5%;
+        // width: 100%;
+        h2, h3, h4, th {
+            font-family: 'Teko', Impact, sans-serif; 
+        }
+        h2 {
+            margin-bottom: 10%;
+            margin-left: 5%;
+            margin-top: 5%;
+            margin-bottom: 3%;
+        }
+        p, td {
+            font-family: 'Oswald', "Roboto", sans-serif;
+        }
+        p {
+            margin-bottom: 3%;
+            margin-left: 5%;
+            margin-bottom: 5%;
+        }
+        a {
+            text-decoration: none;
+        }
+        td:nth-of-type(2) {
+            display: none;
+        }
+        th:nth-of-type(2) {
+            display: none;
+        }
+        th, td {
+            width: 20%;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .userCMS {
+        header {
+            h1 {
+                font-size: 40px;
+                margin-left: 3%;
+            }
+        }
+        .mainNavCon {
+            #hamburger_menu {
+                margin-top: 12px;
+            }
+            .mainNav {
+                width: 200px;
+                margin-left: -170px;
+                ul a li {
+                    font-size: 25px;
+                }
+            }
+        }
+        #userIndex {
+            #topSec {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                h3 {
+                    width: 40%;
+                    text-align: center;
+                    margin-top: 0%;
+                    padding-top: 2%;
+                    padding-bottom: 2%;
+                    font-size: 30px;
+                    border-bottom: $grey 2px solid;
+                }
+                .topSecRow {
+                    width: 60%;
+                    justify-content: space-evenly;
+                    margin-top: 0%;
+                    padding-top: 3%;
+                    a {
+                        font-size: 22px;
+                    }
+                }
+            }
+            #dashP {
+                margin-top: 3%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                .users-list {
+                    width: 30%;
+                }
+            }
+            .actions {
+                font-size: 22px;
+            }
+        }
+        .userForms {
+            width: 40%;
+            h2 {
+                font-size: 40px;
+            }
+            label {
+                font-size: 20px;
+            }
+            input {
+                font-size: 15px;
+            }
+            button {
+                margin-left: 78%;
+                letter-spacing: 1px;
+                font-size: 22px;
+            }
+            p {
+                margin-top: -5%;
+                margin-bottom: 5%;
+            }
+        }
+    
+        #deleteT {
+            width: 80%;
+            margin-right: 10%;
+            margin-left: 10%;
+            h2 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 20px;
+                margin-left: 6%;
+            }
+            th {
+                font-size: 20px;
+                margin-bottom: 8%;
+            }
+            td {
+                font-size: 18px;
+                margin-bottom: 5%;
+            }
+            td:nth-of-type(2) {
+                display: block;
+                width: 100%;
+            }
+            th:nth-of-type(2) {
+                display: block;
+                width: 100%;
+            }
+            th, td {
+                width: 18%;
+                text-align: center;
+            }
         }
     }
 }

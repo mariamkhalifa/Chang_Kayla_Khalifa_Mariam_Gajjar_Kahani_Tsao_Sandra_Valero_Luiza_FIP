@@ -3,7 +3,6 @@
     require_once '../../load.php';
     confirm_logged_in();
     
-    $getUsers = getAllUsers();
     $message = greeting();
 
     if(!empty($_GET['create'])){
@@ -22,44 +21,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include '../head.php'; ?>
+    <?php include '../template/head.php'; ?>
     <title>Dashboard</title>
 </head>
 <body>
-    <div id="userIndex">
+    <div class="userCMS">
         <header>
             <h1>Welcome to DASHBOARD!</h1>
-            <a href="admin_logout.php">Log Out</a>
-        </header>
-        <div id="topSec">
+        <?php include '../template/header.php'; ?>
+        <div id="main">
             <h3><?php echo !empty($message)?$message: ''; ?>, <?php echo $_SESSION['user_fname']; ?>!</h3>
-            <div class="topSecRow">
-                <a href="admin_edit_account.php">Edit Account</a>
-                <a href="admin_create_user.php">Create User</a>
-                <a href="admin_delete_user.php">Delete User</a>
+            <div class="subNav">
+                <a href="admin_subscription.php">Subscriptions List</a>
+                <a href="admin_ano_story.php">Anonymous Stories</a>
+            </div>
+            <div class="pageList">
+                <a href="admin_kin_home.php">Edit Home Page</a>
+                <a href="admin_kin_community.php">Edit Community Page</a>
+                <a href="admin_kin_faq.php">Edit FAQ Page</a>
             </div>
         </div>
-        <?php echo !empty($create)?$create: ''; ?>
-        <?php echo !empty($set)?$set: ''; ?>
-        <?php echo !empty($edit)?$edit: ''; ?>
-        <main id="dashP">
-            <?php while($row = $getUsers->fetch(PDO::FETCH_ASSOC)):?>
-            <div class="users-list">
-                <h3><?php echo $row['user_fname'];?></h3>
-                <p>Username: <?php echo $row['user_name'];?></p>
-                <h4>Email:</h4>
-                <p><?php echo $row['user_email'];?></p>
-                <h4>Last Logged In Time:</h4>
-                <p><?php echo $row['user_lastlogin'];?></p>
-                <h4>Account locked?</h4>
-                <p><?php echo $row['user_locked'];?></p>
-                <h4>Account suspended?</h4>
-                <p><?php echo $row['user_sus'];?></p>
-                <h4>IP Address:</h4>
-                <p><?php echo $row['user_ip'];?></p>
-            </div>
-            <?php endwhile;?>
-        </main>
     </div>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
