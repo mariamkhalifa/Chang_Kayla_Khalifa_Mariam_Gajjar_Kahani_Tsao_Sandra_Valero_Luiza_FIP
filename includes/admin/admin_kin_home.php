@@ -98,6 +98,7 @@
         <header>
             <h1>Edit Home Page</h1>
         <?php include '../template/header.php'; ?>
+        <a href="index.php"><-Back to Dashboard</a>
         <div class="homeNav">
             <a href="admin_kin_home.php?#hero">Hero Section</a>
             <a href="admin_kin_home.php?#about">About Section</a>
