@@ -1,185 +1,106 @@
-<?php
-    require_once 'load.php';
-   
-    $tbl_home = 'tbl_home';
-    $getHero = getHero($tbl_home);
-    $getTest = getTest($tbl_home);
-    $getMap = getHero($tbl_home);
-    $getHero2 = getHero2($tbl_home);
-    $getHero3 = getHero3($tbl_home);
-    $getHero4 = getHero4($tbl_home);
-    $getHero5 = getHero5($tbl_home);
-    $getHero6 = getHero6($tbl_home);
-    $tbl_faq = 'tbl_faq';
-    $getFaq = getFaq($tbl_home, $tbl_faq);
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<?php include 'template/head.php'; ?>
+    <link rel="stylesheet" href="https://use.typekit.net/its0ltk.css">
+    <link rel="stylesheet" href="https://use.typekit.net/its0ltk.css">
+    <link rel="icon" type="image/x-icon/" href="images/favicon.ico">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
 
-<title>Keep It Neutral Campaign - Home</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script>
+
+    <title>Keep It Neutral Campaign</title>
 </head>
 
 <body>
     <main id="app">
-    <?php include 'template/header.php'; ?>
-
-    <section class="hero">
-    
-        <h1 class="hidden">hero</h1>
-            <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
-                <div class="hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="asian girl"></div>
-                <div class="hero-text1">
-                    <p>
-                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                    </p>
-                </div>
-            <?php endwhile;?>
-            <?php while($row = $getHero2->fetch(PDO::FETCH_ASSOC)):?>
-                <div class="hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="blond boy"></div>
-                <div class="hero-text2">
-                    <p>
-                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                    </p>
-                    
-                </div>
-            <?php endwhile;?>
-            <?php while($row = $getHero3->fetch(PDO::FETCH_ASSOC)):?>
-            <div class="hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="african girl"></div>
-                <div class="hero-text3">
-                    <p>
-                        <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                        <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                    </p>
-                </div>
-            <?php endwhile;?>
-
-            <div class="alt-hero-wrapper">
-                <div class="alt-hero-grid">
-                    <?php while($row = $getHero4->fetch(PDO::FETCH_ASSOC)):?>
-                        <div class="alt-hero-img1"><img src="images/<?php echo $row['hero_img'];?>" alt="african boy"></div>
-                        <div class="alt-hero-text1">
-                            <p>
-                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                            </p>
-                        </div>
-                    <?php endwhile;?>
-                    <?php while($row = $getHero5->fetch(PDO::FETCH_ASSOC)):?>
-                        <div class="alt-hero-img2"><img src="images/<?php echo $row['hero_img'];?>" alt="dark haired girl"></div>
-                        <div class="alt-hero-text2">
-                            <p>
-                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                            </p>
-                        </div>
-                    <?php endwhile;?>
-                    <?php while($row = $getHero6->fetch(PDO::FETCH_ASSOC)):?>
-                        <div class="alt-hero-img3"><img src="images/<?php echo $row['hero_img'];?>" alt="red haired girl"></div>
-                        <div class="alt-hero-text3">
-                            <p>
-                                <span class="small-txt"><?php echo $row['hero_s_text'];?><br></span>
-                                <span class="large-txt"><?php echo $row['hero_l_text'];?></span>
-                            </p>
-                        </div>
-                    <?php endwhile;?>
-                </div>
-            </div>
-            
-    </section>
-
-    <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
-    <section class="about">
-        <div class="about-top">
-            <div class="line"></div>
-        </div>
-        <div class="about-img">
+    <h1 class="hidden">Keep It Neutral</h1>
+    <header class="header">
+        <h2 class="hidden">Main Navigation</h2>
+        <a href="index.php" class="logo">
             <picture>
-                <source media="(min-width: 598px)" srcset="images/girl7.jpg">
-                <img src="images/girl3.jpg" alt="girl">
+                <source srcset="images/kin_logo.svg" media="(min-width: 767px)">
+                <img src="images/kin_symbol.svg" alt="logo">
             </picture>
-        </div>
-        <div class="about-text">
-            <h2><?php echo $row['about_heading'];?></h2>
-            <ul>
-                <li><?php echo $row['about_p'];?></li>
-                <li><?php echo $row['about_p_sub'];?> <span><?php echo $row['about_p_highlight'];?></span></li>
+        </a>
+        <img v-on:click="expandBurger" class="burger" :class="{'rotated':burger.isExpanded}" src="images/burger_menu.svg" alt="burger menu">
+        <div class="nav-wrapper" :class="{'visible':burger.isExpanded}">
+            <div class="title-close">
+                <h3>Keep It Neutral</h3>
+                <p v-on:click="closeBurger" class="close-nav">X</p>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="index.php">Home</a>
+                    <div class="link1"><div>
+                </li>
+                <li>
+                    <a href="facts.php">Facts</a>
+                    <div class="link2"><div>
+                </li>
+                <li>
+                    <a href="community.php">Community</a>
+                    <div class="link3"><div>
+                </li>
+                <li>
+                    <a href="contact.php">Contact</a>
+                    <div class="link4"><div>
+                </li>
+            </ul>
+            <ul class="h-social-media">
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
             </ul>
         </div>
-    </section>
+    </header>
 
-    <section class="video-section">
-        <div class="vid-grid">
-            <div class="video-top">
-                <div class="line"></div>
+    <router-view></router-view>
+
+    <footer class="footer">
+        <h2 class="hidden">Footer</h2>
+        <ul class="f-nav">
+            <h3>All Links</h3>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="facts.php">Facts</a></li>
+                <li><a href="community.php">Community</a></li>
+                <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <ul class="f-social-media">
+            <h3>Stay Connected</h3>
+            <div class="f-social-icons">
+                <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
             </div>
-            <div class="video-wrapper">
-                <img class="temp" src="images/temporary_video3.jpg" alt="temporary video">
-                <div class="video-icon"><img src="images/play_icon.svg" alt="play video icon"></div>
-                <video class="video">
-                    <source src="" type="video/mp4">
-                </video>
-            </div>
+        </ul>
+        <div class="subscribe">
+            <h3>Want to Stay Neutral?</h3>
+            <p>Sign up to our newsletter for community events, updates, and contests.</p>
+            <form class="subs-form" action="includes/subscribe.php" method="post">
+                <label for="email">Email Address *</label>
+                <input id="email" name="email" type="email" required>
+                <input id="subs-submit" type="submit" value="SUBMIT">
+            </form>
         </div>
-        <div class="video-text">
-            <h2><?php echo $row['stories_heading'];?></h2>
-            <p><?php echo $row['stories_p'];?></p>
+        <img class="f-logo" src="images/kin_symbol.svg" alt="logo">
+        <h3 class="f-title">Keep It Neutral</h3>
+        <div class="f-symbol">
+            <img src="images/footer_symbol2.svg" alt="footer decoration">
         </div>
-    </section>
-    <?php endwhile;?>
-
-    
-    <section class="h-faq">
-        <h2>Frequently Asked Questions</h2>
-        <p>Do you have any questions? We can help you find the answers!</p>
-            <!-- FAQ component -->
-        <!-- <template v-for="card in faqdata"> -->
-        <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
-            <div class="faq-card">
-                <div class="question-card">
-                    <img class="card-top" src="images/top_card.svg" alt="top decoration">
-                    <h4 class="question"><?php echo $row['question'];?></h4>
-                    <div class="minus">-</div>
-                    <div class="plus">+</div>
-                </div>
-                <div class="answer-card hidden">    
-                    <p class="answer"><?php echo $row['answer'];?></p>
-                    <img class="card-bottom" src="images/bottom_card.svg" alt="bottom decoration">
-                </div>
-            </div>
-        <?php endwhile;?>
-        <!-- </template> -->
-        <a href="facts.php" class="button">See More</a>
-    </section>
-
-    
-    <section class="testing">
-        <h2>Get Tested</h2>
-        <p>Find HIV Testing locations and care services close to you.</p>
-        <!-- might add google maps API instead of iframe -->
-        <?php while($row = $getMap->fetch(PDO::FETCH_ASSOC)):?>
-            <iframe class="map" src="<?php echo $row['map_location'];?>" allowfullscreen=""></iframe>
-        <?php endwhile;?>
-        <div class="locations-wrapper">
-            <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
-            <div class="location">
-                <h3><?php echo $row['test_place'];?></h3>
-                <ul>
-                    <li><?php echo $row['test_address'];?></li>
-                    <li><?php echo $row['test_address_2'];?></li>
-                </ul>
-            </div>
-            <?php endwhile;?>
-        </div>
-        <p>For more information on where to get tested:</p>
-        <a href="https://hivaidsconnection.ca/get-facts/get-tested/where-get-tested" target="_blank" class="testing-link">Go to HIV/AIDS Connections</a>
-    </section>
-    
-
-    <?php include 'template/footer.php'; ?>
+    </footer>
+   
+    <p class="reg-trademark">Keep It Neutral &copy; 2020. All Rights Reserved.</p>
     </main>
 
-    <script defer src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>

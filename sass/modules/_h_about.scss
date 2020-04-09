@@ -53,9 +53,6 @@
         align-self: start;
         @include col;
         align-items: center;
-        img {
-            width: 100%;
-        }
     }
 
     .about-text {
@@ -63,16 +60,17 @@
         align-self: start;
         position: absolute;
         z-index: 10;
-        width: 50vw;
+        width: 55vw;
         //height: 100%;
         @include col;
         justify-items: center;
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 810px) {
     .about-text {
-        height: 80%;
+        width: 55vw;
+        padding: 50px 40px;
         ul {
             width: 90%;
         }
@@ -82,30 +80,35 @@
     }
 }
 
-@media screen and (min-width: 1010px) {
+@media screen and (min-width: 900px) {
     .about {
         grid-template-columns: 1fr 460px;
     }
 
     .about-text {
-        width: 50vw;
-        padding-left: 50px;
-        padding-top: 80px;
+        width: 60vw;
+        padding: 60px 50px;
+    }
+}
+
+@media screen and (min-width: 1010px) {
+    .about-text {
+        width: 65vw;
+        padding: 70px 60px;
     }
 }
 
 @media screen and (min-width: 1050px) {
     .about-text {
-        width: 60vw;
         li {
-            font-size: 1.3em;
+            font-size: 1.5em;
         }
     }
 }
 
 @media screen and (min-width: 1300px) {
     .about-text {
-        width: 65vw;
-        padding-left: 60px;
+        width: 70vw;
+        padding: 80px 70px;
     }
 }
