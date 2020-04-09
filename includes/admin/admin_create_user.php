@@ -27,32 +27,35 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-    <?php include '../head.php'; ?>
+    <?php include '../template/head.php'; ?>
     <title>Create Account</title>
 </head>
 <body>
-    <div class="userForms">
-        <?php echo !empty($message)?$message: ''; ?>
-        <form action="admin_create_user.php" method="post">
-            <h2>Create Account</h2><p><a href="index.php">Go Back</a></p>
-            <div class="row">
-                <label>First Name:</label>
-                <input type="text" name="fname" value="">
-            </div>
-            <div class="row">
-                <label>Username:</label>
-                <input type="text" name="username" value="">
-            </div>
-            <!-- <div class="row">
-                <label>Password:</label>
-                <input type="password" name="password" value="">
-            </div> -->
-            <div class="row">
-                <label>Email:</label>
-                <input type="email" name="email" value="">
-            </div>
-            <button name="submit" id="ca">Create Account</button>
-        </form>
+    <div class="userCMS">
+        <div class="userForms">
+            <?php echo !empty($message)?$message: ''; ?>
+            <form action="admin_create_user.php" method="post">
+                <h2>Create Account</h2><p><a href="index.php">Go Back</a></p>
+                <div class="row">
+                    <label>First Name:</label>
+                    <input type="text" name="fname" value="">
+                </div>
+                <div class="row">
+                    <label>Username:</label>
+                    <input type="text" name="username" value="">
+                </div>
+                <!-- <div class="row">
+                    <label>Password:</label>
+                    <input type="password" name="password" value="">
+                </div> -->
+                <div class="row">
+                    <label>Email:</label>
+                    <input type="email" name="email" value="">
+                </div>
+                <button name="submit" id="ca">Create Account</button>
+            </form>
+        </div>
     </div>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

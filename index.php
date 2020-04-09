@@ -3,6 +3,7 @@
    
     $tbl_home = 'tbl_home';
     $getHero = getHero($tbl_home);
+    $getAbout = getHero($tbl_home);
     $getTest = getTest($tbl_home);
     $getMap = getHero($tbl_home);
     $getHero2 = getHero2($tbl_home);
@@ -89,7 +90,7 @@
             
     </section>
 
-    <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
+    <?php while($row = $getAbout->fetch(PDO::FETCH_ASSOC)):?>
     <section class="about">
         <div class="about-top">
             <div class="line"></div>
