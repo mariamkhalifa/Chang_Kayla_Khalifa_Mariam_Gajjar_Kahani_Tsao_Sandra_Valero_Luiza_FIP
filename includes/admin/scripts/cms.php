@@ -348,3 +348,58 @@ function deleteEvent($id) {
         return false;
     }
 }
+
+function createFaq($q, $a) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $insert_new_query = "INSERT INTO tbl_faq (question, answer) VALUES (:q, :a);";
+    $user_add = $pdo->prepare($insert_new_query);
+    $result = $user_add->execute(
+        array(
+            ':q'=>$q,
+            ':a'=>$a
+        )
+    );
+    
+    if($result){
+        redirect_to('admin_kin_faq.php?addFaq=You have added a new question and answer!');
+    } else {
+        return 'Something went wrong';
+    }
+}
+
+function updateFaq($id, $q, $a) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_faq_query = 'UPDATE `tbl_faq` SET question =:q, answer =:a WHERE id =:id';
+    $single_update = $pdo->prepare($update_faq_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':q'=>$q,
+            ':a'=>$a,
+            ':id'=>$id
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_faq.php?updatedFaq=You have updated the question and answer!');
+    }else{
+        return 'Something went wrong with the update.';
+    }
+}
+
+function deleteFaq($id) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $delete_faq_query = 'DELETE FROM tbl_faq WHERE id=:id';
+    $delete_faq_set = $pdo->prepare($delete_faq_query);
+    $delete_faq_result = $delete_faq_set->execute(array(
+        ':id'=>$id
+    ));
+
+    if($delete_faq_result && $delete_faq_set->rowCount() > 0){
+        redirect_to('admin_kin_faq.php?deletedFaq=You have deleted the question and answer!');
+    }else{
+        return false;
+    }
+}
