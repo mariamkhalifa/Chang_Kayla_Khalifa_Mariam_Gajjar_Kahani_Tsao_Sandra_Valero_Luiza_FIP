@@ -20,10 +20,6 @@
     align-items: center;
     position: relative;
     justify-content: center;
-    //height: 459px;
-    img {
-        width: 100%;
-    }
     .video-icon {
         width: 100px;
         position: absolute;
@@ -67,11 +63,8 @@
     .video-wrapper {
         grid-column: 1;
         grid-row: 1;
-        margin-top: 200px;
+        margin-top: 10%;
         //width: 50%;
-        .temp {
-            width: 100%;
-        }
     }
 
     .video-text {
@@ -79,10 +72,11 @@
         bottom: 5%;
         right: 0;
         z-index: 10;
-        width: 45vw;
-        padding-right: 80px;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        width: 60vw;
+        //padding-right: 80px;
+        //padding-top: 30px;
+        //padding-bottom: 30px;
+        padding: 30px 40px;
         @include col;
         justify-items: center;
     }
@@ -90,7 +84,7 @@
 
 @media screen and (min-width: 618px) {
     .video-wrapper {
-        margin-top: 150px;
+        //margin-top: 150px;
     }
 
     .video-top {
@@ -102,7 +96,7 @@
 
 @media screen and (min-width: 638px) {
     .video-wrapper {
-        margin-top: 100px;
+        //margin-top: 100px;
     }
 
     .video-top {
@@ -113,20 +107,12 @@
 }
 
 @media screen and (min-width: 735px) {
-    .video-wrapper {
-        margin-top: 50px;
-    }
-
     .video-text {
         bottom: 10%;
     }
 }
 
 @media screen and (min-width: 792px) {
-    .video-wrapper {
-        margin-top: 20px;
-    }
-
     .video-top {
         .line {
             margin-top: 70px;
@@ -156,5 +142,13 @@
     .video-text {
         padding-left: 50px;
         width: 60vw;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .video-top {
+        .line {
+            margin-top: 140px;
+        }
     }
 }

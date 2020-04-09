@@ -1,0 +1,78 @@
+.testing {
+    @include col;
+    align-items: center;
+    margin-top: 80px;
+    h3 {
+        color: $purple;
+        text-align: center;
+    }
+}
+
+.testing-intro {
+    margin: 20px 30px 0 30px;
+    text-align: center;
+}
+
+.map {
+    width: 100%;
+    margin-top: 40px;
+    height: 80vh;
+}
+
+.locations-wrapper {
+    // @include col;
+    // align-items: center;
+    @include row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+.location {
+    @include col;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 15px rgba($color: $grey, $alpha: .2);
+    //padding: 30px;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-width: 280px;
+    height: 200px;
+    text-align: center;
+    h4 {
+        color: $purple;
+        max-width: 170px;
+        font-size: 1.2em;
+    }
+    p {
+        margin-top: 15px;
+        max-width: 160px;
+    }
+}
+
+.testing-link {
+    color: $dark-blue;
+    margin-top: 10px;
+    transition: all .5s ease;
+}
+
+.testing-link:hover {
+    color: $hover-color;
+}
+
+@media screen and (min-width: 800px) {
+    .location {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .location {
+        p { font-size: 1.1em; }
+    }
+}
