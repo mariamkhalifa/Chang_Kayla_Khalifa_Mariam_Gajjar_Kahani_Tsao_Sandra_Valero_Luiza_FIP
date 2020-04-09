@@ -106,8 +106,12 @@
 .f-logo {
     margin-top: 80px;
     margin-bottom: 40px;
-    padding: 0 80px;
-    max-width: 100px;
+    // padding: 0 80px;
+    width: 80px;
+    // height: 80px;
+    //max-width: 90px;
+    // position: relative;
+    // z-index: 20;
 }
 
 .f-title {
@@ -190,7 +194,7 @@
         //margin: 0;
         margin: 40px 0 0 0;
         padding: 0;
-        max-width: 60px;
+        width: 60px;
     }
 
     .f-title {
