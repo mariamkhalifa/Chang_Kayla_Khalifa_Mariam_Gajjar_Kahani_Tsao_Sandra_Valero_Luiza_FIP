@@ -4,19 +4,11 @@
     confirm_logged_in();
     
     $message = greeting();
-
-    if(!empty($_GET['create'])){
-        $msg = $_GET['create'];
-        $create = '<p class="actions">'.$msg.'</p>';
-    }
-    if(!empty($_GET['edit'])){
-        $msg = $_GET['edit'];
-        $edit = '<p class="actions">'.$msg.'</p>';
-    }
-    if(!empty($_GET['set'])){
-        $msg = $_GET['set'];
-        $set = '<p class="actions">'.$msg.'</p>';
-    }
+    $tblAbout = 'tbl_about';
+    $getAbout = getAll($tblAbout);
+    $tblEvent = 'tbl_event';
+    $getOneEvent = getOneEvent($tblEvent);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,9 +28,22 @@
                 <a href="admin_ano_story.php">Anonymous Stories</a>
             </div>
             <div class="pageList">
-                <a href="admin_kin_home.php">Edit Home Page</a>
-                <a href="admin_kin_community.php">Edit Community Page</a>
-                <a href="admin_kin_faq.php">Edit FAQ Page</a>
+                <div class="pgImg">
+                <?php while($row = $getAbout->fetch(PDO::FETCH_ASSOC)):?>
+                    <img src="../../images/<?php echo $row['img'];?>" alt="<?php echo $row['img'];?>">
+                    <a href="admin_kin_home.php">Edit Home Page</a>
+                <?php endwhile;?>
+                </div>
+                <div class="pgImg">
+                <?php while($row = $getOneEvent->fetch(PDO::FETCH_ASSOC)):?>
+                    <img src="../../images/<?php echo $row['img'];?>" alt="<?php echo $row['img'];?>">
+                    <a href="admin_kin_community.php">Edit Community Page</a>
+                <?php endwhile;?>
+                </div>
+                <div class="pgImg">
+                    <img src="../../images/kin_symbol.svg" alt="keep it neutral logo">
+                    <a href="admin_kin_faq.php">Edit FAQ Page</a>
+                </div>
             </div>
         </div>
     </div>
