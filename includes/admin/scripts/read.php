@@ -88,4 +88,5 @@ function newStory($story) {
             }
         }
     }
+
 }
