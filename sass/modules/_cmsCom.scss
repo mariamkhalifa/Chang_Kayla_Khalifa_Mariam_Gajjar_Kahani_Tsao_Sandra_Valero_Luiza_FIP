@@ -1,0 +1,169 @@
+.userCMS {
+    #event {
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        .eventForm {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5%;
+            h2 {
+                font-size: 30px;
+            }
+            input, textarea {
+                border: $dark-blue 1px solid;
+                font-family: 'Oswald', "Roboto", sans-serif;
+                margin-bottom: 3%;
+                font-size: 15px;
+            }
+            textarea {
+                resize: none;
+                height: 80px;
+            }
+            select {
+                border: $dark-blue 1px solid;
+                font-family: 'Oswald', "Roboto", sans-serif;
+            }
+            label {
+                font-family: 'Teko', Impact, sans-serif; 
+                font-size: 20px;
+            }
+            p {
+                margin-bottom: 3%;
+            }
+            input[type=submit] {
+                width: 40%;
+                background-color: $blue;
+                color: white;
+                margin-left: auto;
+                &:hover {
+                    color: $grey;
+                    transition: all ease 0.3s;
+                }
+            }
+        }
+        #eventList {
+            h2 {
+                font-size: 30px;
+                margin-bottom: 3%;
+            }
+            .eventForm {
+                border: $dark-blue 1px solid;
+                border-radius: 5px;
+                padding: 2%;
+                h3 {
+                    font-size: 20px;
+                }
+                a {
+                    font-size: 20px;
+                    margin-left: auto;
+                    color: $copy-color;
+                    &:hover {
+                        color: $purple;
+                        transition: all ease 0.3s;
+                    }
+                }
+                .DandE {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    input[type=submit] {
+                        margin-left: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .userCMS {
+        #event {
+            margin-top: 3%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .eventForm {
+                width: 45%;
+                margin-bottom: 5%;
+                h2 {
+                    font-size: 35px;
+                }
+                input, textarea {
+                    font-size: 15px;
+                }
+                textarea {
+                    height: 80px;
+                }
+                select {
+                    font-size: 15px;
+                }
+                label {
+                    font-size: 20px;
+                }
+                input[type=submit] {
+                    font-size: 20px;
+                }
+            }
+            #eventList {
+                width: 50%;
+                h2 {
+                    font-size: 35px;
+                }
+                .eventForm {
+                    width: 100%;
+                    padding: 3%;
+                    h3 {
+                        font-size: 22px;
+                    }
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userCMS {
+        #event {
+            .eventForm {
+                h2 {
+                    font-size: 40px;
+                }
+                input, textarea {
+                    font-size: 20px;
+                }
+                textarea {
+                    height: 120px;
+                }
+                select {
+                    font-size: 18px;
+                }
+                label {
+                    font-size: 25px;
+                }
+                input[type=submit] {
+                    font-size: 20px;
+                }
+            }
+            #eventList {
+                h2 {
+                    font-size: 40px;
+                }
+                .eventForm {
+                    padding: 4%;
+                    h3 {
+                        font-size: 25px;
+                    }
+                    a {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}

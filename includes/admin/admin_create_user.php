@@ -35,7 +35,7 @@
         <div class="userForms">
             <?php echo !empty($message)?$message: ''; ?>
             <form action="admin_create_user.php" method="post">
-                <h2>Create Account</h2><p><a href="index.php">Go Back</a></p>
+                <h2>Create Account</h2><p><a href="admin_user_page.php">Go Back</a></p>
                 <div class="row">
                     <label>First Name:</label>
                     <input type="text" name="fname" value="">

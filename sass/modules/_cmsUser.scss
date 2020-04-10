@@ -88,15 +88,24 @@
                 }
             }
         }
-        #dashP {
-            width: 80%;
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-top: 5%;
-            .users-list {
-                border: $blue 2px solid;
-                padding: 5%;
-                margin-bottom: 5%;
+        main {
+            h2 {
+                font-size: 30px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+            }
+            #dashP {
+                width: 80%;
+                margin-left: 10%;
+                margin-right: 10%;
+                margin-top: 5%;
+                .users-list {
+                    border: $blue 2px solid;
+                    padding: 5%;
+                    margin-bottom: 5%;
+                }
             }
         }
         .actions {
@@ -142,8 +151,7 @@
             border-radius: 3px;
         }
         form {
-            width: 80%;
-            padding: 10%;
+            padding: 4%;
         }
         .row {
             margin-bottom: 10%;
@@ -208,6 +216,7 @@
 @media screen and (min-width: 768px){
     .userCMS {
         header {
+            padding: 2%;
             h1 {
                 font-size: 40px;
                 margin-left: 3%;
@@ -244,22 +253,28 @@
                     width: 60%;
                     justify-content: space-evenly;
                     margin-top: 0%;
-                    padding-top: 3%;
+                    padding-top: 2.5%;
                     a {
                         font-size: 22px;
                     }
                 }
             }
-            #dashP {
-                margin-top: 3%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-                .users-list {
-                    width: 30%;
+            main {
+                h2 {
+                    font-size: 35px;
                 }
+                #dashP {
+                    margin-top: 3%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    .users-list {
+                        width: 45%;
+                    }
+                } 
             }
+            
             .actions {
                 font-size: 22px;
             }
@@ -274,6 +289,9 @@
             }
             input {
                 font-size: 15px;
+            }
+            form {
+                padding: 10%;
             }
             button {
                 margin-left: 78%;
@@ -316,6 +334,88 @@
             th, td {
                 width: 18%;
                 text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userCMS {
+        header {
+            padding: 1%;
+            h1 {
+                font-size: 50px;
+            }
+        }
+        .mainNavCon {
+            margin-right: 1%;
+            #hamburger_menu {
+                margin-top: 18px;
+                width: 32px;
+            }
+        }
+        #userIndex {
+            #topSec {
+                h3 {
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                    font-size: 35px;
+                }
+                .topSecRow {
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+            main {
+                h2 {
+                    font-size: 35px;
+                    width: 80%;
+                }
+                #dashP {
+                    margin-top: 3%;
+                    .users-list {
+                        width: 30%;
+                        padding: 2%;
+                    }
+                } 
+            }
+            
+            .actions {
+                font-size: 25px;
+            }
+        }
+        .userForms {
+            width: 35%;
+            label {
+                font-size: 22px;
+            }
+            input {
+                font-size: 18px;
+            }
+        }
+    
+        #deleteT {
+            h2 {
+                font-size: 45px;
+                margin-top: 3%;
+                margin-bottom: 1%;
+            }
+            p {
+                font-size: 22px;
+                margin-bottom: 2%;
+                margin-left: 5%;
+            }
+            th {
+                font-size: 22px;
+            }
+            td {
+                font-size: 20px;
+            }
+            th, td {
+                width: 20%;
             }
         }
     }

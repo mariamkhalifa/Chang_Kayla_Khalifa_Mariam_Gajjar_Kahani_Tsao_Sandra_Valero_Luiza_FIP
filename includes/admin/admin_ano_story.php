@@ -17,13 +17,17 @@
         <header>
             <h1>Anonymous Stories</h1>
         <?php include '../template/header.php'; ?>
-        <a href="index.php"><-Back to Dashboard</a>
-        <div class="storyList">
+        <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
+        <div id="story">
             <h2>Stories List:</h2>
-            <?php while($row = $getStory->fetch(PDO::FETCH_ASSOC)):?>
-                <h3>Story ID <?php echo $row['id'];?></h3>
-                <p><?php echo $row['story'];?></p>
-            <?php endwhile;?>
+            <div class="storyList">
+                <div class="stories">
+                    <?php while($row = $getStory->fetch(PDO::FETCH_ASSOC)):?>
+                        <h3>Story ID <?php echo $row['id'];?></h3>
+                        <p><?php echo $row['story'];?></p>
+                    <?php endwhile;?>
+                </div>
+            </div>
         </div>
         
     </div>

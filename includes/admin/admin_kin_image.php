@@ -36,7 +36,7 @@
             <h1>Edit This Image</h1>
         <?php include '../template/header.php'; ?>
         <?php echo !empty($message)?$message: ''; ?>
-        <a href="<?php echo $page;?>">Go Back</a>
+        <p class="imgbk"><a href="<?php echo $page;?>"><-Go Back</a></p>
         <form action="admin_kin_image.php" method="post" class="imgUpForm">
             <?php while($row = $getSingleImg->fetch(PDO::FETCH_ASSOC)):?>
             <div class="imgTop">

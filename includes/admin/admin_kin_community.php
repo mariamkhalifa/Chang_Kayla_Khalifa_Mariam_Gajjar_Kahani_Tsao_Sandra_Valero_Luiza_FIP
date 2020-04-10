@@ -61,7 +61,7 @@
         <header>
             <h1>Edit Community Page</h1>
         <?php include '../template/header.php'; ?>
-        <a href="index.php"><-Back to Dashboard</a>
+        <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <?php echo !empty($message)?$message: ''; ?>
         <section id="event">
             <form action="admin_kin_home.php" method="post" class="eventForm">
@@ -124,12 +124,13 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
-                <label for="time">Time: (Format example: "Monday & Tuesday, 1 PM - 3 PM", or "4 PM - 5 PM")</label>
-                <input type="text" name="time" value="" required>
+                <label for="time">Time:</label>
+                <input type="text" name="time" value="" placeholder="'Monday & Tuesday, 1 PM - 3 PM', or '4 PM - 5 PM' required>
                 <label for="des">Description:</label>
                 <textarea name="des"></textarea>
                 <label for="link">Link:</label>
                 <input type="url" name="link" value="">
+                <p>* required</p>
                 <input type="submit" name="submit-event-new" value="Create Event">
             </form>
             <div id="eventList">
@@ -202,8 +203,10 @@
                     <textarea name="des"><?php echo $row['des'];?></textarea>
                     <label for="link">Link:</label>
                     <input type="url" name="link" value="<?php echo $row['link'];?>">
-                    <input type="submit" name="submit-event" value="Edit Event">
+                    <div class="DandE">
                     <input type="submit" name="delete-event" value="Delete Event">
+                        <input type="submit" name="submit-event" value="Edit Event">
+                    </div>
                 </form>
                 <?php endwhile;?>
             </div>

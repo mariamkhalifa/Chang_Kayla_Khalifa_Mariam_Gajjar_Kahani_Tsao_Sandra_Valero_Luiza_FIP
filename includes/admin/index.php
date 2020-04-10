@@ -21,11 +21,13 @@
         <header>
             <h1>Welcome to DASHBOARD!</h1>
         <?php include '../template/header.php'; ?>
-        <div id="main">
-            <h3><?php echo !empty($message)?$message: ''; ?>, <?php echo $_SESSION['user_fname']; ?>!</h3>
-            <div class="subNav">
-                <a href="admin_subscription.php">Subscriptions List</a>
-                <a href="admin_ano_story.php">Anonymous Stories</a>
+        <div id="cmsIndex">
+            <div class="topBar">
+                <h3><?php echo !empty($message)?$message: ''; ?>, <?php echo $_SESSION['user_fname']; ?>!</h3>
+                <div class="subNav">
+                    <a href="admin_subscription.php">Subscriptions List</a>
+                    <a href="admin_ano_story.php">Anonymous Stories</a>
+                </div>
             </div>
             <div class="pageList">
                 <div class="pgImg">

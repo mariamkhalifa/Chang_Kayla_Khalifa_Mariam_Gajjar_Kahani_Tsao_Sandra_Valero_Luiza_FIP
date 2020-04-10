@@ -1,0 +1,144 @@
+.userCMS {
+    #faq {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        .faqForm {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5%;
+            h2 {
+                font-size: 25px;
+                margin-bottom: 3%;
+            }
+            input, textarea {
+                border: $dark-blue 1px solid;
+                font-family: 'Oswald', "Roboto", sans-serif;
+                margin-bottom: 3%;
+                font-size: 15px;
+            }
+            textarea {
+                resize: none;
+                height: 80px;
+            }
+            label {
+                font-family: 'Teko', Impact, sans-serif; 
+                font-size: 20px;
+            }
+            input[type=submit] {
+                width: 100%;
+                background-color: $blue;
+                color: white;
+                &:hover {
+                    color: $grey;
+                    transition: all ease 0.3s;
+                }
+            }
+            .DandS {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                input[type=submit] {
+                    width: 30%;
+                    background-color: $blue;
+                    color: white;
+                    &:hover {
+                        color: $grey;
+                        transition: all ease 0.3s;
+                    }
+                }
+            }
+        }
+        #faqList {
+            h2 {
+                font-size: 25px;
+                margin-top: 3%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .userCMS {
+        #faq {
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 3%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .faqForm {
+                width: 45%;
+                h2 {
+                    font-size: 30px;
+                }
+                input, textarea {
+                    margin-bottom: 3%;
+                    font-size: 18px;
+                }
+                textarea {
+                    height: 120px;
+                }
+                label {
+                    font-size: 22px;
+                }
+                input[type=submit] {
+                    font-size: 20px;
+                }
+                .DandS {
+                    input[type=submit] {
+                        width: 40%;
+                        font-size: 20px;
+                    }
+                }
+            }
+            #faqList {
+                width: 45%;
+                h2 {
+                    font-size: 30px;
+                    margin-top: 0%;
+                    margin-bottom: 3%;
+                }
+                .faqForm {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userCMS {
+        #faq {
+            .faqForm {
+                margin-bottom: 3%;
+                h2 {
+                    font-size: 35px;
+                }
+                textarea {
+                    height: 150px;
+                }
+                label {
+                    font-size: 25px;
+                }
+                input[type=submit] {
+                    font-size: 22px;
+                }
+                textarea {
+                    margin-bottom: 5%;
+                }
+                .DandS {
+                    input[type=submit] {
+                        font-size: 22px;
+                    }
+                }
+            }
+            #faqList {
+                h2 {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}

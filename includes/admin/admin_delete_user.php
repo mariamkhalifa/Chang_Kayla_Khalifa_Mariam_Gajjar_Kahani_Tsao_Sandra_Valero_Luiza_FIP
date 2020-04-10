@@ -36,7 +36,7 @@
 <body>
     <div class="userCMS">
         <div id="deleteT">
-            <h2>Delete User</h2><p><a href="index.php">Go Back</a></p>
+            <h2>Delete User</h2><p><a href="admin_user_page.php">Go Back</a></p>
             <?php echo !empty($message)?$message:'';?>
             <table>
                 <thead>

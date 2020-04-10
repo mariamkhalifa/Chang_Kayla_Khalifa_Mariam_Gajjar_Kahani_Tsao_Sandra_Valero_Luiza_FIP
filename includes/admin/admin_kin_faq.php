@@ -46,18 +46,18 @@
         <header>
             <h1>Edit FAQ Page</h1>
         <?php include '../template/header.php'; ?>
-        <a href="index.php"><-Back to Dashboard</a>
+        <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <section id="faq">
-            <h2>Add new question and answer!</h2>
-            <form action="admin_kin_faq.php" method="post" id="faqForm">
+            <form action="admin_kin_faq.php" method="post" class="faqForm">
+                <h2>Add new question and answer!</h2>
                 <label for="q">Question:</label>
                 <input type="text" name="q" value="" required>
                 <label for="a">Answer:</label>
                 <textarea name="a" required></textarea>
-                <input type="submit" name="submit-new-faq" class="submit">
+                <input type="submit" name="submit-new-faq" value="Add">
             </form>
             <div id="faqList">
-                <h3>FAQ List:</h3>
+                <h2>FAQ List:</h2>
                 <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
                 <form action="admin_kin_faq.php" method="post" class="faqForm">
                     <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
@@ -65,8 +65,10 @@
                     <input type="text" name="q" value="<?php echo $row['question'];?>">
                     <label for="a">Answer:</label>
                     <textarea name="a"><?php echo $row['answer'];?></textarea>
-                    <input type="submit" name="submit-faq" value="Save">
-                    <input type="submit" name="delete-faq" value="Delete">
+                    <div class="DandS">
+                        <input type="submit" name="delete-faq" value="Delete">
+                        <input type="submit" name="submit-faq" value="Save">
+                    </div>
                 </form>
                 <?php endwhile;?>
             </div>
