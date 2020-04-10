@@ -98,7 +98,7 @@
         <header>
             <h1>Edit Home Page</h1>
         <?php include '../template/header.php'; ?>
-        <a href="index.php"><-Back to Dashboard</a>
+        <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <div class="homeNav">
             <a href="admin_kin_home.php?#hero">Hero Section</a>
             <a href="admin_kin_home.php?#about">About Section</a>
@@ -108,51 +108,63 @@
         <?php echo !empty($message)?$message: ''; ?>
         <section id="hero">
             <h2>Hero Section:</h2>
-            <div class="row">
+            <div class="col">
                 <h3>Images:</h3>
                 <div class="imgRow">
                     <?php while($row = $getHero->fetch(PDO::FETCH_ASSOC)):?>
+                    <div class="imgs">
                         <img src="../../images/<?php echo $row['img'];?>" alt=" hero image <?php echo $row['img'];?>">
                         <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_hero&page=admin_kin_home.php">Edit</a>
+                    </div>
                     <?php endwhile;?>
                     <?php while($row = $getHeroAlt->fetch(PDO::FETCH_ASSOC)):?>
+                    <div class="imgs">
                         <img src="../../images/<?php echo $row['img'];?>" alt=" hero image <?php echo $row['img'];?>">
                         <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_hero_alt&page=admin_kin_home.php">Edit</a>
+                    </div>
                     <?php endwhile;?>
                 </div>
             </div>
-            <div class="row">
+            <div class="col">
                 <h3>Texts:</h3>
-                <?php while($row = $getHeroT->fetch(PDO::FETCH_ASSOC)):?>
-                <form action="admin_kin_home.php" method="post" class="textForm">
-                    <input class="hidden" type="text" name="tbl" value="tbl_hero">
-                    <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
-                    <input type="text" name="hText" value="<?php echo $row['text'];?>">
-                    <input type="text" name="hCText" value="<?php echo $row['cap_text'];?>">
-                    <input type="submit" name="submit-hero" value="Save">
-                </form>
-                <?php endwhile;?>
-                <?php while($row = $getHeroAltT->fetch(PDO::FETCH_ASSOC)):?>
-                <form action="admin_kin_home.php" method="post" class="textForm">
-                    <input class="hidden" type="text" name="tbl" value="tbl_hero_alt">
-                    <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
-                    <input type="text" name="hText" value="<?php echo $row['text'];?>">
-                    <input type="text" name="hCText" value="<?php echo $row['cap_text'];?>">
-                    <input type="submit" name="submit-hero" value="Save">
-                </form>
-                <?php endwhile;?>
+                <div class="rows">
+                    <div class="row">
+                        <?php while($row = $getHeroT->fetch(PDO::FETCH_ASSOC)):?>
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                            <input class="hidden" type="text" name="tbl" value="tbl_hero">
+                            <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
+                            <input type="text" name="hText" value="<?php echo $row['text'];?>">
+                            <input type="text" name="hCText" value="<?php echo $row['cap_text'];?>">
+                            <input type="submit" name="submit-hero" value="Save">
+                        </form>
+                        <?php endwhile;?>
+                    </div>
+                    <div class="row">
+                        <?php while($row = $getHeroAltT->fetch(PDO::FETCH_ASSOC)):?>
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                            <input class="hidden" type="text" name="tbl" value="tbl_hero_alt">
+                            <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
+                            <input type="text" name="hText" value="<?php echo $row['text'];?>">
+                            <input type="text" name="hCText" value="<?php echo $row['cap_text'];?>">
+                            <input type="submit" name="submit-hero" value="Save">
+                        </form>
+                        <?php endwhile;?>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="about">
             <h2>About Section:</h2>
-            <div class="row">
+            <div class="col">
                 <h3>Images:</h3>
                 <?php while($row = $getAbout->fetch(PDO::FETCH_ASSOC)):?>
+                <div class="aboutImg">
                     <img src="../../images/<?php echo $row['img'];?>" alt="about image <?php echo $row['img'];?>">
                     <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_about&page=admin_kin_home.php">Edit</a>
+                </div>
                 <?php endwhile;?>
             </div>
-            <div class="row">
+            <div class="col">
                 <h3>Texts:</h3>
                 <form action="admin_kin_home.php" method="post" class="textForm">
                 <?php while($row = $getAboutT->fetch(PDO::FETCH_ASSOC)):?>
@@ -166,7 +178,7 @@
         </section>
         <section id="video">
             <h2>Video Section:</h2>
-            <div class="row">
+            <div class="col">
                 <h3>Videos:</h3>
                 <form action="admin_kin_home.php" method="post" class="vidForm">
                 <?php while($row = $getVideo->fetch(PDO::FETCH_ASSOC)):?>
@@ -175,12 +187,13 @@
                         Sorry, your browser doesn't support embedded videos.
                     </video>
                     <input class="hidden" type="text" name="old_vid" value="<?php echo $row['video'];?>">
-                    <input type="file" name="video" value=""><p>(Note: this will erase your last video!)</p>
+                    <input type="file" name="video" value="">
+                    <p>(Note: this will erase your last video!)</p>
                     <input type="submit" value="Upload Video" name="submit-video">
                 <?php endwhile;?>
                 </form>
             </div>
-            <div class="row">
+            <div class="col">
                 <h3>Texts:</h3>
                 <form action="admin_kin_home.php" method="post" class="textForm">
                 <?php while($row = $getVideoT->fetch(PDO::FETCH_ASSOC)):?>
@@ -193,25 +206,34 @@
         </section>
         <section id="test">
             <h2>Test Location Section:</h2>
-            <div class="row">
+            <div class="col">
                 <h3>Texts:</h3>
-                <form action="admin_kin_home.php" method="post" class="textForm">
-                    <h4>Add new test location:</h4>
-                    <label for="name">Test location name:</label>
-                    <input type="text" name="name" value="">
-                    <label for="address">Address:</label>
-                    <input type="text" name="address" value="">
-                    <input type="submit" name="submit-test-new" value="Add">
-                </form>
-                <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
-                <form action="admin_kin_home.php" method="post" class="textForm">
-                    <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
-                    <input type="text" name="name" value="<?php echo $row['name'];?>">
-                    <input type="text" name="address" value="<?php echo $row['address'];?>">
-                    <input type="submit" name="submit-test" value="Save">
-                    <input type="submit" name="delete-test" value="Delete">
-                </form>
-                <?php endwhile;?>
+                <div class="rows">
+                    <div class="row">
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                            <h4>Add new test location:</h4>
+                            <label for="name">Test location name:</label>
+                            <input type="text" name="name" value="">
+                            <label for="address">Address:</label>
+                            <input type="text" name="address" value="">
+                            <input type="submit" name="submit-test-new" value="Add">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <h4>Exiting test locations:</h4>
+                        <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                            <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
+                            <input type="text" name="name" value="<?php echo $row['name'];?>">
+                            <input type="text" name="address" value="<?php echo $row['address'];?>">
+                            <div class="DandS">
+                                <input type="submit" name="delete-test" value="Delete">
+                                <input type="submit" name="submit-test" value="Save">
+                            </div>
+                        </form>
+                        <?php endwhile;?>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

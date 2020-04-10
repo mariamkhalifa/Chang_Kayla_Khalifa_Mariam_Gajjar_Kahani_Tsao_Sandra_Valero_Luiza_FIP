@@ -168,7 +168,7 @@ function editUser($id, $fname, $username, $password, $email){
                 );
                 if($updated_first){
                     // $_SESSION['set'] = '<p class="actions">You have set up the account sucessfully!</p>';
-                    redirect_to('index.php?set=You have set up the account sucessfully!');
+                    redirect_to('admin_user_page.php?set=You have set up the account sucessfully!');
                     // redirect_to('index.php');
                     // return '<p>You have signed up sucessfully! Please log in again.</p>';
                 }else{
@@ -190,7 +190,7 @@ function editUser($id, $fname, $username, $password, $email){
                 );
                 if($updated_single){
                     // $_SESSION['edited'] = '<p class="actions">You have edited the account sucessfully!</p>';
-                    redirect_to('index.php?edit=You have edited the account sucessfully!');
+                    redirect_to('admin_user_page.php?edit=You have edited the account sucessfully!');
                     // return '<p>You have updated sucessfully!</p>';
                 }else{
                     return 'Something went wrong with the update.';
@@ -209,7 +209,7 @@ function editUser($id, $fname, $username, $password, $email){
                 );
                 if($updated_single){
                     // redirect_to('index.php');
-                    redirect_to('index.php?edit=You have edited the account sucessfully!');
+                    redirect_to('admin_user_page.php?edit=You have edited the account sucessfully!');
                     // return '<p>You have updated sucessfully!</p>';
                 }else{
                     return 'Something went wrong with the update.';

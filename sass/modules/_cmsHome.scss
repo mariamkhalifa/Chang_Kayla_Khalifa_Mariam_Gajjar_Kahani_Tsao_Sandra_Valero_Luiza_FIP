@@ -1,0 +1,376 @@
+.userCMS {
+    .homeNav {
+        width: 100%;
+        background-color: $grey;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        a {
+            color: $copy-color;
+            font-family: 'Teko', Impact, sans-serif; 
+            &:hover {
+                color: $purple;
+                transition: ease all 0.3s;
+            }
+        }
+    }
+    #hero, #about, #video, #test {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 10%;
+        h2 {
+            font-size: 35px;
+        }
+        input, textarea {
+            border: $dark-blue 1px solid;
+            font-family: 'Oswald', "Roboto", sans-serif;
+        }
+        label {
+            font-family: 'Teko', Impact, sans-serif; 
+            font-size: 18px;
+        }
+        .col {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            h3 {
+                width: 100%;
+                font-size: 25px;
+                padding-bottom: 3%;
+                margin-bottom: 5%;
+                border-bottom: $blue solid 2px;
+            }
+            .imgRow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .imgs {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 50%;
+                    img {
+                        width: 70%;
+                    }
+                    a {
+                        font-size: 25px;
+                        color: $copy-color;
+                        text-align: center;
+                        &:hover {
+                            color: $purple;
+                            transition: ease all 0.3s;
+                        }
+                    }
+                }
+            }
+            .rows {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+            h4 {
+                font-size: 20px;
+                margin-bottom: 3%;
+                width: 80%;
+                margin-left: 10%;
+            }
+            .textForm {
+                width: 80%;
+                height: 100%;
+                margin-left: 10%;
+                margin-bottom: 3%;
+                display: flex;
+                flex-direction: column;
+                input {
+                    margin-bottom: 3%;
+                    width: 100%;
+                }
+                textarea {
+                    resize: none;
+                    height: 80px;
+                    margin-bottom: 1%;
+                }
+                input[type=submit] {
+                    width: 30%;
+                    background-color: $blue;
+                    color: white;
+                    margin-left: auto;
+                    &:hover {
+                        color: $grey;
+                        transition: all ease 0.3s;
+                    }
+                }
+                .DandS {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    input {
+                        margin-left: 2%;
+                    }
+                }
+                h4 {
+                    font-size: 20px;
+                    margin-bottom: 3%;
+                    margin-left: 0%;
+                }
+            }
+            .aboutImg{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    width: 50%;
+                }
+                a {
+                    font-size: 25px;
+                    color: $copy-color;
+                    text-align: center;
+                    &:hover {
+                        color: $purple;
+                        transition: ease all 0.3s;
+                    }
+                }
+            }
+            .vidForm {
+                width: 90%;
+                margin-left: 5%;
+                display: flex;
+                flex-direction: column;
+                video {
+                    margin-bottom: 3%;
+                }
+                input[type=file] {
+                    width: 100%;
+                }
+                p {
+                    text-align: right;
+                }
+                input[type=submit] {
+                    width: 50%;
+                    background-color: $blue;
+                    color: white;
+                    margin-left: auto;
+                    &:hover {
+                        color: $grey;
+                        transition: all ease 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    .imgbk {
+        font-size: 20px;
+        margin-left: 5%;
+        margin-top: 3%;
+        a {
+            color: $dark-blue;
+            &:hover {
+                color: $purple;
+                transition: ease all 0.3s;
+            }
+        }
+    }
+    .imgUpForm {
+        width: 80%;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+        .imgTop {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5%;
+            h2 {
+                font-size: 20px;
+                margin-bottom: 2%;
+            }
+            img {
+                width: 60%;
+                margin-left: 20%;
+            }
+        }
+        label {
+            font-family: 'Teko', Impact, sans-serif; 
+            font-size: 18px;
+        }
+        input {
+            border: $dark-blue 1px solid;
+            font-family: 'Oswald', "Roboto", sans-serif;
+        }
+        input[type=file] {
+            width: 100%;
+        }
+        input[type=submit] {
+            width: 40%;
+            margin-top: 5%;
+            background-color: $blue;
+            color: white;
+            margin-left: auto;
+            &:hover {
+                color: $grey;
+                transition: all ease 0.3s;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .userCMS {
+        .homeNav {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-top: 2%;
+            margin-bottom: 3%;
+            a {
+                font-size: 25px;
+            }
+        }
+        #hero, #about, #video, #test {
+            margin-bottom: 5%;
+            h2 {
+                font-size: 40px;
+            }
+            .col {
+                h3 {
+                    width: 90%;
+                    margin-left: 5%;
+                    font-size: 32px;
+                    padding-bottom: 2%;
+                    margin-bottom: 3%;
+                }
+                .imgRow {
+                    .imgs {
+                        width: 30%;
+                        a {
+                            font-size: 30px;
+                        }
+                    }
+                }
+                .rows {
+                    flex-direction: row;
+                    .row {
+                        width: 50%;
+                    }
+                }
+                h4 {
+                    font-size: 25px;
+                }
+                .textForm {
+                    height: 30%;
+                    h4 {
+                        font-size: 25px;
+                    }
+                }
+                .aboutImg{
+                    width: 100%;
+                    img {
+                        width: 30%;
+                    }
+                    a {
+                        font-size: 30px;
+                    }
+                }
+                .vidForm {
+                    width: 80%;
+                    margin-left: 10%;
+                    video {
+                        margin-bottom: 3%;
+                        width: 50%;
+                        align-self: center;
+                    }
+                    p {
+                        font-size: 20px;
+                    }
+                    input[type=submit] {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+        .imgbk {
+            margin-top: 1%;
+        }
+        .imgUpForm {
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 3%;
+            .imgTop {
+                margin-bottom: 3%;
+                h2 {
+                    font-size: 30px;
+                }
+            }
+            label {
+                font-size: 20px;
+            }
+            input {
+                font-size: 18px;
+            }
+            input[type=submit] {
+                width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userCMS {
+        .homeNav {
+            a {
+                font-size: 30px;
+            }
+        }
+        #hero, #about, #video, #test {
+            margin-bottom: 3%;
+            h2 {
+                font-size: 45px;
+            }
+            .col {
+                h3 {
+                    font-size: 35px;
+                    padding-bottom: 1%;
+                }
+                .imgRow {
+                    .imgs {
+                        width: 30%;
+                        a {
+                            font-size: 35px;
+                        }
+                    }
+                }
+                .rows {
+                    justify-content: space-evenly;
+                    .row {
+                        width: 40%;
+                    }
+                }
+                h4 {
+                    font-size: 30px;
+                }
+                .textForm {
+                    h4 {
+                        font-size: 30px;
+                    }
+                }
+                .aboutImg{
+                    a {
+                        font-size: 35px;
+                    }
+                }
+                .vidForm {
+                    width: 70%;
+                    margin-left: 15%;
+                }
+            }
+        }
+        .imgUpForm {
+            margin-top: 2%;
+        }
+    }
+}

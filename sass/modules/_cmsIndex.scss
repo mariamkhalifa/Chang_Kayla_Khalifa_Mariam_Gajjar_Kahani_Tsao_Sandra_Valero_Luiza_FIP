@@ -1,0 +1,126 @@
+.userCMS {
+    #cmsIndex {
+        .topBar {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 5%;
+            h3 {
+                width: 100%;
+                text-align: center;
+                background-color: $grey;
+                padding-top: 2%;
+                padding-bottom: 2%;
+                font-size: 20px;
+            }
+            .subNav {
+                border-bottom: $copy-color 1px solid;
+                padding: 3%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                a {
+                    color: $dark-blue;
+                    &:hover {
+                        color: $purple;
+                        transition: all 0.5s ease;
+                    }
+                }
+            }
+        }
+        .pageList {
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            .pgImg {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 5%;
+                img {
+                    width: 50%;
+                    margin-bottom: 3%;
+                }
+                a {
+                    color: $copy-color;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .userCMS {
+        #cmsIndex {
+            .topBar {
+                flex-direction: row;
+                h3 {
+                    width: 40%;
+                    padding-top: 2%;
+                    padding-bottom: 2%;
+                    font-size: 25px;
+                }
+                .subNav {
+                    width: 60%;
+                    padding: 2%;
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .pageList {
+                width: 90%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                .pgImg {
+                    width: 50%;
+                    margin-bottom: 8%;
+                    height: 220px;
+                    justify-content: space-between;
+                    img {
+                        width: 60%;
+                    }
+                    a {
+                        font-size: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .userCMS {
+        #cmsIndex {
+            .topBar {
+                h3 {
+                    padding-top: 1%;
+                    padding-bottom: 1%;
+                    font-size: 30px;
+                }
+                .subNav {
+                    padding: 1%;
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+            .pageList {
+                .pgImg {
+                    width: 50%;
+                    margin-bottom: 10%;
+                    height: 250px;
+                    img {
+                        width: 50%;
+                    }
+                    a {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

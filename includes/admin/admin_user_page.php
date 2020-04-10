@@ -42,24 +42,26 @@
             <?php echo !empty($create)?$create: ''; ?>
             <?php echo !empty($set)?$set: ''; ?>
             <?php echo !empty($edit)?$edit: ''; ?>
-            <main id="dashP">
+            <main>
                 <h2>Users list:</h2>
-                <?php while($row = $getUsers->fetch(PDO::FETCH_ASSOC)):?>
-                <div class="users-list">
-                    <h3><?php echo $row['user_fname'];?></h3>
-                    <p>Username: <?php echo $row['user_name'];?></p>
-                    <h4>Email:</h4>
-                    <p><?php echo $row['user_email'];?></p>
-                    <h4>Last Logged In Time:</h4>
-                    <p><?php echo $row['user_lastlogin'];?></p>
-                    <h4>Account locked?</h4>
-                    <p><?php echo $row['user_locked'];?></p>
-                    <h4>Account suspended?</h4>
-                    <p><?php echo $row['user_sus'];?></p>
-                    <h4>IP Address:</h4>
-                    <p><?php echo $row['user_ip'];?></p>
+                <div id="dashP">
+                    <?php while($row = $getUsers->fetch(PDO::FETCH_ASSOC)):?>
+                    <div class="users-list">
+                        <h3><?php echo $row['user_fname'];?></h3>
+                        <p>Username: <?php echo $row['user_name'];?></p>
+                        <h4>Email:</h4>
+                        <p><?php echo $row['user_email'];?></p>
+                        <h4>Last Logged In Time:</h4>
+                        <p><?php echo $row['user_lastlogin'];?></p>
+                        <h4>Account locked?</h4>
+                        <p><?php echo $row['user_locked'];?></p>
+                        <h4>Account suspended?</h4>
+                        <p><?php echo $row['user_sus'];?></p>
+                        <h4>IP Address:</h4>
+                        <p><?php echo $row['user_ip'];?></p>
+                    </div>
+                    <?php endwhile;?>
                 </div>
-                <?php endwhile;?>
             </main>
         </div>
     </div>
