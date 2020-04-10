@@ -73,5 +73,6 @@ export default {
         questioncard: QuestionCardComponent,
         infolink: LinkComponent,
         faq: FAQComponent
-    }
+    },
+
 }

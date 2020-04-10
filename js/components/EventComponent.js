@@ -1,5 +1,5 @@
 export default {
-    props: ['day', 'month', 'img', 'time', 'name', 'desc', 'location', 'link' ],
+    props: ['day', 'month', 'img', 'time', 'name', 'des', 'location', 'link' ],
     
     template: `
     <section class="event-card">
@@ -15,7 +15,7 @@ export default {
         
         <p class="event-time">{{ time }}</p> 
         
-        <p class="event-desc">{{ desc }}</p> 
+        <p class="event-desc">{{ des }}</p> 
         
         <div class="event-location">
             <p>Location:</p>
@@ -26,6 +26,7 @@ export default {
             <p>See more information:</p>
             <a :href="link" target="_blank">{{ link }}</a> 
         </div>
+        
     </section>
     `
 }

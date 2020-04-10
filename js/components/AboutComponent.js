@@ -4,12 +4,9 @@ export default {
             <div class="about-top">
                 <div class="line"></div>
             </div>
-            <div class="about-img">
-                <picture>
-                    <source media="(min-width: 598px)" :srcset="about.largeimg">
-                    <img :src="about.smallimg" alt="girl">
-                </picture>
-            </div>
+
+            <div class="about-img"><img :src="'images/' + about.img" alt="girl"></div>
+            
             <div class="about-text">
                 <h3 class="main-heading">{{ about.heading }}</h3>
                 <ul>
@@ -23,13 +20,33 @@ export default {
     data() {
         return {
             about: {
-                heading: `What's HIV Neutral?`,
-                text1: 'We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.',
-                text2: 'Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV.',
+                heading: ``,
+                text1: '',
+                text2: '',
                 textbold: ` Let's Keep It Neutral.`,
-                smallimg: 'images/girl3.jpg',
-                largeimg: 'images/girl7.jpg'
+                img: '',
             },
+        }
+    },
+
+    created: function() {
+        this.fetchAbout();
+    },
+
+    methods: {
+        fetchAbout() {
+            let url = './includes/admin/ajax.php?about=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.about.heading = data[0].heading;
+                this.about.text1 = data[0].p;
+                this.about.text2 = data[0].p_sub;
+                this.about.img = data[0].img;
+            })
+            .catch((err) => console.log(err))
         }
     }
 }

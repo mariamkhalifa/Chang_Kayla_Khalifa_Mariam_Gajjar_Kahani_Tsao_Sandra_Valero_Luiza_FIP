@@ -19,15 +19,35 @@ export default {
 
     data() {
         return {
-            locations: [
-                { name: 'Regional HIV/AIDS Connections', address: '186 King St #30 London, ON N6A 1C7'},
-                { name: 'London InterCommunity Health Centre', address: '659 Dundas St London, ON N5W 2Z1'},
-                { name: 'Anova', address: '101 Wellington Rd London, ON N6C 4M7'},
-            ]
+            // locations: [
+            //     { name: 'Regional HIV/AIDS Connections', address: '186 King St #30 London, ON N6A 1C7'},
+            //     { name: 'London InterCommunity Health Centre', address: '659 Dundas St London, ON N5W 2Z1'},
+            //     { name: 'Anova', address: '101 Wellington Rd London, ON N6C 4M7'},
+            // ]
+
+            locations: []
         }
     },
 
     components: {
         location: LocationComponent
+    },
+
+    created: function() {
+        this.fetchLocations();
+    },
+
+    methods: {
+        fetchLocations() {
+            let url = './includes/admin/ajax.php?location=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.locations = data;
+            })
+            .catch((err) => console.log(err))
+        }
     }
 }
