@@ -11,7 +11,7 @@ export default {
                 <p>{{ contactintro.text }} &#9786;</p>
             </section>
 
-            <form class="cont-form" action="" method="post">
+            <form class="cont-form" action="includes/contact/contact_form.php" method="post">
                 <label for="name">{{ formlabel.name }}</label>
                 <input id="name" name="name" type="text" required>
 
@@ -24,7 +24,7 @@ export default {
                 <label for="msg">{{ formlabel.message }}</label>
                 <textarea id="msg" name="msg" type="text"  rows="10" required></textarea>
 
-                <input id="contact-submit" type="submit" value="submit">
+                <input id="contact-submit" type="submit" name="submit value="submit">
             </form>
 
             <section class="info">

@@ -1,5 +1,16 @@
 <?php
 
+function greeting() {
+    $nowtime = date("G");
+    if($nowtime <= 10 && $nowtime >= 0){
+        return 'Good morning';
+    }else if($nowtime >= 11 && $nowtime <= 17){
+        return 'Good afternoon';
+    }else{
+        return 'Good evening';
+    }
+}
+
 function getAll($tbl) {
     $pdo = Database::getInstance()->getConnection();
 
@@ -167,8 +178,8 @@ function addTestLocation($name, $address) {
     $pdo = Database::getInstance()->getConnection();
 
     $insert_new_query = "INSERT INTO tbl_test_location (name, address) VALUES (:name, :address);";
-    $user_add = $pdo->prepare($insert_new_query);
-    $result = $user_add->execute(
+    $test_add = $pdo->prepare($insert_new_query);
+    $result = $test_add->execute(
         array(
             ':name'=>$name,
             ':address'=>$address
