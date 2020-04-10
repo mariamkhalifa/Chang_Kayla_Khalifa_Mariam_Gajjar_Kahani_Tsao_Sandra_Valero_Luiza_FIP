@@ -1,11 +1,19 @@
 // intro
+.comm-page {
+    position: relative;
+}
+
+.comm-banner {
+    position: absolute;
+    top: 0;
+}
+
 .comm-intro {
     text-align: center;
-    position: relative;
     margin-left: 30px;
     margin-right: 30px;
-    margin-top: 40%;
-    h2 {
+    padding-top: 40%;
+    .main-heading {
         color: $blue;
         margin: 0 10vw;
     }
@@ -15,9 +23,7 @@
     }
 }
 
-.comm-banner {
-    position: absolute;
-}
+
 
 // events
 
@@ -27,7 +33,7 @@
     margin-left: 60px;
     @include col;
     align-items: center;
-    h2 {
+    .sub-heading {
         color: $blue;
         text-align: center;
     }
@@ -100,27 +106,33 @@
     @include col;
     align-items: center;
     margin-top: 100px;
-    margin-right: 60px;
-    margin-left: 60px;
-    h2 {
+    margin-right: 30px;
+    margin-left: 30px;
+    .sub-heading {
         color: $blue;
         text-align: center;
     }
 }
 
-.insta-feed {
+.insta-feed-wrapper {
     margin-top: 40px;
     @include col;
     align-items: center;
 }
 
-.comm-img {
-    width: 300px;
+.insta-feed-group {
+    @include col;
 }
+
+// .comm-img {
+//     width: 300px;
+// }
 
 .comm-img, .quote {
     margin-top: 40px;
     cursor: pointer;
+    height: 250px;
+    width: 300px;
 }
 
 .quote {
@@ -128,8 +140,6 @@
     @include col;
     align-items: center;
     border-radius: 10px;
-    height: 310px;
-    width: 300px;
     position: relative;
     p {
         margin-top: 50px;
@@ -156,37 +166,44 @@
     bottom: 30px;
 }
 
-.comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
-.comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
-.quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
+// .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
+// .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
+// .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
+//     display: none;
+// }
+
+.insta-feed-group:nth-of-type(4),
+.insta-feed-group:nth-of-type(5),
+.insta-feed-group:nth-of-type(6),
+.insta-feed-group:nth-of-type(7) {
     display: none;
 }
 
-.quote:first-of-type {
+.insta-feed-group:first-of-type .quote{
     background: url(../images/quote1.png) no-repeat;
 }
 
-.quote:nth-of-type(2) {
+.insta-feed-group:nth-of-type(2) .quote {
     background: url(../images/quote2.png) no-repeat;
 }
 
-.quote:nth-of-type(3) {
+.insta-feed-group:nth-of-type(3) .quote {
     background: url(../images/quote3.png) no-repeat;
 }
 
-.quote:nth-of-type(4) {
+.insta-feed-group:nth-of-type(4) .quote {
     background: url(../images/quote4.png) no-repeat;
 }
 
-.quote:nth-of-type(5) {
+.insta-feed-group:nth-of-type(5) .quote {
     background: url(../images/quote5.png) no-repeat;
 }
 
-.quote:nth-of-type(6) {
+.insta-feed-group:nth-of-type(6).quote {
     background: url(../images/quote6.png) no-repeat;
 }
 
-.quote:nth-of-type(7) {
+.insta-feed-group:nth-of-type(7) .quote {
     background: url(../images/quote7.png) no-repeat;
 }
 
@@ -207,7 +224,7 @@
     @include col;
     align-items: center;
     text-align: center;
-    h2 {
+    .sub-heading {
         color: $blue;
     }
     p {
@@ -267,7 +284,7 @@
     @include col;
     align-items: center;
     text-align: center;
-    h2 {
+    .sub-heading {
         color: $blue;
     }
     p {
@@ -295,26 +312,23 @@
 @media screen and (min-width: 450px) {
     .comm-intro {
         //margin-top: 40%;
-        h2 {
-            margin: 0 15vw;
-        }
+        .main-heading { margin: 0 15vw; }
     }
 }
 
 @media screen and (min-width: 420px) {
     .more-community {
-        h2 {
+        .sub-heading {
             margin-right: 10%;
             margin-left: 10%;
         }
     }
-    .comm-img {
+    .comm-img, .quote {
         width: 380px;
+        height: 310px;
     }
 
     .quote {
-        width: 380px;
-        height: 310px;
         p {
             margin-top: 60px;
         }
@@ -328,12 +342,10 @@
 @media screen and (min-width: 700px) {
     .comm-intro {
         text-align: left;
-        margin-top: 30%;
+        padding-top: 30%;
         margin-left: 50px;
         margin-right: 40vw;
-        h2 {
-            margin: 0;
-        }
+        .main-heading { margin: 0; }
         p {
             margin-right: 0;
             margin-left: 0;
@@ -344,16 +356,15 @@
         margin-left: 150px;
         margin-right: 150px;
     }
+}
 
-    .insta-feed {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 30px;
-        margin: 40px 30px;
+@media screen and (min-width: 768px ) {
+    .insta-feed-group {
+        @include row;   
     }
 
     .comm-img, .quote {
-        margin: 0;
+        margin: 15px;
         width: 300px;
         height: 250px;
     }
@@ -433,18 +444,47 @@
         grid-gap: 5vw;
     }
 
-    .insta-feed {
+    // .insta-feed-wrapper {
+    //     grid-template-columns: repeat(3,1fr);
+    // }
+
+    // .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
+    // .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
+    // .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
+    //     display: flex;
+    // }
+
+    
+}
+
+@media screen and (min-width: 1060px) {
+    .insta-feed-wrapper {
+        // @include row;
+        // justify-content: space-evenly;
+        // flex-wrap: wrap;
+        // max-width: 95%;
+        display: grid;
         grid-template-columns: repeat(3,1fr);
+        //grid-gap: 5vw;
     }
 
-    .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
-    .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
-    .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
-        display: flex;
+    .insta-feed-group {
+        @include col;
+    }
+
+    .insta-feed-group:nth-of-type(4),
+    .insta-feed-group:nth-of-type(5),
+    .insta-feed-group:nth-of-type(6) {
+        @include col;
+    }
+
+    .insta-feed-group:nth-of-type(even) {
+        .comm-img { order: 2 }
     }
 
     .comm-img, .quote {
-        margin: 0;
+        margin: 2vw;
+        //margin: 0;
         width: 300px;
         height: 250px;
     }
@@ -466,7 +506,11 @@
     }
 }
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1300px) {
+    // .insta-feed-wrapper {
+    //     max-width: 100%;
+    // }
+
     .comm-img, .quote {
         width: 380px;
         height: 310px;
@@ -488,13 +532,13 @@
         }
     }
 
-    .quote:nth-of-type(5) {
+    .insta-feed-group:nth-of-type(5) .quote {
         p {
             margin-top: 30px;
         }
     }
 
-    .quote:nth-of-type(7) {
+    .insta-feed-group:nth-of-type(7) .quote {
         p {
             margin-top: 80px;
         }

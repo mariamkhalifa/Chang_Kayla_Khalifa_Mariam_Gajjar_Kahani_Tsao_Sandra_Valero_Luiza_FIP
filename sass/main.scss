@@ -76,6 +76,12 @@ li {
 
 .main-heading {
     font-size: 2em;
+    text-transform: capitalize;
+}
+
+.sub-heading {
+    font-size: 1.8em;
+    text-transform: capitalize;
 }
 
 .button {
@@ -100,6 +106,10 @@ li {
         font-size: 2.2em;
     }
 
+    .sub-heading {
+        font-size: 2em;
+    }
+
     p {
         font-size: 1.1em;
     }
@@ -109,9 +119,15 @@ li {
     .main-heading {
         font-size: 2.5em;
     }
+
+    .sub-heading {
+        font-size: 2.3em;
+    }
+
     p {
         font-size: 1.5em;
     }
+
     ::placeholder {
         font-size: 1em;
     }
