@@ -47,6 +47,7 @@
             <h1>Edit FAQ Page</h1>
         <?php include '../template/header.php'; ?>
         <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
+        <?php echo !empty($message)?$message: ''; ?>
         <section id="faq">
             <form action="admin_kin_faq.php" method="post" class="faqForm">
                 <h2>Add new question and answer!</h2>
@@ -61,7 +62,7 @@
                 <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
                 <form action="admin_kin_faq.php" method="post" class="faqForm">
                     <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
-                    <label for="q">Question <?php echo $row['id'];?>:</label>
+                    <label for="q">Question ID <?php echo $row['id'];?>:</label>
                     <input type="text" name="q" value="<?php echo $row['question'];?>">
                     <label for="a">Answer:</label>
                     <textarea name="a"><?php echo $row['answer'];?></textarea>
