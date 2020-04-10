@@ -14,6 +14,9 @@
     } else if(!empty($_GET['updatedE'])) {
         $msg = $_GET['updatedE'];
         $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedImg'])){
+        $msg = $_GET['updatedImg'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
     }
 
     if(isset($_POST['submit-event-new'])) {
@@ -64,7 +67,7 @@
         <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <?php echo !empty($message)?$message: ''; ?>
         <section id="event">
-            <form action="admin_kin_home.php" method="post" class="eventForm">
+            <form action="admin_kin_community.php" method="post" class="eventForm" enctype="multipart/form-data">
                 <h2>Add new event:</h2>
                 <label for="img">Please upload cover image:*</label>
                 <input type="file" name="img" value="" reuqired>
@@ -125,26 +128,26 @@
                     <option value="31">31</option>
                 </select>
                 <label for="time">Time:</label>
-                <input type="text" name="time" value="" placeholder="'Monday & Tuesday, 1 PM - 3 PM', or '4 PM - 5 PM' required>
+                <input type="text" name="time" value="" placeholder="'Monday & Tuesday, 1 PM - 3 PM', or '4 PM - 5 PM'" required>
                 <label for="des">Description:</label>
                 <textarea name="des"></textarea>
                 <label for="link">Link:</label>
-                <input type="url" name="link" value="">
+                <input type="text" name="link" value="">
                 <p>* required</p>
                 <input type="submit" name="submit-event-new" value="Create Event">
             </form>
             <div id="eventList">
                 <h2>Edit events:</h2>
                 <?php while($row = $getEvent->fetch(PDO::FETCH_ASSOC)):?>
-                <form action="admin_kin_home.php" method="post" class="eventForm">
+                <form action="admin_kin_community.php" method="post" class="eventForm">
                     <input class="hidden" type="text" name="id" value="<?php echo $row['id'];?>">
                     <h3>Current Image:</h3>
                     <img src="../../images/<?php echo $row['img'];?>" alt="event image <?php echo $row['img'];?>">
                     <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_event&page=admin_kin_community.php">Edit</a>
                     <label for="name">Event name:</label>
                     <input type="text" name="name" value="<?php echo $row['heading'];?>">
-                    <label for="address">Event location:</label>
-                    <input type="text" name="address" value="<?php echo $row['location'];?>">
+                    <label for="location">Event location:</label>
+                    <input type="text" name="location" value="<?php echo $row['location'];?>">
                     <label for="month">Month or event type:</label>
                     <select name="month" id="month">
                         <option value="<?php echo $row['month'];?>"><?php echo $row['month'];?></option>
@@ -202,9 +205,9 @@
                     <label for="des">Description:</label>
                     <textarea name="des"><?php echo $row['des'];?></textarea>
                     <label for="link">Link:</label>
-                    <input type="url" name="link" value="<?php echo $row['link'];?>">
+                    <input type="text" name="link" value="<?php echo $row['link'];?>">
                     <div class="DandE">
-                    <input type="submit" name="delete-event" value="Delete Event">
+                        <input type="submit" name="delete-event" value="Delete Event">
                         <input type="submit" name="submit-event" value="Edit Event">
                     </div>
                 </form>

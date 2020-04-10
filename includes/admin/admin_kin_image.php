@@ -11,16 +11,17 @@
         $message = 'Cannot get the image info.';
     }
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['submit-img'])) {
         $id = trim($_POST['id']);
         $img = $_FILES['img'];
         $tbl = trim($_POST['tbl']);
-        $message = updateImg($id, $img, $tbl);
-    }
-
-    if(!empty($_GET['updatedImg'])){
-        $msg = $_GET['updatedImg'];
-        $message = '<p class="updateMsg">'.$msg.'</p>';
+        $page = trim($_POST['page']);
+        
+        if ($_FILES['img']['size'] == 0 && $_FILES['img']['error'] > 0) {
+            $message = 'image required';
+        } else {
+            $message = updateImg($id, $img, $tbl, $page);
+        }
     }
 
 ?>
@@ -37,7 +38,7 @@
         <?php include '../template/header.php'; ?>
         <?php echo !empty($message)?$message: ''; ?>
         <p class="imgbk"><a href="<?php echo $page;?>"><-Go Back</a></p>
-        <form action="admin_kin_image.php" method="post" class="imgUpForm">
+        <form action="admin_kin_image.php" method="post" class="imgUpForm" enctype="multipart/form-data">
             <?php while($row = $getSingleImg->fetch(PDO::FETCH_ASSOC)):?>
             <div class="imgTop">
                 <h2>Current Image:</h2>
@@ -46,9 +47,10 @@
             <label for="img">Upload new image: </label>
             <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
             <input class="hidden" type="text" name="tbl" value="<?php echo $tbl;?>">
-            <input type="file" name="img" value="">
-            <input type="submit" name="submit" value="Upload Image">
+            <input class="hidden" type="text" name="page" value="<?php echo $page;?>">
             <?php endwhile;?>
+            <input type="file" name="img" value="">
+            <input type="submit" name="submit-img" value="Upload Image">
         </form>
         </div>
     </div>

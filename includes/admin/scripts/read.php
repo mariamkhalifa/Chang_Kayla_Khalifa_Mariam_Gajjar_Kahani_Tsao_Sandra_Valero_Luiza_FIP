@@ -65,27 +65,29 @@ function newStory($story) {
 
     $story_words = explode(' ', $story);
 
-    for ($i=0; $i < count($story_words); ++$i) {
+    // $words = array_chunk($story_words, 1);
 
-        $word = $story_words[$i];
-        $check_word = strtolower($word[$i]);
+    // $check_word = array_map('strtolower', $story_words);
 
-        if($check_word == 'fuck' || $check_word == 'shit' || $check_word == 'dick' || $check_word = 'bitch' || $check_word == 'motherfucker'){
-            return '<p class="storyRe">Please be nice when choosing words to use.</p>';
-        }else{
-            $insert_story_query = "INSERT INTO tbl_story (story) VALUES (:story);";
-            $story_add = $pdo->prepare($insert_story_query);
-            $result = $story_add->execute(
-                array(
-                    ':story'=>$story
-                )
-            );
-            
-            if($result){
-                return '<p class="storyRe">Thank you for sharing your story with us!</p>';
-            } else {
-                return '<p class="storyRe">Something went wrong with the story form.</p>';
-            }
+    $check_word = array_change_key_case($story_words, CASE_LOWER);
+
+    // $check_word = array(strtolower(implode($words)));
+
+    if(in_array('fuck', $check_word) || in_array('shit', $check_word) || in_array('dick', $check_word) || in_array('bitch', $check_word) || in_array('motherfucker', $check_word)){
+        return '<p class="storyRe">Please be nice when choosing words to use.</p>';
+    }else{
+        $insert_story_query = "INSERT INTO tbl_story (story) VALUES (:story);";
+        $story_add = $pdo->prepare($insert_story_query);
+        $result = $story_add->execute(
+            array(
+                ':story'=>$story
+            )
+        );
+        
+        if($result){
+            return '<p class="storyRe">Thank you for sharing your story with us!</p>';
+        } else {
+            return '<p class="storyRe">Something went wrong with the story form.</p>';
         }
     }
 
