@@ -1,0 +1,153 @@
+.facts-wrapper {
+    position: relative;
+}
+
+.facts-banner {
+    position: absolute;
+    top: 0;
+}
+
+.facts-main {
+    // position: relative;
+    // top: -50px;
+    padding-top: 40%;
+}
+
+.facts-faq {
+    margin-top: 0;
+    .main-heading {
+        color: $green;
+        max-width: 250px;
+    }
+    p:first-of-type { max-width: 500px; }
+    a { display: none; }
+}
+
+.facts-links {
+    @include col;
+    align-items: center;
+    margin-top: 80px;
+    margin-right: 30px;
+    margin-left: 30px;
+    text-align: center;
+    .sub-heading { color: $green; }
+    p { margin-top: 30px; max-width: 500px; }
+    ul {
+        @include col;
+        align-items: center;
+    }
+}
+
+.info-links {
+    @include col;
+    align-items: center;
+    margin-top: 60px;
+    img {
+        width: 70%;
+    }
+    a {
+        color: $dark-blue;
+        font-size: .8em;
+        margin-top: 20px;
+    }
+}
+
+.facts-more {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    @include col;
+    align-items: center;
+    text-align: center;
+    .sub-heading { color: $green; }
+    p { margin-top: 30px; }
+    img { 
+        width: 50%;
+        max-width: 200px;
+        margin-top: 40px; 
+    }
+    .button {
+        margin-top: 40px;
+        background-color: $green;
+    }
+}
+
+// @media screen and (min-width: 420px) {
+//     .facts-main { top: -70px; }
+// }
+
+// @media screen and (min-width: 520px) {
+//     .facts-main { top: -90px; }
+// }
+
+@media screen and (min-width: 600px) {
+    .facts-main { padding-top: 20%; }
+
+    .facts-faq {
+        .main-heading, p:first-of-type {
+            text-align: left;
+            align-self: start;
+            margin-left: 30px;
+            margin-right: 180px;
+        }
+        .main-heading { max-width: 100%; }
+        .faq-card { 
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+    }
+
+    .facts-links {
+        img { width: 80%; }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .facts-main { top: -200px; }
+
+    .facts-more {
+        img { 
+            margin-top: 60px; 
+        }
+        .button {
+            margin-top: 60px;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .facts-main { top: -250px; }
+
+    .faq-card:first-of-type { margin-top: 100px; }
+}
+
+@media screen and (min-width: 900px) {
+    .facts-links {
+        margin-top: 120px;
+        ul {
+            // @include row;
+            // justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+            grid-gap: 30px;
+            height: 70%;
+        }
+    }
+
+    .info-links {
+        //img { width: auto; height: 3%; }
+        justify-content: end;
+    }
+
+    .facts-more {
+        margin-top: 140px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .facts-main { top: -300px; }
+
+    .faq-card:first-of-type { margin-top: 100px; }
+}

@@ -90,4 +90,5 @@ function newStory($story) {
             return '<p class="storyRe">Something went wrong with the story form.</p>';
         }
     }
+
 }

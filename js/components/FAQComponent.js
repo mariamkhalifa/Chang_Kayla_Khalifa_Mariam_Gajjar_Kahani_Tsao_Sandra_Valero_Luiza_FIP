@@ -18,16 +18,36 @@ export default {
 
     data() {
         return {
-            faqdata: [
-                { question: "What's HIV? What's the difference between HIV and AIDS?",
-                  answer: `HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.`},
-                { question: "How can I get HIV?",
-                  answer: "HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status." },
-            ],
+            // faqdata: [
+            //     { question: "What's HIV? What's the difference between HIV and AIDS?",
+            //       answer: `HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.`},
+            //     { question: "How can I get HIV?",
+            //       answer: "HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status." },
+            // ],
+
+            faqdata: []
         }
     },
 
     components: {
         questioncard: QuestionCardComponent
+    },
+
+    created: function() {
+        this.fetchFaq();
+    },
+
+    methods: {
+        fetchFaq() {
+            let url = './includes/admin/ajax.php?faq=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.faqdata = data;
+            })
+            .catch((err) => console.log(err))
+        }
     }
 }
