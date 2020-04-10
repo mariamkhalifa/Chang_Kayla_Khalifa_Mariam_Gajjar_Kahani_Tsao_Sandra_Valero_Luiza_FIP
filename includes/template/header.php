@@ -4,7 +4,7 @@
             <h2 class="hidden">Main Navigation</h2>
             <ul>
                 <a href="index.php"><li>CMS Home Page</li></a>
-                <a href="../../index.php" target="_blank"><li>Keep It Neutral</li></a>
+                <a href="../../index.html" target="_blank"><li>Keep It Neutral</li></a>
                 <a href="admin_user_page.php"><li>User Settings</li></a>
                 <a href="admin_logout.php"><li>Log out</li></a>
             </ul>

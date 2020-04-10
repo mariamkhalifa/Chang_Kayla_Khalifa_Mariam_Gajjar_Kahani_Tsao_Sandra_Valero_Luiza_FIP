@@ -11,6 +11,9 @@
     } else if(!empty($_GET['deletedE'])) {
         $msg = $_GET['deletedE'];
         $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedE'])) {
+        $msg = $_GET['updatedE'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
     }
 
     if(isset($_POST['submit-event-new'])) {
