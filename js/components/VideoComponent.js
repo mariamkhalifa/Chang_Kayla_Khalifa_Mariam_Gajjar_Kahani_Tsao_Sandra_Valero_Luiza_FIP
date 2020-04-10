@@ -23,10 +23,30 @@ export default {
     data() {
         return {
             video: {
-                heading: 'Stories of HIV/AIDS',
-                text: 'Start by listening to real stories from people who speak openly about their experience with HIV/AIDS.',
+                heading: '',
+                text: '',
                 video: ''
             },
+        }
+    },
+
+    created: function() {
+        this.fetchVideo();
+    },
+
+    methods: {
+        fetchVideo() {
+            let url = './includes/admin/ajax.php?video=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.video.heading = data[0].heading;
+                this.video.text = data[0].p;
+                this.video.video = data[0].video;
+            })
+            .catch((err) => console.log(err))
         }
     }
 }
