@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 08, 2020 at 10:14 PM
+-- Generation Time: Apr 10, 2020 at 08:00 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -106,7 +106,7 @@ CREATE TABLE `tbl_hero` (
 --
 
 INSERT INTO `tbl_hero` (`id`, `img`, `text`, `cap_text`) VALUES
-(1, 'asian_girl3.jpg', 'Have', 'saver dex'),
+(1, 'asian_girl3.jpg', 'Have', 'saver sex'),
 (2, 'blondie_boy3.jpg', 'What\'s', 'your status'),
 (3, 'happiness_girl3.jpg', 'Let\'s', 'talk');
 
@@ -131,6 +131,32 @@ INSERT INTO `tbl_hero_alt` (`id`, `img`, `text`, `cap_text`) VALUES
 (1, 'dark_skin_teenager3.jpg', 'Take', 'prep or pep'),
 (2, 'thinking_girl3.jpg', 'It\'s', 'neutral'),
 (3, 'curly_haired_girl3.jpg', 'With', 'pride');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_instagram`
+--
+
+CREATE TABLE `tbl_instagram` (
+  `id` int(11) NOT NULL,
+  `img` varchar(60) NOT NULL,
+  `quote` varchar(400) NOT NULL,
+  `author` varchar(70) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_instagram`
+--
+
+INSERT INTO `tbl_instagram` (`id`, `img`, `quote`, `author`) VALUES
+(1, 'i_asian_girl.jpg', 'Let us give publicity to HIV/AIDS and not hide it. because that is the only way to make it appear like a normal illness.', 'Nelson Mandela'),
+(2, 'i_blondie_teenger.jpg', 'It is bad enough that people are dying of AIDS, but no one should die of ignorance.', 'Elizabeth Taylor'),
+(3, 'supporters.jpg', 'HIV does not make people dangerous to know, so you can shake their hands and give them a hug: Heaven knows they need it.', 'Princess Diana'),
+(4, 'high_school_teenagers.jpg', 'I tell you, it’s funny because the only time I think about HIV is when I have to take my medicine twice a day.', 'Magic Johnson'),
+(5, 'girls.jpg', 'Education, awareness and prevention are the key, but stigmatization and exclusion from family is what makes people suffer most', 'Ralph Fiennes'),
+(6, 'group_supporters.jpg', 'HIV infection and AIDS is growing- but so too is public apathy. We have already lost too many friends and colleagues.', 'David Geffen'),
+(7, 'i_african_american.jpg', 'It’s not the years in your life that count. It’s the life in your years.', 'Abe Lincoln');
 
 -- --------------------------------------------------------
 
@@ -217,7 +243,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_lastlogin`, `user_currentlogin`, `user_ip`, `user_locked`, `user_attempts`, `user_fail_start`, `user_new`, `user_newstart`, `user_sus`) VALUES
-(1, 'Sandra', 'sandra', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-04-08 00:48:54', '2020-04-08 18:59:47', '::1', 'NO', '0', '2020-04-08 18:59:47', 'O', '2020-03-07 23:02:14', 'NO'),
+(1, 'Sandra', 'sandra', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-04-10 05:06:51', '2020-04-10 09:40:42', '::1', 'NO', '0', '2020-04-10 09:40:42', 'O', '2020-03-07 23:02:14', 'NO'),
 (2, 'tester', 'test', '$2y$10$0nApKJp791jaED67N.GgxOloqO0G429mxL4t29KF6xfiJp/RSAtLq', 'SandraTsao0405@gmail.com', '2020-03-08 02:45:08', '2020-03-08 03:43:10', '::1', 'NO', '0', '2020-03-08 03:43:10', 'O', '2020-03-08 02:45:08', 'NO'),
 (3, 'tester2', 'test2', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-03-08 02:54:55', '2020-03-08 02:54:55', '::1', 'NO', '0', NULL, 'N', '2020-03-02 02:54:55', 'SUSPENDED'),
 (4, 'tester3', 'test3', '$2y$10$S/1dGaAcwDnuuNKqNePXdebIr66YaLzrbLu8zf7jpKBB1d/KFqOmm', 'SandraTsao0405@gmail.com', '2020-03-08 03:05:02', '2020-03-08 03:44:54', '::1', 'NO', '0', '2020-03-08 03:44:54', 'O', '2020-03-08 03:05:02', 'NO');
@@ -274,6 +300,12 @@ ALTER TABLE `tbl_hero`
 -- Indexes for table `tbl_hero_alt`
 --
 ALTER TABLE `tbl_hero_alt`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_instagram`
+--
+ALTER TABLE `tbl_instagram`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -339,6 +371,12 @@ ALTER TABLE `tbl_hero`
 --
 ALTER TABLE `tbl_hero_alt`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_instagram`
+--
+ALTER TABLE `tbl_instagram`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_story`

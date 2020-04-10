@@ -36,11 +36,11 @@ export default {
             <h3 class="sub-heading">{{ story.heading }}</h3>
             <p>{{ story.text }}</p>
 
-            <form class="story-form" action="" method="post">
+            <form class="story-form" action="includes/story/story.php" method="post">
                 <img class="top-form" src="images/top_card.svg" alt="">
                 <label for="story">{{ story.formlabel }}</label>
                 <textarea id="story" name="story" rows="11" placeholder="My story is..." required></textarea>
-                <input class="button" type="submit" value="Submit">
+                <input class="button" type="submit" name="submit" value="Submit">
                 <img class="bottom-form" src="images/bottom_card.svg" alt="">
             </form>
         </section>
