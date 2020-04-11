@@ -1,15 +1,18 @@
 <?php
 
 if(empty($_POST)){
-    return '<p>Contact form missing something.</p>';
+    return $msg = 'Please fill out the required fields!';
     exit;
 }
 
+if(isset($_GET['submit'])) {
+
+//echo 'here';
 //VALIDATE ALL DATA
 //necessary to protect your server
 $name = '';
 $email = '';
-$subject = '';
+$phone = '';
 $message = '';
 $recipient = 'sandra3dra@gmail.com';
 
@@ -31,7 +34,7 @@ if (isset($_POST['phone'])) {
 }
 
 if (isset($_POST['msg'])) {
-    $message = $_POST['msg']; 
+    $message = $_POST['message']; 
 }
 
 //Internet courrier validates email to protect from spam
@@ -41,14 +44,19 @@ if (isset($_POST['msg'])) {
 //SEND OUT EMAIL
 $headers = array(
     'From'=> $email,
-    'Reply=To'=>$name.'<'.$email.'>'
+    'Reply-To'=>$name.'<'.$email.'>'
 );
 
-// if(mail($recipient, $subject, $message, $headers)){
 if(mail($recipient, $subject, $message, $headers)){
-    return '<p class="conRe">Thank you for contacting us, we will reply within 4 business days.</p>';
+    //echo 'here';
+    return $msg = 'Thank you for contacting us. We will reply within 4 business days.';
 }else{
-    return '<p class="conRe">Sorry, something went wrong with the contact form. Please try calling us or visit our office during office hours.</p>';
+    return $msg = 'Sorry, something went wrong with the contact form. Please try calling us or visit our office during office hours.';
 }
+
+echo json_encode($msg);
+}
+
+
 
 ?>

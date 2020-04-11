@@ -124,10 +124,6 @@
     @include col;
 }
 
-// .comm-img {
-//     width: 300px;
-// }
-
 .comm-img, .quote {
     margin-top: 40px;
     cursor: pointer;
@@ -165,12 +161,6 @@
     position: absolute;
     bottom: 30px;
 }
-
-// .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
-// .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
-// .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
-//     display: none;
-// }
 
 .insta-feed-group:nth-of-type(4),
 .insta-feed-group:nth-of-type(5),
@@ -227,7 +217,7 @@
     .sub-heading {
         color: $blue;
     }
-    p {
+    p:first-of-type {
         margin-top: 40px;
         margin-left: 40px;
         margin-right: 40px;

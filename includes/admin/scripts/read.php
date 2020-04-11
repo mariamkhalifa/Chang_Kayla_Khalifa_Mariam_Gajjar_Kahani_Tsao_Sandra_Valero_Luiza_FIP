@@ -13,6 +13,7 @@ function getAllResults($tbl) {
 }
 
 function subscribe($email) {
+    
     $pdo = Database::getInstance()->getConnection();
 
     $check_exist = 'SELECT COUNT(*) FROM `tbl_subscription` WHERE email =:email';
@@ -24,7 +25,7 @@ function subscribe($email) {
     );
 
     if($sub_email->fetchColumn()>0){
-        return '<p class="subRe">This email already signed up.</p>';
+        return $msg = 'This email has already signed up.';
     }else{
         $insert_sub_query = "INSERT INTO tbl_subscription (email) VALUES (:email);";
         $sub_add = $pdo->prepare($insert_sub_query);
@@ -33,6 +34,8 @@ function subscribe($email) {
                 ':email'=>$email
             )
         );
+
+        
         
         if($result){
             $recipient = $email;
@@ -53,10 +56,13 @@ function subscribe($email) {
             $headers .= 'X-Mailer: PHP/' . phpversion();
             
             mail($recipient, $subject, $message, $headers);
-            return '<p class="subRe">Thank you for subscribing to our email!</p>';
+            
+            return $msg = 'Thank you for subscribing!';
         } else {
-            return '<p class="subRe">Something went wrong with the subscription.</p>';
+            return $msg = 'Something went wrong with the subscription!';
         }
+
+        return $msg;
     }
 }
 
@@ -64,17 +70,13 @@ function newStory($story) {
     $pdo = Database::getInstance()->getConnection();
 
     $story_words = explode(' ', $story);
-
-    // $words = array_chunk($story_words, 1);
-
-    // $check_word = array_map('strtolower', $story_words);
-
-    $check_word = array_change_key_case($story_words, CASE_LOWER);
-
-    // $check_word = array(strtolower(implode($words)));
-
-    if(in_array('fuck', $check_word) || in_array('shit', $check_word) || in_array('dick', $check_word) || in_array('bitch', $check_word) || in_array('motherfucker', $check_word)){
-        return '<p class="storyRe">Please be nice when choosing words to use.</p>';
+    
+    for ($i=0; $i < count($story_words); $i++) {        
+        $new_words = Array(strtolower($story_words[$i]));
+    }
+  
+    if(in_array('fuck',$new_words)){
+        return $msg = 'Please be nice when choosing words to use! Story not submitted!';
     }else{
         $insert_story_query = "INSERT INTO tbl_story (story) VALUES (:story);";
         $story_add = $pdo->prepare($insert_story_query);
@@ -85,10 +87,12 @@ function newStory($story) {
         );
         
         if($result){
-            return '<p class="storyRe">Thank you for sharing your story with us!</p>';
+            return $msg = 'Thank you for sharing your story with us!';
         } else {
-            return '<p class="storyRe">Something went wrong with the story form.</p>';
+            return $msg = 'Something went wrong with the story form!';
         }
-    }
 
+        return $msg;
+    }
 }
+

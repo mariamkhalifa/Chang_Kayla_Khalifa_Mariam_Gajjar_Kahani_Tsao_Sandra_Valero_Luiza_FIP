@@ -10,8 +10,7 @@
     <link rel="icon" type="image/x-icon/" href="images/favicon.ico">
     <link href="css/main.css" rel="stylesheet" type="text/css">
 
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.15/dist/vue.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script>
@@ -87,9 +86,10 @@
         <div class="subscribe">
             <h3>Want to Stay Neutral?</h3>
             <p>Sign up to our newsletter for community events, updates, and contests.</p>
-            <form class="subs-form" action="includes/subscribe/subscribe.php" method="post">
+            <form @submit.prevent="subscribe" class="subs-form">
+                <p class="form-msg">{{ formmsg }}</p>
                 <label for="email">Email Address *</label>
-                <input id="email" name="email" type="email" required>
+                <input v-model="input.email" id="email" name="email" type="email" value="" required>
                 <input id="subs-submit" type="submit" name="submit" value="SUBMIT">
             </form>
         </div>
