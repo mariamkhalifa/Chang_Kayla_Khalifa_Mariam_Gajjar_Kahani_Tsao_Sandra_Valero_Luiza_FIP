@@ -67,11 +67,32 @@ var vm = new Vue({
                 this.formmsg = '';
             }, 4000)
           
-        }
+        },
+
+        
     },
 
     router
 }).$mount("#app");
+
+
             
 
 })();
+
+function initMap() {
+    let rhac = {lat: 42.982909, lng: -81.248330},
+        lihc = {lat: 42.989237, lng: -81.229701 },
+        anova = {lat: 42.978455, lng: -81.235937 }
+
+    let map = new google.maps.Map(
+        document.querySelector('.map'), {zoom: 14, center: rhac}
+    );
+
+    let marker1 = new google.maps.Marker({position: rhac, map: map, title: 'RHAC'}),
+        marker2 = new google.maps.Marker({position: lihc, map: map, title: 'LIHC'}),
+        marker3 = new google.maps.Marker({position: anova, map: map, title: 'Anova'});
+
+}
+
+initMap();

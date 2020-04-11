@@ -61,7 +61,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 this.herodata1 = data;
             })
             .catch((err) => console.log(err))
@@ -73,7 +73,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 this.herodata2 = data;
             })
             .catch((err) => console.log(err))
