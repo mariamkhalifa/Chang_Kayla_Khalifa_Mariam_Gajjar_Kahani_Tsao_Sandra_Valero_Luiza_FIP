@@ -71,12 +71,10 @@ function newStory($story) {
 
     $story_words = explode(' ', $story);
     
-
     for ($i=0; $i < count($story_words); $i++) {        
         $new_words = Array(strtolower($story_words[$i]));
     }
-
-    
+  
     if(in_array('fuck',$new_words)){
         return $msg = 'Please be nice when choosing words to use! Story not submitted!';
     }else{

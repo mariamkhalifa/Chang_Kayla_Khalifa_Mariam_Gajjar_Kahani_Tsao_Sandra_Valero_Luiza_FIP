@@ -23,7 +23,7 @@ function getAll($tbl) {
     if($result){
         return $result;
     }else{
-        return '<p>There was a problem accessing the info</p>';
+        return '<p class="updateMsg">There was a problem accessing the info</p>';
     }
 }
 
@@ -44,7 +44,7 @@ function getImg($id, $tbl) {
     if($result){
         return $result;
     }else{
-        return '<p>There was a problem accessing the info</p>';
+        return '<p class="updateMsg">There was a problem accessing the info</p>';
     }
 }
 
@@ -65,7 +65,7 @@ function getOneEvent($tbl) {
     if($result){
         return $result;
     }else{
-        return '<p>There was a problem accessing the info</p>';
+        return '<p class="updateMsg">There was a problem accessing the info</p>';
     }
 }
 
@@ -85,7 +85,7 @@ function updateHero($tbl, $id, $text, $cap_text) {
     if($updated_single){
         redirect_to('admin_kin_home.php?updatedHero=You have updated the hero texts!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 
@@ -106,7 +106,7 @@ function updateAbout($heading, $p, $p_sub) {
     if($updated_single){
         redirect_to('admin_kin_home.php?updatedAbout=You have updated the about texts!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 
@@ -121,7 +121,7 @@ function updateVideo($video, $old_vid) {
             throw new Exception('Wrong file type!');
         }
     
-        $image_path = '../../../media/';
+        $image_path = '../../media/';
     
         $generated_name     = md5($upload_file['filename'] . time());
         $generated_filename = $generated_name . '.' . $upload_file['extension'];
@@ -145,7 +145,7 @@ function updateVideo($video, $old_vid) {
         if($deleteOld && $updated_single) {
             redirect_to('index.php?updatedVid=You have updated the video sucessfully!');
         } else {
-            return 'something went wrong with the update';
+            return '<p class="updateMsg">something went wrong with the update</p>';
         }
         
     } catch (Exception $e) {
@@ -170,7 +170,7 @@ function updateVidT($heading, $p) {
     if($updated_single){
         redirect_to('admin_kin_home.php?updatedVidT=You have updated the video texts!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 
@@ -189,7 +189,7 @@ function addTestLocation($name, $address) {
     if($result){
         redirect_to('admin_kin_home.php?addTest=You have added a new test location!');
     } else {
-        return 'Something went wrong';
+        return '<p class="updateMsg">Something went wrong</p>';
     }
 }
 
@@ -209,7 +209,7 @@ function updateTestLocation($id, $name, $address) {
     if($updated_single){
         redirect_to('admin_kin_home.php?updatedTest=You have updated the test location!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 
@@ -229,8 +229,8 @@ function deleteTestLocation($id) {
     }
 }
 
-function updateImg($id, $img, $tbl) {
-    try {
+function updateImg($id, $img, $tbl, $page) {
+    try { 
         $pdo = Database::getInstance()->getConnection();
 
         $image          = $img;
@@ -240,7 +240,7 @@ function updateImg($id, $img, $tbl) {
             throw new Exception('Wrong file type!');
         }
     
-        $image_path = '../../../images/';
+        $image_path = '../../images/';
     
         $generated_name     = md5($upload_file['filename'] . time());
         $generated_filename = $generated_name . '.' . $upload_file['extension'];
@@ -260,9 +260,9 @@ function updateImg($id, $img, $tbl) {
         );
 
         if($updated_single) {
-            redirect_to('admin_kin_image.php?updatedImg=You have updated the image sucessfully!');
+            redirect_to($page.'?updatedImg=You have updated the image sucessfully!');
         } else {
-            return 'something went wrong with the update';
+            return '<p class="updateMsg">Something went wrong with the update.</p>';
         }
         
     } catch (Exception $e) {
@@ -282,7 +282,7 @@ function addEvent($img, $name, $location, $month, $day, $time, $des, $link) {
             throw new Exception('Wrong file type!');
         }
     
-        $image_path = '../../../images/';
+        $image_path = '../../images/';
     
         $generated_name     = md5($upload_file['filename'] . time());
         $generated_filename = $generated_name . '.' . $upload_file['extension'];
@@ -292,7 +292,7 @@ function addEvent($img, $name, $location, $month, $day, $time, $des, $link) {
             throw new Exception('Failed to move uploaded file, check permission!');
         }
 
-        $insert_e_query = 'INSERT INTO tbl_event(img, name, location, month, day, time, des, link)';
+        $insert_e_query = 'INSERT INTO tbl_event(img, heading, location, month, day, time, des, link)';
         $insert_e_query .= ' VALUES(:img, :name, :location, :month, :day, :time, :des, :link)';
 
         $insert_e       = $pdo->prepare($insert_e_query);
@@ -322,7 +322,7 @@ function addEvent($img, $name, $location, $month, $day, $time, $des, $link) {
 function updateEvent($id, $name, $location, $month, $day, $time, $des, $link) {
     $pdo = Database::getInstance()->getConnection();
 
-    $update_e_query = 'UPDATE `tbl_event` SET name =:name, location =:location, month =:month, day =:day, time =:time, des =:des, link =:link WHERE id =:id';
+    $update_e_query = 'UPDATE `tbl_event` SET heading =:name, location =:location, month =:month, day =:day, time =:time, des =:des, link =:link WHERE id =:id';
     $single_update = $pdo->prepare($update_e_query);
     $updated_single = $single_update->execute(
         array(
@@ -337,10 +337,13 @@ function updateEvent($id, $name, $location, $month, $day, $time, $des, $link) {
         )
     );
 
-    if($updated_single){
-        redirect_to('admin_kin_community.php?updatedEvent=You have updated the event!');
+    // echo $single_update->debugDumpParams();
+    // exit;
+
+    if($single_update){
+        redirect_to('admin_kin_community.php?updatedE=You have updated the event!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 
@@ -375,7 +378,7 @@ function createFaq($q, $a) {
     if($result){
         redirect_to('admin_kin_faq.php?addFaq=You have added a new question and answer!');
     } else {
-        return 'Something went wrong';
+        return '<p class="updateMsg">Something went wrong</p>';
     }
 }
 
@@ -395,7 +398,7 @@ function updateFaq($id, $q, $a) {
     if($updated_single){
         redirect_to('admin_kin_faq.php?updatedFaq=You have updated the question and answer!');
     }else{
-        return 'Something went wrong with the update.';
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
 

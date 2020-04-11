@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 10, 2020 at 08:00 PM
+-- Generation Time: Apr 10, 2020 at 11:12 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -50,12 +50,12 @@ INSERT INTO `tbl_about` (`id`, `img`, `heading`, `p`, `p_sub`) VALUES
 CREATE TABLE `tbl_event` (
   `id` int(11) NOT NULL,
   `img` varchar(60) NOT NULL,
+  `heading` varchar(70) NOT NULL,
+  `location` varchar(40) NOT NULL,
   `month` varchar(10) NOT NULL,
   `day` varchar(2) NOT NULL,
-  `heading` varchar(20) NOT NULL,
   `time` varchar(50) NOT NULL,
   `des` varchar(100) NOT NULL,
-  `location` varchar(40) NOT NULL,
   `link` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -63,10 +63,10 @@ CREATE TABLE `tbl_event` (
 -- Dumping data for table `tbl_event`
 --
 
-INSERT INTO `tbl_event` (`id`, `img`, `month`, `day`, `heading`, `time`, `des`, `location`, `link`) VALUES
-(1, 'coffee_cups.jpg', 'April', '01', 'Coffee Drop-In', 'Wednesday Mornings, 10:00 AM - 11:30 AM', 'Join us for coffee and support. For people living with HIV.', 'RHAC Boardroom, #30-186 King St.', 'www.hivaidsconnection.ca/events'),
-(2, 'friends.jpg', 'April', '01', 'Couch Crew', 'Monday & Wednesday, 12:00 PM - 4:00 PM', 'Drop in and volunteer with us!', 'RHAC Boardroom, #30-186 King St.', 'www.hivaidsconnection.ca/events'),
-(3, 'prep.jpg', 'April', '10', 'PrEP Clinic', 'Every second Friday, 9:00 AM to 5:00 PM', 'The RHAC PrEP clinic is currently held every second Friday.', 'RHAC Boardroom, #30-186 King St.', 'www.hivaidsconnection.ca/events');
+INSERT INTO `tbl_event` (`id`, `img`, `heading`, `location`, `month`, `day`, `time`, `des`, `link`) VALUES
+(1, 'coffee_cups.jpg', 'Coffee Drop-In', 'RHAC Boardroom, #30-186 King St.', 'April', '01', 'Wednesday Mornings, 10:00 AM - 11:30 AM', 'Join us for coffee and support. For people living with HIV.', 'www.hivaidsconnection.ca/events'),
+(2, 'friends.jpg', 'Couch Crew', 'RHAC Boardroom, #30-186 King St.', 'April', '01', 'Monday & Wednesday, 12:00 PM - 4:00 PM', 'Drop in and volunteer with us!', 'www.hivaidsconnection.ca/events'),
+(3, 'prep.jpg', 'PrEP Clinic', 'RHAC Boardroom, #30-186 King St.', 'April', '10', 'Every second Friday, 9:00 AM to 5:00 PM', 'The RHAC PrEP clinic is currently held every second Friday.', 'www.hivaidsconnection.ca/events');
 
 -- --------------------------------------------------------
 
@@ -86,7 +86,11 @@ CREATE TABLE `tbl_faq` (
 
 INSERT INTO `tbl_faq` (`id`, `question`, `answer`) VALUES
 (1, 'What\'s HIV? What\'s the difference between HIV and AIDS?', 'HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.'),
-(2, 'How can I get HIV?', 'HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status.');
+(2, 'How can I get HIV?', 'HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status.'),
+(4, 'How can I keep myself safe?', 'Practice safe sex, never share your needles or razors, and talk to your partner before having sex. If you are at higher risk of getting infected with HIV, you can take antiretroviral medicine to help protect yourself from HIV infection.'),
+(5, 'Other than condoms, how can I practice safer sex to prevent HIV?', 'Talk to your partner before having sex. Find out if they are at risk for HIV. Tell them when you were last tested, and get tested together! Other physical protective barriers include dental dams and disposable gloves.'),
+(6, 'What are the ways I CANNOT get HIV?', 'HIV is NOT transmitted by hugging, shaking hands, coughs or sneezes, eating food prepared or handled by an HIV-infected person, donating blood, mosquitoes, toilet seats, sweat or tears, simple kissing or everyday contact with HIV-infected persons at school, work, home or anywhere else.'),
+(7, 'How do I ask someone about their HIV status?', 'Reference media. Say hey i want to do this thing. I want to talk about using protection. Or reference media you found. Show them this website.');
 
 -- --------------------------------------------------------
 
@@ -106,7 +110,7 @@ CREATE TABLE `tbl_hero` (
 --
 
 INSERT INTO `tbl_hero` (`id`, `img`, `text`, `cap_text`) VALUES
-(1, 'asian_girl3.jpg', 'Have', 'saver sex'),
+(1, 'asian_girl3.jpg', 'Have', 'safer sex'),
 (2, 'blondie_boy3.jpg', 'What\'s', 'your status'),
 (3, 'happiness_girl3.jpg', 'Let\'s', 'talk');
 
@@ -128,7 +132,7 @@ CREATE TABLE `tbl_hero_alt` (
 --
 
 INSERT INTO `tbl_hero_alt` (`id`, `img`, `text`, `cap_text`) VALUES
-(1, 'dark_skin_teenager3.jpg', 'Take', 'prep or pep'),
+(1, 'dark_skin_teenager3.jpg', 'Take', 'prep/pep'),
 (2, 'thinking_girl3.jpg', 'It\'s', 'neutral'),
 (3, 'curly_haired_girl3.jpg', 'With', 'pride');
 
@@ -174,7 +178,15 @@ CREATE TABLE `tbl_story` (
 --
 
 INSERT INTO `tbl_story` (`id`, `story`) VALUES
-(1, 'I was diagnosed with HIV in 2010 when I went for my antenatal check. I guess I didn’t know how I felt about it at first but as time passed I took responsibility. I started to accept my HIV status and understand my condition. It was hard to start my meds. I felt humiliated and scared of rejection… I ended up not taking them first-time round.');
+(1, 'I was diagnosed with HIV in 2010 when I went for my antenatal check. I guess I didn’t know how I felt about it at first but as time passed I took responsibility. I started to accept my HIV status and understand my condition. It was hard to start my meds. I felt humiliated and scared of rejection… I ended up not taking them first-time round.'),
+(2, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(3, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(4, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(5, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(6, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(7, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(8, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.'),
+(9, 'I’m the first to admit that growing up with HIV positive parents was agonizing, it was an isolating and emotional nightmare. They were both very sick in my teens. I hated my father for not being honest about his sexuality in the first place. I refused to attend his funeral. He had been dead to me long before his corporeal self left us.');
 
 -- --------------------------------------------------------
 
@@ -243,7 +255,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_lastlogin`, `user_currentlogin`, `user_ip`, `user_locked`, `user_attempts`, `user_fail_start`, `user_new`, `user_newstart`, `user_sus`) VALUES
-(1, 'Sandra', 'sandra', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-04-10 05:06:51', '2020-04-10 09:40:42', '::1', 'NO', '0', '2020-04-10 09:40:42', 'O', '2020-03-07 23:02:14', 'NO'),
+(1, 'Sandra', 'sandra', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-04-10 09:40:42', '2020-04-10 21:02:48', '::1', 'NO', '0', '2020-04-10 21:02:48', 'O', '2020-03-07 23:02:14', 'NO'),
 (2, 'tester', 'test', '$2y$10$0nApKJp791jaED67N.GgxOloqO0G429mxL4t29KF6xfiJp/RSAtLq', 'SandraTsao0405@gmail.com', '2020-03-08 02:45:08', '2020-03-08 03:43:10', '::1', 'NO', '0', '2020-03-08 03:43:10', 'O', '2020-03-08 02:45:08', 'NO'),
 (3, 'tester2', 'test2', '$2y$10$tb17GejYMA27.4eGM9HKRehACqoxJM0SasRVzqvzzpXcyly9iante', 'SandraTsao0405@gmail.com', '2020-03-08 02:54:55', '2020-03-08 02:54:55', '::1', 'NO', '0', NULL, 'N', '2020-03-02 02:54:55', 'SUSPENDED'),
 (4, 'tester3', 'test3', '$2y$10$S/1dGaAcwDnuuNKqNePXdebIr66YaLzrbLu8zf7jpKBB1d/KFqOmm', 'SandraTsao0405@gmail.com', '2020-03-08 03:05:02', '2020-03-08 03:44:54', '::1', 'NO', '0', '2020-03-08 03:44:54', 'O', '2020-03-08 03:05:02', 'NO');
@@ -352,13 +364,13 @@ ALTER TABLE `tbl_about`
 -- AUTO_INCREMENT for table `tbl_event`
 --
 ALTER TABLE `tbl_event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_faq`
 --
 ALTER TABLE `tbl_faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_hero`
@@ -382,7 +394,7 @@ ALTER TABLE `tbl_instagram`
 -- AUTO_INCREMENT for table `tbl_story`
 --
 ALTER TABLE `tbl_story`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_subscription`
@@ -394,7 +406,7 @@ ALTER TABLE `tbl_subscription`
 -- AUTO_INCREMENT for table `tbl_test_location`
 --
 ALTER TABLE `tbl_test_location`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

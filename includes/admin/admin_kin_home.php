@@ -35,6 +35,9 @@
     } else if(!empty($_GET['deletedT'])) {
         $msg = $_GET['deletedT'];
         $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedImg'])){
+        $msg = $_GET['updatedImg'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
     }
 
     if(isset($_POST['submit-hero'])) {
@@ -180,7 +183,7 @@
             <h2>Video Section:</h2>
             <div class="col">
                 <h3>Videos:</h3>
-                <form action="admin_kin_home.php" method="post" class="vidForm">
+                <form action="admin_kin_home.php" method="post" class="vidForm" enctype="multipart/form-data">
                 <?php while($row = $getVideo->fetch(PDO::FETCH_ASSOC)):?>
                     <video controls muted>
                         <source src="../../media/<?php echo $row['video'];?>" type="video/mp4">
