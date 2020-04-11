@@ -115,7 +115,12 @@ export default {
 
                 fetch(url, {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-type': 'application/json'
+                    },
+        
+                    body: JSON.stringify(formData)
                 })
                 .then(res => res.text())
                 .then(data => {
