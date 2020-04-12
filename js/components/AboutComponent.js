@@ -8,7 +8,7 @@ export default {
             <div class="about-img"><img :src="'images/' + about.img" alt="girl"></div>
             
             <div class="about-text">
-                <h3 class="main-heading">{{ about.heading }}</h3>
+                <h3 class="sub-heading">{{ about.heading }}</h3>
                 <ul>
                     <li>{{ about.text1 }}</li>
                     <li>{{ about.text2 }}<span>{{ about.textbold }}</span></li>
@@ -23,7 +23,7 @@ export default {
                 heading: ``,
                 text1: '',
                 text2: '',
-                textbold: ` Let's Keep It Neutral.`,
+                textbold: ``,
                 img: '',
             },
         }
@@ -44,6 +44,7 @@ export default {
                 this.about.heading = data[0].heading;
                 this.about.text1 = data[0].p;
                 this.about.text2 = data[0].p_sub;
+                this.about.textbold = data[0].p_bold;
                 this.about.img = data[0].img;
             })
             .catch((err) => console.log(err))

@@ -60,17 +60,18 @@
         align-self: start;
         position: absolute;
         z-index: 10;
-        width: 60vw;
+        width: 65vw;
         //height: 100%;
         @include col;
         justify-items: center;
+        li { font-size: .9em; }
     }
 }
 
 @media screen and (min-width: 810px) {
     .about-text {
-        width: 55vw;
-        padding: 50px 40px;
+        width: 60vw;
+        //padding: 50px 40px;
         ul {
             width: 90%;
         }
@@ -82,7 +83,7 @@
 
 @media screen and (min-width: 900px) {
     .about {
-        grid-template-columns: 1fr 460px;
+        grid-template-columns: 1fr 596px;
     }
 
     .about-text {
@@ -112,3 +113,11 @@
         padding: 80px 70px;
     }
 }
+
+@media screen and (min-width: 1500px) {
+    .about-text {
+        width: 70vw;
+        padding: 90px 80px;
+    }
+}
+
