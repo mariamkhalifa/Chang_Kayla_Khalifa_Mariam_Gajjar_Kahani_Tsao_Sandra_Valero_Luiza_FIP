@@ -293,6 +293,11 @@
     color: $dark-blue;
     font-size: .9em;
     margin-top: 5px;
+    transition: 1s all ease;
+}
+
+.help-link:hover, .help-link:focus {
+    color: $hover-color;
 }
 
 // media queries

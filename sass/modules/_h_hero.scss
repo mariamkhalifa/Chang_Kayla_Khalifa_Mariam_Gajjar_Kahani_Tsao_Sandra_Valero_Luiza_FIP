@@ -23,6 +23,7 @@
     .hero-text {
         background-color: $blue;
         color: $yellow-orange;
+        .large-txt { max-width: 50%; }
     }
 }
 
