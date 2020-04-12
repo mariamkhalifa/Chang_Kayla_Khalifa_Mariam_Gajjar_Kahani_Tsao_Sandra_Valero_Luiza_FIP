@@ -26,22 +26,9 @@ export default {
 
     data() {
         return {
-            // herodata1: [
-            //     { img: 'asian_girl3.jpg', text: 'have', textcap: 'safer sex'},
-            //     { img: 'blondie_boy3.jpg', text: 'what\'s', textcap: 'your status'},
-            //     { img: 'happiness_girl3.jpg', text: 'let\'s', textcap: 'talk'},
-            // ],
-
-            // herodata2: [
-            //     { img: 'dark_skin_teenager3.jpg', text: 'take', textcap: 'prep/pep'},
-            //     { img: 'curly_haired_girl3.jpg', text: 'it\'s', textcap: 'neutral'},
-            //     { img: 'thinking_girl3.jpg', text: 'with', textcap: 'pride'},
-            // ],
-
             herodata1: [],
 
             herodata2: []
-            
         }
     },
 

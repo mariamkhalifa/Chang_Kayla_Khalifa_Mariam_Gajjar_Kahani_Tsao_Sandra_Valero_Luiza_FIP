@@ -3,25 +3,30 @@ import LocationComponent from "./LocationComponent.js"
 export default {
     template: `
     <section class="testing">
-        <h3 class="main-heading">Get Tested</h3>
-        <p class="testing-intro">Find HIV Testing locations and care services close to you.</p>
-        <!-- might add google maps API instead of iframe -->
-
+        <h3 class="main-heading">{{ locationsintro.heading }}</h3>
+        <p class="testing-intro">{{ locationsintro.text }}</p>
+ 
         <div class="map"></div>
 
-        <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.769633654516!2d-81.25054408514464!3d42.98312610351882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef21cf012e81d%3A0xc2124c8409950117!2s186%20King%20St%2C%20London%2C%20ON%20N6A%201C7!5e0!3m2!1sen!2sca!4v1582313402657!5m2!1sen!2sca" allowfullscreen=""></iframe> -->
         <div class="locations-wrapper">
             <location v-for="(location, index) in locations" :name="location.name"
             :address="location.address" :key="index">
             </location>
         </div>
-        <p>For more information on where to get tested:</p>
-        <a href="https://hivaidsconnection.ca/get-facts/get-tested/where-get-tested" target="_blank" class="testing-link">Go to HIV/AIDS Connections</a>
+        <p>{{ locationsintro.linktext }}</p>
+        <a :href="locationsintro.link" target="_blank" class="testing-link">{{ locationsintro.link }}</a>
     </section>
     `,
 
     data() {
         return {
+            locationsintro: {
+                heading: '',
+                text: '',
+                linktext: '',
+                link: ''
+            },
+
             locations: []
         }
     },
@@ -31,11 +36,24 @@ export default {
     },
 
     created: function() {
+        this.fetchLocationsIntro();
         this.fetchLocations();
         
     },
 
     methods: {
+        fetchLocationsIntro() {
+            let url = './includes/admin/ajax.php?locationintro=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.locationsintro = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+
         fetchLocations() {
             let url = './includes/admin/ajax.php?location=true';
 

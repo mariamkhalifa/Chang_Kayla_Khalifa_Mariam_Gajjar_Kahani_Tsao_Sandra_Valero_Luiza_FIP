@@ -3,12 +3,13 @@ import AboutComponent from "./AboutComponent.js";
 import VideoComponent from "./VideoComponent.js";
 import FAQComponent from "./FAQComponent.js";
 import AllLocationsComponent from "./AllLocationsComponent.js";
+import TopButtonComponent from "./TopButtonComponent.js";
 
 export default {
     name: 'home',
 
     template: `
-    <section>
+    <section class="home-wrapper">
         <h2 class="hidden">Home Page</h2>
 
         <allhero></allhero>
@@ -20,6 +21,8 @@ export default {
         <faq></faq>
         
         <testlocations></testlocations>
+
+        <topbutton></topbutton>
         
     </section>
     `,
@@ -39,6 +42,7 @@ export default {
         about: AboutComponent,
         kinvideo: VideoComponent,
         faq: FAQComponent,
-        testlocations: AllLocationsComponent
+        testlocations: AllLocationsComponent,
+        topbutton: TopButtonComponent
     }
 }

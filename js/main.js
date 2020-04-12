@@ -23,6 +23,15 @@ var vm = new Vue({
     },
 
     methods: {
+        navigateTo() {
+            this.burger.isExpanded = false;
+            //console.log('workin');
+        },
+
+        scrollToTop() {
+            window.scrollTo(0,0);
+        },
+
         expandBurger() {
             //console.log('expanded');
             this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
@@ -69,14 +78,10 @@ var vm = new Vue({
           
         },
 
-        
     },
 
     router
 }).$mount("#app");
-
-
-            
 
 })();
 

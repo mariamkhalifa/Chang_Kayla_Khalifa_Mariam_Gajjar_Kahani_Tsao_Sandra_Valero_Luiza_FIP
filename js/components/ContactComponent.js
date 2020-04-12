@@ -1,3 +1,6 @@
+import SocialMediaInfoComponent from "./SocialMediaInfoComponent.js";
+import ContactInfoComponent from "./ContactInfoComponent.js";
+
 export default {
     name: 'contact',
 
@@ -33,33 +36,9 @@ export default {
             <section class="info">
                 <h3 class="sr-only">Contact info</h3>
                 
-                <section class="cont-social-media-wrapper">
-                    <h4 class="sub-heading">{{ socialmedia.heading }}</h4>
-                    <p>{{ socialmedia.intro }}</p>
-                    <ul class="cont-social-media">
-                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-snapchat"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    </ul>
-                    <p>{{ socialmedia.text }}</p>
-                </section>
+                <socialmedia></socialmedia>
 
-                <section class="contact-info-wrapper">
-                    <h4 class="sub-heading">Contact information</h4>
-                    <div class="info-text">
-                        <h5>Address</h5>
-                        <p>{{ contactinfo.address }}</p>
-                    </div>
-                    <div class="info-text">
-                        <h5>Phone</h5>
-                        <p>{{ contactinfo.phone }}</p>
-                    </div>
-                    <div class="info-text">
-                        <h5>Email</h5>
-                        <p>{{ contactinfo.email }}</p>
-                    </div>
-                </section>
+                <contactinfo></contactinfo>
             </section>
         </section>
     `,
@@ -67,27 +46,15 @@ export default {
     data() {
         return {
             contactintro: {
-                heading: "Contact Us",
-                text: `We’re here to help. Got questions? Want to use stuff from our campaign? Please don’t hesitate to reach out.`
+                heading: '',
+                text: ''
             },
 
             formlabel: {
-                name: "Your name",
-                email: "Email",
-                phone: "Phone",
-                message: "Message"
-            },
-
-            socialmedia: {
-                heading: "Social media",
-                intro: "Follow us here!",
-                text: "All social media accounts are updated and monitored Monday to Friday from 8 a.m. to 8 p.m. EST/EDT. "
-            },
-
-            contactinfo: {
-                address: "683 King Street, London, ON, W2C 8QX",
-                phone: "519-230-6781",
-                email: "support@keepitneutral.ca"
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
             },
 
             formmsg: '',
@@ -101,7 +68,36 @@ export default {
         }
     },
 
+    created() {
+        this.fecthContactIntro();
+        this.fecthContactFormLabels();
+    },
+
     methods: {
+        fecthContactIntro() {
+            let url = './includes/admin/ajax.php?contactintro=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.contactintro = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+
+        fecthContactFormLabels() {
+            let url = './includes/admin/ajax.php?contactformlabels=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.formlabel = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+
         handleMail() {
             //console.log('!');
             if (this.input.email !== "" && this.input.name !== "" &&  this.input.message !== "") {
@@ -146,5 +142,10 @@ export default {
             }, 4000)
           
         }
+    },
+
+    components: {
+        socialmedia: SocialMediaInfoComponent,
+        contactinfo: ContactInfoComponent
     }
 }
