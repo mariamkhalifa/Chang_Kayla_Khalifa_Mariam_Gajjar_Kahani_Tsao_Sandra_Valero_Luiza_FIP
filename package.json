@@ -1,13 +1,13 @@
 {
   "name": "fip_gulp",
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src=\"images/kin_logo.svg\" width=\"150\">",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "mariam",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
@@ -16,5 +16,14 @@
     "gulp-imagemin": "^6.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariamkhalifa/Chang_Khalifa_Gajjar_Tsao_Valero_FIP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariamkhalifa/Chang_Khalifa_Gajjar_Tsao_Valero_FIP/issues"
+  },
+  "homepage": "https://github.com/mariamkhalifa/Chang_Khalifa_Gajjar_Tsao_Valero_FIP#readme"
 }
