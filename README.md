@@ -12,6 +12,13 @@ Here you’ll find ways to start conversations that celebrate love, encourage sa
 * **PHP**
 * **MySQL**
 
+## Team
+* **Kayla Chang**
+* **Kahani Gajjar**
+* **Luisa Valero**
+* **Mariam Khalifa**
+* **Sandra Tsao**
+
 ## Dev Area
 
 All the content on the website is dynamic and is pulled from a database using Ajax. The database in included in the database folder. If using Windows OS, you will need to delete the password in includes/config/database.php  
