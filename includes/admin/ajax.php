@@ -19,6 +19,10 @@ if(isset($_GET['video'])) {
     $result = getAllResults('tbl_video');
 }
 
+if(isset($_GET['faqintro'])) {
+    $result = getAllResults('tbl_faqintro');
+}
+
 if(isset($_GET['faq'])) {
     $result = getAllResults('tbl_faq');
 }
