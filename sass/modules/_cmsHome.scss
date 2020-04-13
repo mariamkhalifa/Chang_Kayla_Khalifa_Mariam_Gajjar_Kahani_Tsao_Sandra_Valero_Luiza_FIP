@@ -2,6 +2,7 @@
     .homeNav {
         width: 100%;
         background-color: $grey;
+        font-size: 12px;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -18,7 +19,7 @@
             }
         }
     }
-    #hero, #about, #video, #homeFaq, #test {
+    #hero, #about, #video, #homeFaq, #test, #faq, #event, #contact {
         width: 90%;
         margin-left: 5%;
         margin-bottom: 10%;
@@ -80,7 +81,7 @@
                 width: 80%;
                 margin-left: 10%;
             }
-            .textForm {
+            .textForm, .faqLinksForm {
                 width: 80%;
                 height: 100%;
                 margin-left: 10%;
@@ -120,7 +121,7 @@
                     margin-left: 0%;
                 }
             }
-            .aboutImg{
+            .aboutImg, .linksImg, .comImg{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -231,7 +232,7 @@
                 font-size: 25px;
             }
         }
-        #hero, #about, #video, #homeFaq, #test {
+        #hero, #about, #video, #homeFaq, #test, #faq, #event, #contact {
             margin-bottom: 5%;
             h2 {
                 font-size: 40px;
@@ -258,6 +259,23 @@
                         width: 50%;
                     }
                 }
+                .faq-link-row {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    form {
+                        width: 25%;
+                        margin-left: 0%;
+                    }
+                }
+                .faq-row {
+                    justify-content: space-between;
+                    h3 {
+                        margin-left: 0%;
+                        width: 100%;
+                    }
+                }
                 h4 {
                     font-size: 25px;
                 }
@@ -267,13 +285,20 @@
                         font-size: 25px;
                     }
                 }
-                .aboutImg{
+                .faq-link-form {
+                    height: 70%;
+                    padding-top: 10%;
+                }
+                .aboutImg, .linksImg, .comImg{
                     width: 100%;
                     img {
                         width: 30%;
                     }
                     a {
                         font-size: 30px;
+                    }
+                    #linkImg {
+                        width: 30%;
                     }
                 }
                 .vidForm {
@@ -326,7 +351,7 @@
                 font-size: 30px;
             }
         }
-        #hero, #about, #video, #homeFaq, #test {
+        #hero, #about, #video, #homeFaq, #test, #faq, #event, #contact {
             margin-bottom: 3%;
             h2 {
                 font-size: 45px;
@@ -350,6 +375,14 @@
                         width: 40%;
                     }
                 }
+                .faq-link-row {
+                    form {
+                        width: 30%;
+                        img {
+                            width: 60%;
+                        }
+                    }
+                }
                 h4 {
                     font-size: 30px;
                 }
@@ -358,9 +391,12 @@
                         font-size: 30px;
                     }
                 }
-                .aboutImg{
+                .aboutImg, .linksImg, .comImg{
                     a {
                         font-size: 35px;
+                    }
+                    #linkImg, #comImg {
+                        width: 20%;
                     }
                 }
                 .vidForm {

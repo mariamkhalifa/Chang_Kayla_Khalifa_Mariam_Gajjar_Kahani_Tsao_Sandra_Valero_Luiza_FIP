@@ -124,8 +124,9 @@
         <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <?php echo !empty($message)?$message: ''; ?>
         <section id="event">
+            <h2>Community and Events:</h2>
             <div class="col">
-                <h2>Heading:</h2>
+                <h3>Heading:</h3>
                 <form action="admin_kin_community.php" method="post" class="textForm">
                 <?php while($row = $getComH->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
@@ -135,7 +136,7 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Social Media Post Heading:</h2>
+                <h3>Social Media Post Heading:</h3>
                 <form action="admin_kin_community.php" method="post" class="textForm">
                 <?php while($row = $getComSM->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
@@ -145,7 +146,7 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Sharing:</h2>
+                <h3>Sharing:</h3>
                 <form action="admin_kin_community.php" method="post" class="textForm">
                 <?php while($row = $getComShare->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
@@ -156,15 +157,15 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Helpline:</h2>
+                <h3>Helpline:</h3>
                 <form action="admin_kin_community.php" method="post" class="textForm">
                 <?php while($row = $getComHelp->fetch(PDO::FETCH_ASSOC)):?>
-                    <input type="text" name="heading" value="<?php echo $row['heading'];?>">
-                    <textarea name="text"><?php echo $row['text'];?></textarea>
                     <div class="comImg">
-                        <img src="../../images/<?php echo $row['img'];?>" alt="helpline image <?php echo $row['img'];?>">
+                        <img id="comImg" src="../../images/<?php echo $row['img'];?>" alt="helpline image <?php echo $row['img'];?>">
                         <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_helplines&page=admin_kin_community.php">Edit</a>
                     </div>
+                    <input type="text" name="heading" value="<?php echo $row['heading'];?>">
+                    <textarea name="text"><?php echo $row['text'];?></textarea>
                     <input type="text" name="linkheading" value="<?php echo $row['linkheading'];?>">
                     <input type="text" name="link" value="<?php echo $row['link'];?>">
                     <input type="submit" name="submit-helpline" value="Save">
@@ -172,15 +173,16 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Events Heading:</h2>
+                <h3>Events Heading:</h3>
                 <form action="admin_kin_community.php" method="post" class="textForm">
                 <?php while($row = $getEventH->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
                     <input type="submit" name="submit-e-heading" value="Save">
                 <?php endwhile;?>
+                </form>
             </div>
-            <div class="col">
-                <h2>Events:</h2>
+            <h2>Events:</h2>
+            <div class="col com-col">
                 <form action="admin_kin_community.php" method="post" class="eventForm" enctype="multipart/form-data">
                     <h3>Add new event:</h3>
                     <label for="img">Please upload cover image:*</label>

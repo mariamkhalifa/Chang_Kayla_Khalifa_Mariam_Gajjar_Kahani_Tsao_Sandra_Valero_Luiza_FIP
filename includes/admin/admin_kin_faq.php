@@ -129,7 +129,7 @@
                 <h3>Links:</h3>
                 <div class="rows">
                     <div class="row">
-                        <form action="admin_kin_faq.php" method="post" class="textForm">
+                        <form action="admin_kin_faq.php" method="post" class="textForm faq-link-form">
                         <?php while($row = $getLinksH->fetch(PDO::FETCH_ASSOC)):?>
                             <input type="text" name="heading" value="<?php echo $row['heading'];?>">
                             <textarea name="text"><?php echo $row['text'];?></textarea>
@@ -147,7 +147,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="rows">
+                <div class="rows faq-link-row">
                     <?php while($row = $getFaqLinks->fetch(PDO::FETCH_ASSOC)):?>
                     <form action="admin_kin_faq.php" method="post" class="textForm">
                         <div class="linksImg">
@@ -165,13 +165,13 @@
                 </div>
             </div>
             <div class="col">
-                <h2>Contact Link:</h2>
+                <h3>Contact Link:</h3>
                 <form action="admin_kin_faq.php" method="post" class="textForm">
                 <?php while($row = $getConLink->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
                     <textarea name="text"><?php echo $row['text'];?></textarea>
                     <div class="linksImg">
-                        <img src="../../images/<?php echo $row['img'];?>" alt="contact link image <?php echo $row['img'];?>">
+                        <img id="linkImg" src="../../images/<?php echo $row['img'];?>" alt="contact link image <?php echo $row['img'];?>">
                         <a href="admin_kin_image.php?img_id=<?php echo $row['id'];?>&tbl=tbl_factsmore&page=admin_kin_faq.php">Edit</a>
                     </div>
                     <input type="submit" name="submit-con-link" value="Save">
@@ -180,9 +180,9 @@
             </div>
             <div class="col">
                 <h2>FAQs:</h2>
-                <div class="rows">
+                <div class="rows faq-row">
                     <form action="admin_kin_faq.php" method="post" class="faqForm">
-                        <h2>Add new question and answer!</h2>
+                        <h3>Add new question and answer!</h3>
                         <label for="q">Question:</label>
                         <input type="text" name="q" value="" required>
                         <label for="a">Answer:</label>
@@ -190,20 +190,22 @@
                         <input type="submit" name="submit-new-faq" value="Add">
                     </form>
                     <div id="faqList">
-                        <h2>FAQ List:</h2>
-                        <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
-                        <form action="admin_kin_faq.php" method="post" class="faqForm">
-                            <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
-                            <label for="q">Question ID <?php echo $row['id'];?>:</label>
-                            <input type="text" name="q" value="<?php echo $row['question'];?>">
-                            <label for="a">Answer:</label>
-                            <textarea name="a"><?php echo $row['answer'];?></textarea>
-                            <div class="DandS">
-                                <input type="submit" name="delete-faq" value="Delete">
-                                <input type="submit" name="submit-faq" value="Save">
-                            </div>
-                        </form>
-                        <?php endwhile;?>
+                        <h3>FAQ List: (scroll)</h3>
+                        <div class="longWrapper">
+                            <?php while($row = $getFaq->fetch(PDO::FETCH_ASSOC)):?>
+                            <form action="admin_kin_faq.php" method="post" class="faqForm">
+                                <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
+                                <label for="q">Question ID <?php echo $row['id'];?>:</label>
+                                <input type="text" name="q" value="<?php echo $row['question'];?>">
+                                <label for="a">Answer:</label>
+                                <textarea name="a"><?php echo $row['answer'];?></textarea>
+                                <div class="DandS">
+                                    <input type="submit" name="delete-faq" value="Delete">
+                                    <input type="submit" name="submit-faq" value="Save">
+                                </div>
+                            </form>
+                            <?php endwhile;?>
+                        </div>
                     </div>
                 </div>
             </div>

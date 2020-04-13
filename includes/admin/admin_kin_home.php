@@ -263,7 +263,7 @@
                         <form action="admin_kin_home.php" method="post" class="textForm">
                         <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
                             <input type="text" name="heading" value="<?php echo $row['heading'];?>">
-                            <textarea name="text"><?php echo $row['text'];?></textarea>
+                            <input type="text" name="text" value="<?php echo $row['text'];?>">
                             <input type="submit" name="submit-test-heading" value="Save">
                         </form>
                     </div>

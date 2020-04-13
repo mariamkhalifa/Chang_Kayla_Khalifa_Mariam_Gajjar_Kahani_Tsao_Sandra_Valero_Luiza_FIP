@@ -1,15 +1,10 @@
 .userCMS {
     #event {
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 5%;
-        display: flex;
-        flex-direction: column;
         .eventForm {
             display: flex;
             flex-direction: column;
             margin-bottom: 5%;
-            h2 {
+            h3 {
                 font-size: 30px;
             }
             input, textarea {
@@ -45,7 +40,7 @@
             }
         }
         #eventList {
-            h2 {
+            h3 {
                 font-size: 30px;
                 margin-bottom: 3%;
             }
@@ -81,15 +76,17 @@
 @media screen and (min-width: 768px) {
     .userCMS {
         #event {
-            margin-top: 3%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            // margin-top: 3%;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-between;
             .eventForm {
                 width: 45%;
                 margin-bottom: 5%;
-                h2 {
+                h3 {
                     font-size: 35px;
+                    margin-left: 0%;
+                    width: 100%;
                 }
                 input, textarea {
                     font-size: 15px;
@@ -109,8 +106,10 @@
             }
             #eventList {
                 width: 50%;
-                h2 {
+                h3 {
                     font-size: 35px;
+                    margin-left: 0%;
+                    width: 100%;
                 }
                 .eventForm {
                     width: 100%;
@@ -130,8 +129,12 @@
 @media screen and (min-width: 1000px) {
     .userCMS {
         #event {
+            .com-col {
+                width: 90%;
+                margin-left: 5%;
+            }
             .eventForm {
-                h2 {
+                h3 {
                     font-size: 40px;
                 }
                 input, textarea {
@@ -151,7 +154,7 @@
                 }
             }
             #eventList {
-                h2 {
+                h3 {
                     font-size: 40px;
                 }
                 .eventForm {

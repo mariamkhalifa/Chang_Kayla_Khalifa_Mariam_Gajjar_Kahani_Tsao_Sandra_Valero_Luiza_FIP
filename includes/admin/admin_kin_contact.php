@@ -56,8 +56,9 @@
         <p class="bk"><a href="index.php"><-Back to Dashboard</a></p>
         <?php echo !empty($message)?$message: ''; ?>
         <section id="contact">
+            <h2>Contact and Social Media:</h2>
             <div class="col">
-                <h2>Heading:</h2>
+                <h3>Heading:</h3>
                 <form action="admin_kin_contact.php" method="post" class="textForm">
                 <?php while($row = $getContact->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
@@ -67,7 +68,7 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Social Media Heading:</h2>
+                <h3>Social Media Heading:</h3>
                 <form action="admin_kin_contact.php" method="post" class="textForm">
                 <?php while($row = $getSM->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
@@ -78,7 +79,7 @@
                 </form>
             </div>
             <div class="col">
-                <h2>Contact Info:</h2>
+                <h3>Contact Info:</h3>
                 <form action="admin_kin_contact.php" method="post" class="textForm">
                 <?php while($row = $getInfo->fetch(PDO::FETCH_ASSOC)):?>
                     <input type="text" name="address" value="<?php echo $row['address'];?>">
