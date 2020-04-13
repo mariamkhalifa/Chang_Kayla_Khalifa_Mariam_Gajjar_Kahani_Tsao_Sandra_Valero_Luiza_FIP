@@ -5,8 +5,8 @@ export default {
 
     template: `
         <section class="h-faq">
-            <h3 class="main-heading">Frequently Asked Questions</h3>
-            <p>Do you have any questions? We can help you find the answers!</p>
+            <h3 class="main-heading">{{ faqintro.heading }}</h3>
+            <p>{{ faqintro.text }}</p>
             
             <questioncard v-for="(card, index) in faqdata" :question="card.question"
             :answer="card.answer" :key="index">
@@ -18,12 +18,7 @@ export default {
 
     data() {
         return {
-            // faqdata: [
-            //     { question: "What's HIV? What's the difference between HIV and AIDS?",
-            //       answer: `HIV starts as an infection. If left untreated, the HIV virus continues to hurt the immune system. During a period of a few months to several years, people are at risk of contracting serious infections that healthy immune systems can normally handle; This last stage of HIV infection is called AIDS. When HIV is diagnosed before it becomes AIDS, medicines can slow or stop the damage to the immune system. That said, If AIDS does develop, medicines can often help the immune system return to a healthier state.`},
-            //     { question: "How can I get HIV?",
-            //       answer: "HIV is spread through the exchange of blood, semen, and vaginal fluids. It is most often transmitted through unprotected sex and contaminated needles, but can also be passed from a mother to her baby during pregnancy, birth, or breastfeeding. HIV can’t be transmitted through air, water, or casual contact. Everyone can contract HIV, regardless of sexual orientation, gender, age, or social status." },
-            // ],
+            faqintro: '',
 
             faqdata: []
         }
@@ -34,10 +29,23 @@ export default {
     },
 
     created: function() {
+        this.fetchFaqIntro();
         this.fetchFaq();
     },
 
     methods: {
+        fetchFaqIntro() {
+            let url = './includes/admin/ajax.php?faqintro=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.faqintro = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+
         fetchFaq() {
             let url = './includes/admin/ajax.php?faq=true';
 
