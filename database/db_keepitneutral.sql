@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 12, 2020 at 07:34 PM
+-- Generation Time: Apr 13, 2020 at 12:43 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -40,7 +40,7 @@ CREATE TABLE `tbl_about` (
 --
 
 INSERT INTO `tbl_about` (`id`, `img`, `heading`, `p`, `p_sub`, `p_bold`) VALUES
-(1, 'girl3.jpg', 'What\'s HIV Neutral?', 'We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.', 'Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. Let’s Keep it Neutral.', 'Let\'s Keep It Neutral.');
+(1, 'girl3.jpg', 'What\'s HIV Neutral?', 'We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.', 'Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV.', 'Let\'s Keep It Neutral.');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,7 @@ CREATE TABLE `tbl_communityintro` (
 --
 
 INSERT INTO `tbl_communityintro` (`id`, `heading`, `text`) VALUES
-(1, 'Find Amazing Events Happening Around You', 'Stay up to date with all the recent amazing events.');
+(1, 'Community', 'See our thriving community of people living with HIV/AIDS.');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE `tbl_factslinks` (
 --
 
 INSERT INTO `tbl_factslinks` (`id`, `heading`, `text`) VALUES
-(1, 'Get The Facts', 'The facts provide young people in Canada with information about people living with HIV');
+(1, 'Get the Facts', 'For more information about HIV/AIDS, visit the helpful links below.');
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ CREATE TABLE `tbl_factsmore` (
 --
 
 INSERT INTO `tbl_factsmore` (`id`, `heading`, `text`, `img`) VALUES
-(1, 'Do you have more questions?', 'We can help you find the answers.', 'question_icon.svg');
+(1, 'More questions?', 'We can help you find the answers.', 'question_icon.svg');
 
 -- --------------------------------------------------------
 
@@ -206,14 +206,11 @@ INSERT INTO `tbl_faq` (`id`, `question`, `answer`) VALUES
 (4, 'How can I keep myself safe?', 'Practice safe sex, never share your needles or razors, and talk to your partner before having sex. If you are at higher risk of getting infected with HIV, you can take antiretroviral medicine to help protect yourself from HIV infection.'),
 (5, 'Other than condoms, how can I practice safer sex to prevent HIV?', 'Talk to your partner before having sex. Find out if they are at risk for HIV. Tell them when you were last tested, and get tested together! Other physical protective barriers include dental dams and disposable gloves.'),
 (6, 'What are the ways I CANNOT get HIV?', 'HIV is NOT transmitted by hugging, shaking hands, coughs or sneezes, eating food prepared or handled by an HIV-infected person, donating blood, mosquitoes, toilet seats, sweat or tears, simple kissing or everyday contact with HIV-infected persons at school, work, home or anywhere else.'),
-(7, 'How do I ask someone about their HIV status?', 'Reference media. Say hey i want to do this thing. I want to talk about using protection. Or reference media you found. Show them this website.');
-
+(7, 'How do I ask my partner about their HIV status?', 'Ideally talk to your partner before things start to heat up. Say you\'d like to use protection, and ask if they\'ve been tested. Maybe start by disclosing your own status. Or, make it a date and get tested together. Show them this website! But don\'t compromise on your health because you were too afraid or were unsure about how to ask your partner about their status.');
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `tbl_formlabels`
 --
-
 CREATE TABLE `tbl_formlabels` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -221,20 +218,15 @@ CREATE TABLE `tbl_formlabels` (
   `phone` varchar(50) NOT NULL,
   `message` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `tbl_formlabels`
 --
-
 INSERT INTO `tbl_formlabels` (`id`, `name`, `email`, `phone`, `message`) VALUES
 (1, 'Your name', 'Email', 'Phone', 'Message');
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `tbl_helplines`
 --
-
 CREATE TABLE `tbl_helplines` (
   `id` int(11) NOT NULL,
   `heading` varchar(80) NOT NULL,
@@ -243,53 +235,41 @@ CREATE TABLE `tbl_helplines` (
   `rhaclinkheading` varchar(100) NOT NULL,
   `rhaclink` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `tbl_helplines`
 --
-
 INSERT INTO `tbl_helplines` (`id`, `heading`, `text`, `img`, `rhaclinkheading`, `rhaclink`) VALUES
-(1, 'Helplines and Anonymous Services for HIV', 'Peer-to-peer support group for individuals or family living with HIV, newly diagnosed to long-term survivors.', 'contact.svg', 'Contact to Regional HIV/AIDS Connection', 'https://hivaidsconnection.ca/contact');
-
+(1, 'Helplines and Anonymous Services for HIV', 'A peer-to-peer support group for individuals or families living with HIV. Everyone is welcome, from newly diagnosed to long-term survivors.', 'contact.svg', 'Contact to Regional HIV/AIDS Connection', 'https://hivaidsconnection.ca/contact');
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `tbl_hero`
 --
-
 CREATE TABLE `tbl_hero` (
   `id` int(11) NOT NULL,
   `img` varchar(60) NOT NULL,
   `text` varchar(30) NOT NULL,
   `cap_text` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `tbl_hero`
 --
-
 INSERT INTO `tbl_hero` (`id`, `img`, `text`, `cap_text`) VALUES
 (1, 'asian_girl3.jpg', 'Have', 'safer sex'),
 (2, 'blondie_boy3.jpg', 'What\'s', 'your status'),
 (3, 'happiness_girl3.jpg', 'Let\'s', 'talk');
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `tbl_hero_alt`
 --
-
 CREATE TABLE `tbl_hero_alt` (
   `id` int(11) NOT NULL,
   `img` varchar(60) NOT NULL,
   `text` varchar(30) NOT NULL,
   `cap_text` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 --
 -- Dumping data for table `tbl_hero_alt`
 --
-
 INSERT INTO `tbl_hero_alt` (`id`, `img`, `text`, `cap_text`) VALUES
 (1, 'dark_skin_teenager3.jpg', 'Take', 'prep/pep'),
 (2, 'thinking_girl3.jpg', 'It\'s', 'neutral'),
@@ -447,7 +427,7 @@ CREATE TABLE `tbl_storyintro` (
 --
 
 INSERT INTO `tbl_storyintro` (`id`, `heading`, `text`, `formlabel`) VALUES
-(1, 'Share Your Story', 'We provide people living with HIV and their close ones with the opportunity to share their life changing stories with Canada and the world. We respect your privacy. Your story can be submitted anonymously.', 'What\'s Your Story?');
+(1, 'Share Your Story', 'We want to give people living with HIV and their loved ones the opportunity to share their life changing stories. Submit your story anonymously, and we\'ll share it on our social media.', 'What\'s Your Story?');
 
 -- --------------------------------------------------------
 

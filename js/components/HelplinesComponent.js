@@ -4,8 +4,8 @@ export default {
             <h3 class="sub-heading">{{ helplines.heading }}</h3>
             <p>{{ helplines.text }}</p>
             <img class="help-icon" :src="'images/' + helplines.img" alt="contact icon">
-            <p class="help-small-text">{{ helplines.rhaclinkheading }}</p>
-            <a class="help-link" :href="helplines.rhaclink" target="_blank">{{ helplines.rhaclink }}</a>
+            <p class="help-small-text">{{ helplines.linkheading }}</p>
+            <a class="help-link" :href="helplines.rhaclink" target="_blank">{{ helplines.link }}</a>
         </section>
     `,
 

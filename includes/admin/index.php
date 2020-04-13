@@ -8,7 +8,8 @@
     $getAbout = getAll($tblAbout);
     $tblEvent = 'tbl_event';
     $getOneEvent = getOneEvent($tblEvent);
-    
+    $tblContact = 'tbl_factsmore';
+    $getContact = getAll($tblContact);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,14 +38,20 @@
                 <?php endwhile;?>
                 </div>
                 <div class="pgImg">
+                    <img src="../../images/kin_symbol.svg" alt="keep it neutral logo">
+                    <a href="admin_kin_faq.php">Edit FAQ Page</a>
+                </div>
+                <div class="pgImg">
                 <?php while($row = $getOneEvent->fetch(PDO::FETCH_ASSOC)):?>
                     <img src="../../images/<?php echo $row['img'];?>" alt="<?php echo $row['img'];?>">
                     <a href="admin_kin_community.php">Edit Community Page</a>
                 <?php endwhile;?>
                 </div>
                 <div class="pgImg">
-                    <img src="../../images/kin_symbol.svg" alt="keep it neutral logo">
-                    <a href="admin_kin_faq.php">Edit FAQ Page</a>
+                <?php while($row = $getContact->fetch(PDO::FETCH_ASSOC)):?>
+                    <img src="../../images/<?php echo $row['img'];?>" alt="<?php echo $row['img'];?>">
+                    <a href="admin_kin_contact.php">Edit Contact Page</a>
+                <?php endwhile;?>
                 </div>
             </div>
         </div>
