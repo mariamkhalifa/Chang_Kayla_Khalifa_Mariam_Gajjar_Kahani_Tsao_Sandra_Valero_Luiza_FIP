@@ -2,16 +2,19 @@
 
 <img src="images/kin_logo.svg" width="150">
 
-About Keep It Neutral. If we have a live site, put it [here](google.ca).
+We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.
+Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. Let’s Keep it Neutral. Let's Keep It Neutral.
 
 ## Built with
 * **HTML5**
 * **SASS/CSS3**
-* **JavaScript**
+* **Vue.js**
 * **PHP**
 * **MySQL**
 
 ## Dev Area
+
+All the content on the website is dynamic and is pulled from a database using Ajax. The database in included in the database folder. If using Windows OS, you will need to delete the password in includes/config/database.php  
 
 #### How to Use Gulp
 
