@@ -11,7 +11,7 @@ export default {
                 <h3 class="sub-heading">{{ about.heading }}</h3>
                 <ul>
                     <li>{{ about.text1 }}</li>
-                    <li>{{ about.text2 }}<span>{{ about.textbold }}</span></li>
+                    <li>{{ about.text2 }} <span>{{ about.textbold }}</span></li>
                 </ul>
             </div>
         </section>
