@@ -686,3 +686,62 @@ function updateEventH($heading) {
         return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }
+
+function updateContactH($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_contactintro` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_contact.php?updatedConH=You have updated the contact heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateSM($heading, $intro, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_socialmedia` SET heading =:heading, intro =:intro, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':intro'=>$intro,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_contact.php?updatedConSM=You have updated the social media heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateInfo($address, $phone, $email) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_contactinfo` SET address =:address, phone =:phone, email =:email';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':address'=>$address,
+            ':phone'=>$phone,
+            ':email'=>$email
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_contact.php?updatedConInfo=You have updated the contact information!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
