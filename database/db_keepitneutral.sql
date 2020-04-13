@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 13, 2020 at 12:43 AM
+-- Generation Time: Apr 13, 2020 at 01:00 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -40,7 +40,8 @@ CREATE TABLE `tbl_about` (
 --
 
 INSERT INTO `tbl_about` (`id`, `img`, `heading`, `p`, `p_sub`, `p_bold`) VALUES
-(1, 'girl3.jpg', 'What\'s HIV Neutral?', 'We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.', 'Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV.', 'Let\'s Keep It Neutral.');
+(1, 'girl3.jpg', 'What\'s HIV Neutral?', 'We at Keep it Neutral want to create a community that openly talks about HIV/AIDS. Our goal is a world that’s “HIV Neutral” — where HIV is no longer transmittable or stigmatized.', 'Here you’ll find ways to start conversations that celebrate love, encourage safety, and stop the spread of HIV. ', 'Let\'s Keep It Neutral.');
+
 
 -- --------------------------------------------------------
 
@@ -207,6 +208,25 @@ INSERT INTO `tbl_faq` (`id`, `question`, `answer`) VALUES
 (5, 'Other than condoms, how can I practice safer sex to prevent HIV?', 'Talk to your partner before having sex. Find out if they are at risk for HIV. Tell them when you were last tested, and get tested together! Other physical protective barriers include dental dams and disposable gloves.'),
 (6, 'What are the ways I CANNOT get HIV?', 'HIV is NOT transmitted by hugging, shaking hands, coughs or sneezes, eating food prepared or handled by an HIV-infected person, donating blood, mosquitoes, toilet seats, sweat or tears, simple kissing or everyday contact with HIV-infected persons at school, work, home or anywhere else.'),
 (7, 'How do I ask my partner about their HIV status?', 'Ideally talk to your partner before things start to heat up. Say you\'d like to use protection, and ask if they\'ve been tested. Maybe start by disclosing your own status. Or, make it a date and get tested together. Show them this website! But don\'t compromise on your health because you were too afraid or were unsure about how to ask your partner about their status.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_faqintro`
+--
+
+CREATE TABLE `tbl_faqintro` (
+  `id` int(11) NOT NULL,
+  `heading` varchar(250) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_faqintro`
+--
+
+INSERT INTO `tbl_faqintro` (`id`, `heading`, `text`) VALUES
+(1, 'Frequently Asked Questions', 'Do you have any questions? We can help you find the answers!');
 
 -- --------------------------------------------------------
 
@@ -600,6 +620,12 @@ ALTER TABLE `tbl_faq`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tbl_faqintro`
+--
+ALTER TABLE `tbl_faqintro`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_formlabels`
 --
 ALTER TABLE `tbl_formlabels`
@@ -746,6 +772,12 @@ ALTER TABLE `tbl_factsmore`
 --
 ALTER TABLE `tbl_faq`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_faqintro`
+--
+ALTER TABLE `tbl_faqintro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_formlabels`
