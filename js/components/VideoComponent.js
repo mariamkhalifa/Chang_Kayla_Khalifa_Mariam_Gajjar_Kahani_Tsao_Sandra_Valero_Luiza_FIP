@@ -5,8 +5,9 @@ export default {
             <div class="video-top">
                 <div class="line"></div>
             </div>
-            <div @click="showLightbox" class="video-wrapper">
-                <img class="temp" src="images/thumb.jpg" alt="video thumbnail">
+
+            <div class="video-wrapper">
+                <img class="temp" src="images/thumb.jpg" alt="temporary video">
                 <div class="video-icon"><img src="images/play_icon.svg" alt="play video icon"></div>
             </div>
         </div>

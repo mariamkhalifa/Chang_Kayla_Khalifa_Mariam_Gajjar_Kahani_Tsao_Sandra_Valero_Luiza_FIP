@@ -60,21 +60,26 @@
         align-self: start;
         position: absolute;
         z-index: 10;
-        width: 65vw;
+        width: 60vw;
+        height: 400px;
+        padding-top: 15%;
+        padding-left: 12%;
         //height: 100%;
         @include col;
         justify-items: center;
-        li { font-size: .9em; }
+        li { width: 90%; }
     }
 }
 
 @media screen and (min-width: 810px) {
     .about-text {
-        width: 60vw;
-        //padding: 50px 40px;
-        ul {
-            width: 90%;
-        }
+        //width: 55vw;
+        height: 430px;
+        // padding: 50px 40px;
+        // ul {
+        //     width: 90%;
+        // }
+
         li {
             font-size: 1.1em;
         }
@@ -83,24 +88,26 @@
 
 @media screen and (min-width: 900px) {
     .about {
-        grid-template-columns: 1fr 596px;
+        grid-template-columns: 1.5fr 1fr;
     }
 
     .about-text {
         width: 60vw;
-        padding: 60px 50px;
+        //padding: 60px 50px;
     }
 }
 
 @media screen and (min-width: 1010px) {
     .about-text {
         width: 65vw;
-        padding: 70px 60px;
+        //padding: 70px 60px;
     }
 }
 
 @media screen and (min-width: 1050px) {
     .about-text {
+        padding-top: 10%;
+        height: 500px;
         li {
             font-size: 1.5em;
         }
@@ -110,7 +117,7 @@
 @media screen and (min-width: 1300px) {
     .about-text {
         width: 70vw;
-        padding: 80px 70px;
+        //padding: 80px 70px;
     }
 }
 
