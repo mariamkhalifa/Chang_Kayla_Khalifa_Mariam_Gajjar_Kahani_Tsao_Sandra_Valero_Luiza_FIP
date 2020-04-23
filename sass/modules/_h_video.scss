@@ -48,6 +48,8 @@
         display: grid;
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 1fr;
+        height: 480px;
+        align-items: end;
     }
 
     .video-top {
@@ -63,7 +65,7 @@
     .video-wrapper {
         grid-column: 1;
         grid-row: 1;
-        margin-top: 50%;
+        margin-top: 0;
         //width: 50%;
     }
 
@@ -82,29 +84,19 @@
     }
 }
 
-@media screen and (min-width: 618px) {
-    .video-wrapper {
-        //margin-top: 150px;
-    }
+// @media screen and (min-width: 618px) {
+//     .video-top {
+//         .line {
+//             margin-top: 180px;
+//         }
+//     }
+// }
 
-    .video-top {
-        .line {
-            margin-top: 100px;
-        }
-    }
-}
-
-@media screen and (min-width: 638px) {
-    .video-wrapper {
-        margin-top: 100px;
-    }
-
-    .video-top {
-        .line {
-            margin-top: 80px;
-        }
-    }
-}
+// @media screen and (min-width: 638px) {
+//     .video-wrapper {
+//         margin-top: 230px;
+//     }
+// }
 
 @media screen and (min-width: 735px) {
     .video-text {
@@ -115,40 +107,46 @@
 @media screen and (min-width: 792px) {
     .video-top {
         .line {
-            margin-top: 70px;
+            margin-top: 210px;
         }
     }
 }
 
-@media screen and (min-width: 858px) {
-    .video-wrapper {
-        margin-top: 0;
+// @media screen and (min-width: 858px) {
+//     .video-wrapper {
+//         margin-top: 0;
+//     }
+// }
+
+@media screen and (min-width: 900px) {
+    .vid-grid {
+        height: 520px;
+    }
+    .video-top {
+        .line {
+            margin-top: 260px;
+        }
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1010px) {
+    .vid-grid {
+        height: 580px;
+    }
     .video-top {
         .line {
-            margin-top: 100px;
+            margin-top: 280px;
         }
     }
 }
 
 @media screen and (min-width: 1190px) {
     .vid-grid {
-        grid-template-columns: 1.5fr 2fr;
+        grid-template-columns: 1fr 1.5fr;
     }
 
     .video-text {
         padding-left: 50px;
-        width: 60vw;
-    }
-}
-
-@media screen and (min-width: 1050px) {
-    .video-top {
-        .line {
-            margin-top: 140px;
-        }
+        width: 70vw;
     }
 }

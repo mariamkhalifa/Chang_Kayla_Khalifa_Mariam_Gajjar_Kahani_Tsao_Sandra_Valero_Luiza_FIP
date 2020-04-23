@@ -6,7 +6,7 @@ export default {
                 <div class="line"></div>
             </div>
             <div class="video-wrapper">
-                <img class="temp" src="images/temporary_video3.jpg" alt="temporary video">
+                <img class="temp" src="images/thumb.jpg" alt="temporary video">
                 <div class="video-icon"><img src="images/play_icon.svg" alt="play video icon"></div>
                 <video class="video">
                     <source :src="'video/' + video.video" type="video/mp4">
