@@ -8,7 +8,7 @@ export default {
         <div class="faq-card">
             <div class="question-card">
                 <img class="card-top" src="images/top_card.svg" alt="top decoration">
-                <h4 class="question">{{ question }}</h4>
+                <p class="question">{{ question }}</p>
                 <div v-on:click="revealAnswer" v-if="plus.revealed" class="minus">-</div>
                 <div v-on:mouseover="revealAnswer" v-else class="plus">+</div>
             </div>

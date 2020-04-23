@@ -20,7 +20,6 @@ ol, ul {
     list-style: none;
 }
 
-
 html, body {
     height: 100%;
     max-width: 100vw;
@@ -74,6 +73,11 @@ li {
     display: none;
 }
 
+.home-wrapper {
+    position: relative;
+    padding-bottom: 80px;
+}
+
 .main-heading {
     font-size: 2em;
     text-transform: capitalize;
@@ -81,7 +85,7 @@ li {
 
 .sub-heading {
     font-size: 1.8em;
-    text-transform: capitalize;
+    // text-transform: capitalize;
 }
 
 .button {
@@ -105,6 +109,20 @@ li {
     font-size: .8em;
     color: $yellow-orange;
     margin-bottom: 20px;
+}
+
+.fa-angle-up {
+    color: $dark-blue;
+    font-size: 2.2em;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.fa-angle-up:hover, .fa-angle-up:focus {
+    color: $hover-color;
 }
 
 @media screen and (min-width: 700px) {

@@ -5,17 +5,23 @@ export default {
             <div class="video-top">
                 <div class="line"></div>
             </div>
+
             <div class="video-wrapper">
                 <img class="temp" src="images/thumb.jpg" alt="temporary video">
                 <div class="video-icon"><img src="images/play_icon.svg" alt="play video icon"></div>
-                <video class="video">
-                    <source :src="'video/' + video.video" type="video/mp4">
-                </video>
             </div>
         </div>
+
         <div class="video-text">
-            <h3 class="main-heading">{{ video.heading }}</h3>
+            <h3 class="sub-heading">{{ video.heading }}</h3>
             <p>{{ video.text }}</p>
+        </div>
+
+        <div v-if="lightbox" class="lightbox" ref="lightbox">
+            <div @click="closeLightbox" class="close-lightbox"><span>x</span></div>
+            <video class="video" controls>
+                <source :src="'video/' + video.video" type="video/mp4">
+            </video>
         </div>
     </section>
     `,
@@ -27,6 +33,8 @@ export default {
                 text: '',
                 video: ''
             },
+
+            lightbox: false
         }
     },
 
@@ -47,6 +55,16 @@ export default {
                 this.video.video = data[0].video;
             })
             .catch((err) => console.log(err))
+        },
+
+        showLightbox() {
+            //this.$refs.lightbox.style.display = 'flex';
+            this.lightbox = true;
+            console.log('!');
+        },
+
+        closeLightbox() {
+            this.lightbox = false;
         }
     }
 }

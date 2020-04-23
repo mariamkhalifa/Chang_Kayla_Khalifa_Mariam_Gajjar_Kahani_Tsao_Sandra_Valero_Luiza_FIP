@@ -17,6 +17,7 @@
     width: 100%;
     margin-top: 40px;
     height: 80vh;
+    background-color: grey;
 }
 
 .locations-wrapper {
@@ -57,6 +58,10 @@
 .testing-link {
     color: $dark-blue;
     margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    font-size: .9em;
     transition: all .5s ease;
 }
 

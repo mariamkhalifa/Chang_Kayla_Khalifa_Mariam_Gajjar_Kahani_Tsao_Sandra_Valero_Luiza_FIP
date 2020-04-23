@@ -37,19 +37,19 @@
                 <p v-on:click="closeBurger" class="close-nav">X</p>
             </div>
             <ul class="nav">
-                <li>
+                <li @click="navigateTo">
                     <router-link :to="{ name: 'home' }">Home</router-link>
                     <div class="link1"><div>
                 </li>
-                <li>
+                <li @click="navigateTo">
                     <router-link :to="{ name: 'facts' }">Facts</router-link>
                     <div class="link2"><div>
                 </li>
-                <li>
+                <li @click="navigateTo">
                     <router-link :to="{ name: 'community' }">Community</router-link>
                     <div class="link3"><div>
                 </li>
-                <li>
+                <li @click="navigateTo">
                     <router-link :to="{ name: 'contact' }">Contact</router-link>
                     <div class="link4"><div>
                 </li>
@@ -69,10 +69,10 @@
         <h2 class="hidden">Footer</h2>
         <ul class="f-nav">
             <h3>All Links</h3>
-                <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-                <li><router-link :to="{ name: 'facts' }">Facts</router-link></li>
-                <li><router-link :to="{ name: 'community' }">Community</router-link></li>
-                <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
+                <li @click="scrollToTop"><router-link :to="{ name: 'home' }">Home</router-link></li>
+                <li @click="scrollToTop"><router-link :to="{ name: 'facts' }">Facts</router-link></li>
+                <li @click="scrollToTop"><router-link :to="{ name: 'community' }">Community</router-link></li>
+                <li @click="scrollToTop"><router-link :to="{ name: 'contact' }">Contact</router-link></li>
         </ul>
         <ul class="f-social-media">
             <h3>Stay Connected</h3>
@@ -103,6 +103,8 @@
     <p class="reg-trademark">Keep It Neutral &copy; 2020. All Rights Reserved.</p>
     </main>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6CIgAoZRfDd6Ank8YQEfhQGkfT0UgYhI"
+    type="text/javascript"></script>
     <script src="js/main.js" type="module"></script>
 </body>
 </html>

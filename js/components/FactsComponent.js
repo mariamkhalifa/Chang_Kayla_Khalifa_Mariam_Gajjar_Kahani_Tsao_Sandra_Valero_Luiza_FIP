@@ -1,6 +1,7 @@
 import QuestionCardComponent from "./QuestionCardComponent.js"
 import FAQComponent from "./FAQComponent.js"
 import LinkComponent from "./LinkComponent.js"
+import TopButtonComponent from "./TopButtonComponent.js"
 
 export default {
     name: 'facts',
@@ -12,11 +13,6 @@ export default {
 
         <div class="facts-main">
 
-            <!-- <section class="facts-intro">
-                <h3 class="main-heading">{{ factsintro.heading }}</h3>
-                <p>{{ factsintro.text }}</p>
-            </section> -->
-
             <faq class="facts-faq"></faq>
 
             <section class="facts-links">
@@ -25,7 +21,7 @@ export default {
 
                 <ul>
                     <infolink v-for="(link, index) in infolinksdata"
-                    :img="link.img" :url="link.url" :key="index"
+                    :img="link.img" :url="link.link" :key="index"
                     class="info-links">
                     </infolink>
                 </ul>
@@ -35,36 +31,29 @@ export default {
                 <h4 class="sub-heading">{{ factsmore.heading }}</h4>
                 <p>{{ factsmore.text }}</p>
                 <img class="facts-more-img" :src="'images/' + factsmore.img" alt="">
-                <router-link class="button" :to="{ name: 'contact' }">Contact</router-link>
+                <a @click="navigateToContact" class="button">Contact</a>
             </section>
 
         </div>
+
+        <topbutton></topbutton>
 
     </section>
     `,
 
     data() {
         return {
-            factsintro: {
-                heading: "Frequently Asked Questions",
-                text: "Do you have any questions? We can help you find the answers!"
-            },
-
             factslinks: {
-                heading: "Get The Facts",
-                text: "The facts provide young people in Canada with information about people living with HIV"
+                heading: '',
+                text: ''
             },
 
-            infolinksdata: [
-                { img: "rhac_logo.jpg", url: "https://hivaidsconnection.ca"},
-                { img: "catie_logo.jpg", url: "https://www.catie.ca/en/basics"},
-                { img: "unaid_logo.jpg", url: "https://www.unaids.org/en"}  
-            ],
+            infolinksdata: [],
 
             factsmore: {
-                heading: "Do you have more questions?",
-                text: "We can help you find the answers.",
-                img: "question_icon.svg"
+                heading: '',
+                text: '',
+                img: ''
             }
         }
     },
@@ -72,7 +61,57 @@ export default {
     components: {
         questioncard: QuestionCardComponent,
         infolink: LinkComponent,
-        faq: FAQComponent
+        faq: FAQComponent,
+        topbutton: TopButtonComponent
     },
+
+    created() {
+        this.fetchFactsLinks();
+        this.fetchInfoLinksData();
+        this.fetchFactsMore();
+    },
+
+    methods: {
+        navigateToContact() {
+            this.$router.push({ name: 'contact'});
+            window.scrollTo(0,0);
+        },
+
+        fetchFactsLinks() {
+            let url = './includes/admin/ajax.php?factslinks=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.factslinks = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+
+        fetchInfoLinksData() {
+            let url = './includes/admin/ajax.php?infolinksdata=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.infolinksdata = data;
+            })
+            .catch((err) => console.log(err))
+        },
+
+        fetchFactsMore() {
+            let url = './includes/admin/ajax.php?factsmore=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.factsmore = data[0];
+            })
+            .catch((err) => console.log(err))
+        },
+    }
 
 }

@@ -79,6 +79,7 @@
         // ul {
         //     width: 90%;
         // }
+
         li {
             font-size: 1.1em;
         }
@@ -119,3 +120,11 @@
         //padding: 80px 70px;
     }
 }
+
+@media screen and (min-width: 1500px) {
+    .about-text {
+        width: 70vw;
+        padding: 90px 80px;
+    }
+}
+

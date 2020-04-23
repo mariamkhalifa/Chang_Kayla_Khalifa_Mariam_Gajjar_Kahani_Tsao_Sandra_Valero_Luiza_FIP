@@ -1,6 +1,7 @@
 // intro
 .comm-page {
     position: relative;
+    padding-bottom: 40px;
 }
 
 .comm-banner {
@@ -44,6 +45,7 @@
     margin-top: 60px;
     padding-bottom: 40px;
     border-radius: 10px;
+    max-width: 379px;
     box-shadow: 0 0 20px rgba($color: $grey, $alpha: .2)
 }
 
@@ -62,10 +64,6 @@
     .day {
         font-size: 1.4em;
     }
-}
-
-.event-img {
-    width: 100%;
 }
 
 .event-heading {
@@ -295,6 +293,11 @@
     color: $dark-blue;
     font-size: .9em;
     margin-top: 5px;
+    transition: 1s all ease;
+}
+
+.help-link:hover, .help-link:focus {
+    color: $hover-color;
 }
 
 // media queries
@@ -432,30 +435,13 @@
 @media screen and (min-width: 1024px) {
     .events-grid {
         grid-gap: 5vw;
-    }
-
-    // .insta-feed-wrapper {
-    //     grid-template-columns: repeat(3,1fr);
-    // }
-
-    // .comm-img:nth-of-type(4), .comm-img:nth-of-type(5), .comm-img:nth-of-type(6),
-    // .comm-img:nth-of-type(7), .comm-img:nth-of-type(8), .comm-img:nth-of-type(9),
-    // .quote:nth-of-type(4), .quote:nth-of-type(5), .quote:nth-of-type(6) {
-    //     display: flex;
-    // }
-
-    
+    }    
 }
 
 @media screen and (min-width: 1060px) {
     .insta-feed-wrapper {
-        // @include row;
-        // justify-content: space-evenly;
-        // flex-wrap: wrap;
-        // max-width: 95%;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        //grid-gap: 5vw;
     }
 
     .insta-feed-group {
@@ -497,10 +483,6 @@
 }
 
 @media screen and (min-width: 1300px) {
-    // .insta-feed-wrapper {
-    //     max-width: 100%;
-    // }
-
     .comm-img, .quote {
         width: 380px;
         height: 310px;
