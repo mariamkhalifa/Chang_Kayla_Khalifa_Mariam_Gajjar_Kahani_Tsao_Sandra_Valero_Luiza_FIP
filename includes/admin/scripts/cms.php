@@ -89,16 +89,17 @@ function updateHero($tbl, $id, $text, $cap_text) {
     }
 }
 
-function updateAbout($heading, $p, $p_sub) {
+function updateAbout($heading, $p, $p_sub, $p_bold) {
     $pdo = Database::getInstance()->getConnection();
 
-    $update_hero_query = 'UPDATE `tbl_about` SET heading =:heading, p =:p, p_sub =:p_sub WHERE id =:id';
+    $update_hero_query = 'UPDATE `tbl_about` SET heading =:heading, p =:p, p_sub =:p_sub, p_bold =:p_bold WHERE id =:id';
     $single_update = $pdo->prepare($update_hero_query);
     $updated_single = $single_update->execute(
         array(
             ':heading'=>$heading,
             ':p'=>$p,
             ':p_sub'=>$p_sub,
+            ':p_bold'=>$p_bold,
             ':id'=>'1'
         )
     );
@@ -121,7 +122,7 @@ function updateVideo($video, $old_vid) {
             throw new Exception('Wrong file type!');
         }
     
-        $image_path = '../../media/';
+        $image_path = '../../video/';
     
         $generated_name     = md5($upload_file['filename'] . time());
         $generated_filename = $generated_name . '.' . $upload_file['extension'];
@@ -131,7 +132,7 @@ function updateVideo($video, $old_vid) {
             throw new Exception('Failed to move uploaded file, check permission!');
         }
 
-        $deleteOld = unlink('../../../media/'.$old_vid);
+        $deleteOld = unlink('../../../video/'.$old_vid);
 
         $update_hero_query = 'UPDATE `tbl_video` SET video =:video WHERE id =:id';
         $single_update = $pdo->prepare($update_hero_query);
@@ -169,6 +170,63 @@ function updateVidT($heading, $p) {
 
     if($updated_single){
         redirect_to('admin_kin_home.php?updatedVidT=You have updated the video texts!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateFaqH($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_faqintro` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_home.php?updatedFaqH=You have updated the faq heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateTestH($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_locationsintro` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_home.php?updatedTestH=You have updated the test location heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateTestL($linktext, $link) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_locationsintro` SET linktext =:linktext, link =:link';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':linktext'=>$linktext,
+            ':link'=>$link
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_home.php?updatedTestL=You have updated the test location links!');
     }else{
         return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
@@ -363,6 +421,120 @@ function deleteEvent($id) {
     }
 }
 
+function updateFaqLinkH($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_factslink` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_home.php?updatedFaqLinkH=You have updated the faq links heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function addFaqLink($linkImg, $link) {
+    try {
+        $pdo = Database::getInstance()->getConnection();
+
+        $cover          = $linkImg;
+        $upload_file    = pathinfo($cover['name']);
+        $accepted_types = array('gif', 'jpg', 'jpe', 'png', 'jpeg', 'webp');
+        if (!in_array($upload_file['extension'], $accepted_types)) {
+            throw new Exception('Wrong file type!');
+        }
+    
+        $image_path = '../../images/';
+    
+        $generated_name     = md5($upload_file['filename'] . time());
+        $generated_filename = $generated_name . '.' . $upload_file['extension'];
+        $targetpath         = $image_path . $generated_filename;
+    
+        if (!move_uploaded_file($cover['tmp_name'], $targetpath)) {
+            throw new Exception('Failed to move uploaded file, check permission!');
+        }
+
+        $insert_e_query = 'INSERT INTO tbl_infolinksdata(img, link)';
+        $insert_e_query .= ' VALUES(:img, :link)';
+
+        $insert_e       = $pdo->prepare($insert_e_query);
+        $insert_e_result = $insert_e->execute(
+            array(
+                ':img'=>$generated_filename,
+                ':link'=>$link
+            )
+        );
+
+        $last_uploaded_id = $pdo->lastInsertId();
+        if ($insert_e_result && !empty($last_uploaded_id)) {
+            redirect_to('admin_kin_faq.php?createdFaqLink=You have created the new link sucessfully!');
+        }
+    } catch (Exception $e) {
+        $error = $e->getMessage();
+        return $error;
+    }
+}
+
+function updateFaqLink($id, $link) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_infolinksdata` SET link =:link';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':link'=>$link
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_faq.php?updatedFaqSingleLink=You have updated the faq link!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function deleteFaqLink($id) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $delete_faq_query = 'DELETE FROM tbl_infolinksdata WHERE id=:id';
+    $delete_faq_set = $pdo->prepare($delete_faq_query);
+    $delete_faq_result = $delete_faq_set->execute(array(
+        ':id'=>$id
+    ));
+
+    if($delete_faq_result && $delete_faq_set->rowCount() > 0){
+        redirect_to('admin_kin_faq.php?deletedFaqSingleLink=You have deleted the link!');
+    }else{
+        return false;
+    }
+}
+
+function updateFaqCon($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_factsmore` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_home.php?updatedFaqCon=You have updated the faq contact heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
 function createFaq($q, $a) {
     $pdo = Database::getInstance()->getConnection();
 
@@ -415,5 +587,102 @@ function deleteFaq($id) {
         redirect_to('admin_kin_faq.php?deletedFaq=You have deleted the question and answer!');
     }else{
         return false;
+    }
+}
+
+function updateComH($heading, $text) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_communityintro` SET heading =:heading, text =:text';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_community.php?updatedComH=You have updated the community page heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateComSM($heading, $btn){
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_instagramfeed` SET heading =:heading, btn =:btn';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':btn'=>$btn
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_community.php?updatedSM=You have updated the community social media heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateShare($heading, $text, $formlabel) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_storyintro` SET heading =:heading, text =:text, formlabel =:formlabel';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text,
+            ':formlabel'=>$formlabel
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_community.php?updatedShare=You have updated the sharing section heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateHelp($heading, $text, $linkheading, $link) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_helplines` SET heading =:heading, text =:text, linkheading =:linkheading, link =:link';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading,
+            ':text'=>$text,
+            ':linkheading'=>$linkheading,
+            ':link'=>$link
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_community.php?updatedHelp=You have updated the helpline heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
+    }
+}
+
+function updateEventH($heading) {
+    $pdo = Database::getInstance()->getConnection();
+
+    $update_query = 'UPDATE `tbl_eventsheading` SET heading =:heading';
+    $single_update = $pdo->prepare($update_query);
+    $updated_single = $single_update->execute(
+        array(
+            ':heading'=>$heading
+        )
+    );
+
+    if($updated_single){
+        redirect_to('admin_kin_community.php?updatedEH=You have updated the events heading!');
+    }else{
+        return '<p class="updateMsg">Something went wrong with the update.</p>';
     }
 }

@@ -14,8 +14,12 @@
     $tblVideo = 'tbl_video';
     $getVideo = getAll($tblVideo);
     $getVideoT = getAll($tblVideo);
+    $tblHomeFaq = 'tbl_faqintro';
+    $getHomeFaq = getAll($tblHomeFaq);
     $tblTest = 'tbl_test_location';
-    $getTest = getAll($tblTest);
+    $getTestLocation = getAll($tblTest);
+    $tblTestIntro = 'tbl_locationsintro';
+    $getTest = getAll($tblTestIntro);
 
     if(!empty($_GET['updatedHero'])){
         $msg = $_GET['updatedHero'];
@@ -38,6 +42,15 @@
     } else if(!empty($_GET['updatedImg'])){
         $msg = $_GET['updatedImg'];
         $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedFaqH'])){
+        $msg = $_GET['updatedFaqH'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedTestH'])){
+        $msg = $_GET['updatedTestH'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
+    } else if(!empty($_GET['updatedTestL'])){
+        $msg = $_GET['updatedTestL'];
+        $message = '<p class="updateMsg">'.$msg.'</p>';
     }
 
     if(isset($_POST['submit-hero'])) {
@@ -52,7 +65,8 @@
         $heading = trim($_POST['heading']);
         $p = trim($_POST['p']);
         $p_sub = trim($_POST['p_sub']);
-        $message = updateAbout($heading, $p, $p_sub);
+        $p_bold = trim($_POST['p_bold']);
+        $message = updateAbout($heading, $p, $p_sub, $p_bold);
     }
 
     if(isset($_POST['submit-video'])) {
@@ -69,6 +83,24 @@
         $heading = trim($_POST['heading']);
         $p = trim($_POST['p']);
         $message = updateVidT($heading, $p);
+    }
+
+    if(isset($_POST['submit-home-faq'])) {
+        $heading = trim($_POST['heading']);
+        $text = trim($_POST['text']);
+        $message = updateFaqH($heading, $text);
+    }
+
+    if(isset($_POST['submit-test-heading'])) {
+        $heading = trim($_POST['heading']);
+        $text = trim($_POST['text']);
+        $message = updateTestH($heading, $text);
+    }
+    
+    if(isset($_POST['submit-test-link'])) {
+        $linktext = trim($_POST['linktext']);
+        $link = trim($_POST['link']);
+        $message = updateTestL($linktext, $link);
     }
 
     if(isset($_POST['submit-test-new'])) {
@@ -106,6 +138,7 @@
             <a href="admin_kin_home.php?#hero">Hero Section</a>
             <a href="admin_kin_home.php?#about">About Section</a>
             <a href="admin_kin_home.php?#video">Video Section</a>
+            <a href="admin_kin_home.php?#homeFaq">Home FAQ Section</a>
             <a href="admin_kin_home.php?#test">Test Section</a>
         </div>
         <?php echo !empty($message)?$message: ''; ?>
@@ -174,6 +207,7 @@
                     <input type="text" name="heading" value="<?php echo $row['heading'];?>">
                     <textarea name="p"><?php echo $row['p'];?></textarea>
                     <textarea name="p_sub"><?php echo $row['p_sub'];?></textarea>
+                    <input type="text" name="p_bold" value="<?php echo $row['p_bold'];?>">
                     <input type="submit" name="submit-about" value="Save">
                 <?php endwhile;?>
                 </form>
@@ -186,7 +220,7 @@
                 <form action="admin_kin_home.php" method="post" class="vidForm" enctype="multipart/form-data">
                 <?php while($row = $getVideo->fetch(PDO::FETCH_ASSOC)):?>
                     <video controls muted>
-                        <source src="../../media/<?php echo $row['video'];?>" type="video/mp4">
+                        <source src="../../video/<?php echo $row['video'];?>" type="video/mp4">
                         Sorry, your browser doesn't support embedded videos.
                     </video>
                     <input class="hidden" type="text" name="old_vid" value="<?php echo $row['video'];?>">
@@ -207,10 +241,44 @@
                 </form>
             </div>
         </section>
+        <section id="homeFaq">
+            <h2>Home FAQ Section: (links to Facts page)</h2>
+            <div class="col">
+                <h3>Heading:</h3>
+                <form action="admin_kin_home.php" method="post" class="textForm">
+                <?php while($row = $getHomeFaq->fetch(PDO::FETCH_ASSOC)):?>
+                    <input type="text" name="heading" value="<?php echo $row['heading'];?>">
+                    <textarea name="text"><?php echo $row['text'];?></textarea>
+                    <input type="submit" name="submit-home-faq" value="Save">
+                <?php endwhile;?>
+                </form>
+            </div>
+        </section>
         <section id="test">
             <h2>Test Location Section:</h2>
             <div class="col">
-                <h3>Texts:</h3>
+                <h3>Heading and Texts:</h3>
+                <div class="rows">
+                    <div class="row">
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                        <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
+                            <input type="text" name="heading" value="<?php echo $row['heading'];?>">
+                            <textarea name="text"><?php echo $row['text'];?></textarea>
+                            <input type="submit" name="submit-test-heading" value="Save">
+                        </form>
+                    </div>
+                    <div class="row">
+                        <form action="admin_kin_home.php" method="post" class="textForm">
+                            <input type="text" name="linktext" value="<?php echo $row['linktext'];?>">
+                            <input type="text" name="link" value="<?php echo $row['link'];?>">
+                            <input type="submit" name="submit-test-link" value="Save">
+                        <?php endwhile;?>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Contents:</h3>
                 <div class="rows">
                     <div class="row">
                         <form action="admin_kin_home.php" method="post" class="textForm">
@@ -224,7 +292,7 @@
                     </div>
                     <div class="row">
                         <h4>Exiting test locations:</h4>
-                        <?php while($row = $getTest->fetch(PDO::FETCH_ASSOC)):?>
+                        <?php while($row = $getTestLocation->fetch(PDO::FETCH_ASSOC)):?>
                         <form action="admin_kin_home.php" method="post" class="textForm">
                             <input class="hidden" type="number" name="id" value="<?php echo $row['id'];?>">
                             <input type="text" name="name" value="<?php echo $row['name'];?>">
