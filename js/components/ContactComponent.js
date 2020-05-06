@@ -118,7 +118,7 @@ export default {
         
                     body: JSON.stringify(formData)
                 })
-                .then(res => res.text())
+                .then(res => res.json())
                 .then(data => {
                     console.log(data);
                     if(data === true) {
